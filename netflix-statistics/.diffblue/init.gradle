@@ -1,0 +1,19 @@
+import com.diffblue.cover.buildsystem.gradle.plugin.CoverPlugin
+import com.diffblue.cover.buildsystem.gradle.plugin.GradleSpy
+
+initscript {
+  dependencies {
+    classpath files(System.properties['com.diffblue.cover.buildsystem.gradle.model-jar'])
+  }
+}
+
+allprojects {
+  apply plugin: CoverPlugin
+  addListener(GradleSpy.getInstance())
+}
+
+dependencies {
+    testImplementation "org.mockito:mockito-core:5.14.2"
+    testImplementation "org.mockito:mockito-core:5.14.2"
+    testImplementation "org.mockito:mockito-core:5.14.2"
+}
