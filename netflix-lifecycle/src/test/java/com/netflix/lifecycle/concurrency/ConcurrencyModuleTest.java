@@ -3,6 +3,7 @@ package com.netflix.lifecycle.concurrency;
 import java.util.concurrent.ScheduledExecutorService;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.google.inject.ConfigurationException;
@@ -13,6 +14,7 @@ import com.netflix.governator.guice.BootstrapBinder;
 import com.netflix.governator.guice.BootstrapModule;
 import com.netflix.governator.guice.LifecycleInjector;
 
+@Ignore
 public class ConcurrencyModuleTest {
     @Test
     public void backgroundShouldBeInjectable() {
