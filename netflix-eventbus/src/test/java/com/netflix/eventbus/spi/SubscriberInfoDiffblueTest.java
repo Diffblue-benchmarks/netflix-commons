@@ -1,0 +1,29 @@
+package com.netflix.eventbus.spi;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import java.lang.reflect.Method;
+import org.junit.Test;
+
+public class SubscriberInfoDiffblueTest {
+  /**
+   * Test getters and setters.
+   * <p>
+   * Methods under test:
+   * <ul>
+   *   <li>{@link SubscriberInfo#SubscriberInfo(Method, Object)}
+   *   <li>{@link SubscriberInfo#getSubscriberInstance()}
+   *   <li>{@link SubscriberInfo#getSubscriberMethod()}
+   * </ul>
+   */
+  @Test
+  public void testGettersAndSetters() {
+    // Arrange and Act
+    SubscriberInfo actualSubscriberInfo = new SubscriberInfo(null, "Sub Instance");
+    Object actualSubscriberInstance = actualSubscriberInfo.getSubscriberInstance();
+
+    // Assert
+    assertEquals("Sub Instance", actualSubscriberInstance);
+    assertNull(actualSubscriberInfo.getSubscriberMethod());
+  }
+}
