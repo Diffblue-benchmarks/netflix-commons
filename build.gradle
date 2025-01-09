@@ -1,11 +1,27 @@
 plugins {
   id 'nebula.netflixoss' version '11.5.0'
+  id 'info.solidsoft.pitest' version '1.15.0' apply false
 }
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'info.solidsoft.pitest.aggregator'
  
 subprojects {
     group = "com.netflix.netflix-commons"
     apply plugin: 'nebula.netflixoss'
     apply plugin: 'java-library'
+    apply plugin: 'info.solidsoft.pitest'
+
+    pitest {
+        targetTests = ['**DiffblueTest*']
+        targetClasses = ['com.netflix.*']
+        outputFormats = ['XML', 'HTML']
+        exportLineCoverage = true
+        timestampedReports = false
+    }
  
     repositories {
         mavenCentral()
