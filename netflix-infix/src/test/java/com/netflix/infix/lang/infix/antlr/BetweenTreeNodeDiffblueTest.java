@@ -13,8 +13,8 @@ import org.junit.Test;
 public class BetweenTreeNodeDiffblueTest {
   /**
    * Test {@link BetweenTreeNode#BetweenTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link BetweenTreeNode#BetweenTreeNode(Token)}
+   *
+   * <p>Method under test: {@link BetweenTreeNode#BetweenTreeNode(Token)}
    */
   @Test
   public void testNewBetweenTreeNode() {
@@ -33,12 +33,13 @@ public class BetweenTreeNodeDiffblueTest {
 
   /**
    * Test {@link BetweenTreeNode#BetweenTreeNode(BetweenTreeNode)}.
+   *
    * <ul>
-   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.</li>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test: {@link BetweenTreeNode#BetweenTreeNode(BetweenTreeNode)}
+   *
+   * <p>Method under test: {@link BetweenTreeNode#BetweenTreeNode(BetweenTreeNode)}
    */
   @Test
   public void testNewBetweenTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
@@ -69,8 +70,8 @@ public class BetweenTreeNodeDiffblueTest {
 
   /**
    * Test {@link BetweenTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link BetweenTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link BetweenTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -78,7 +79,7 @@ public class BetweenTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new BetweenTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new BetweenTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof BetweenTreeNode);

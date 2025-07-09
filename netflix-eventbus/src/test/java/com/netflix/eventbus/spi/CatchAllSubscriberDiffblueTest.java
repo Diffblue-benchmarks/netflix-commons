@@ -9,8 +9,8 @@ import org.junit.Test;
 public class CatchAllSubscriberDiffblueTest {
   /**
    * Test {@link CatchAllSubscriber#enable(BlockingQueue)}.
-   * <p>
-   * Method under test: {@link CatchAllSubscriber#enable(BlockingQueue)}
+   *
+   * <p>Method under test: {@link CatchAllSubscriber#enable(BlockingQueue)}
    */
   @Test
   public void testEnable() {
@@ -24,24 +24,23 @@ public class CatchAllSubscriberDiffblueTest {
 
   /**
    * Test {@link CatchAllSubscriber#isEnabled()}.
-   * <p>
-   * Method under test: {@link CatchAllSubscriber#isEnabled()}
+   *
+   * <p>Method under test: {@link CatchAllSubscriber#isEnabled()}
    */
   @Test
   public void testIsEnabled() {
     // Arrange, Act and Assert
-    assertFalse((new CatchAllSubscriber()).isEnabled());
+    assertFalse(new CatchAllSubscriber().isEnabled());
   }
 
   /**
    * Test new {@link CatchAllSubscriber} (default constructor).
-   * <p>
-   * Method under test: default or parameterless constructor of
-   * {@link CatchAllSubscriber}
+   *
+   * <p>Method under test: default or parameterless constructor of {@link CatchAllSubscriber}
    */
   @Test
   public void testNewCatchAllSubscriber() {
     // Arrange, Act and Assert
-    assertFalse((new CatchAllSubscriber()).isEnabled());
+    assertFalse(new CatchAllSubscriber().isEnabled());
   }
 }

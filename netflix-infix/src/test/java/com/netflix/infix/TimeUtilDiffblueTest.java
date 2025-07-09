@@ -10,17 +10,19 @@ import org.junit.Test;
 public class TimeUtilDiffblueTest {
   /**
    * Test {@link TimeUtil#toDateTimeFormatter(String, String)}.
+   *
    * <ul>
-   *   <li>When {@code 42}.</li>
-   *   <li>Then return PivotYear is {@code null}.</li>
+   *   <li>When {@code 42}.
+   *   <li>Then return PivotYear is {@code null}.
    * </ul>
-   * <p>
-   * Method under test: {@link TimeUtil#toDateTimeFormatter(String, String)}
+   *
+   * <p>Method under test: {@link TimeUtil#toDateTimeFormatter(String, String)}
    */
   @Test
   public void testToDateTimeFormatter_when42_thenReturnPivotYearIsNull() {
     // Arrange and Act
-    DateTimeFormatter actualToDateTimeFormatterResult = TimeUtil.toDateTimeFormatter("Format Name", "42");
+    DateTimeFormatter actualToDateTimeFormatterResult =
+        TimeUtil.toDateTimeFormatter("Format Name", "42");
 
     // Assert
     assertNull(actualToDateTimeFormatterResult.getPivotYear());
@@ -35,14 +37,14 @@ public class TimeUtilDiffblueTest {
   }
 
   /**
-   * Test {@link TimeUtil#toString(long, String)} with {@code long},
-   * {@code String}.
+   * Test {@link TimeUtil#toString(long, String)} with {@code long}, {@code String}.
+   *
    * <ul>
-   *   <li>When {@code 42}.</li>
-   *   <li>Then return {@code 42}.</li>
+   *   <li>When {@code 42}.
+   *   <li>Then return {@code 42}.
    * </ul>
-   * <p>
-   * Method under test: {@link TimeUtil#toString(long, String)}
+   *
+   * <p>Method under test: {@link TimeUtil#toString(long, String)}
    */
   @Test
   public void testToStringWithLongString_when42_thenReturn42() {
@@ -51,14 +53,14 @@ public class TimeUtilDiffblueTest {
   }
 
   /**
-   * Test {@link TimeUtil#toString(long, String)} with {@code long},
-   * {@code String}.
+   * Test {@link TimeUtil#toString(long, String)} with {@code long}, {@code String}.
+   *
    * <ul>
-   *   <li>When {@link Long#MAX_VALUE}.</li>
-   *   <li>Then return {@code 42}.</li>
+   *   <li>When {@link Long#MAX_VALUE}.
+   *   <li>Then return {@code 42}.
    * </ul>
-   * <p>
-   * Method under test: {@link TimeUtil#toString(long, String)}
+   *
+   * <p>Method under test: {@link TimeUtil#toString(long, String)}
    */
   @Test
   public void testToStringWithLongString_whenMax_value_thenReturn42() {
@@ -67,14 +69,14 @@ public class TimeUtilDiffblueTest {
   }
 
   /**
-   * Test {@link TimeUtil#toString(long, String)} with {@code long},
-   * {@code String}.
+   * Test {@link TimeUtil#toString(long, String)} with {@code long}, {@code String}.
+   *
    * <ul>
-   *   <li>When minus one.</li>
-   *   <li>Then return {@code 42}.</li>
+   *   <li>When minus one.
+   *   <li>Then return {@code 42}.
    * </ul>
-   * <p>
-   * Method under test: {@link TimeUtil#toString(long, String)}
+   *
+   * <p>Method under test: {@link TimeUtil#toString(long, String)}
    */
   @Test
   public void testToStringWithLongString_whenMinusOne_thenReturn42() {

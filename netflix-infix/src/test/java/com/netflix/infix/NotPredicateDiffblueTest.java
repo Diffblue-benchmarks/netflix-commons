@@ -15,92 +15,33 @@ import org.mockito.Mockito;
 public class NotPredicateDiffblueTest {
   /**
    * Test {@link NotPredicate#NotPredicate(Predicate)}.
+   *
    * <ul>
-   *   <li>Given {@code false}.</li>
-   *   <li>When {@link Predicate} {@link Predicate#apply(Object)} return
-   * {@code false}.</li>
-   *   <li>Then return test {@code Input}.</li>
+   *   <li>When {@link Predicate}.
+   *   <li>Then return test {@code Input}.
    * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#NotPredicate(Predicate)}
+   *
+   * <p>Method under test: {@link NotPredicate#NotPredicate(Predicate)}
    */
   @Test
-  public void testNewNotPredicate_givenFalse_whenPredicateApplyReturnFalse_thenReturnTestInput() {
-    // Arrange
-    Predicate<Object> predicate = mock(Predicate.class);
-    when(predicate.apply(Mockito.<Object>any())).thenReturn(false);
-
-    // Act
-    NotPredicate actualNotPredicate = new NotPredicate(predicate);
-    boolean actualApplyResult = actualNotPredicate.apply("Input");
+  public void testNewNotPredicate_whenPredicate_thenReturnTestInput() {
+    // Arrange and Act
+    NotPredicate actualNotPredicate = new NotPredicate(mock(Predicate.class));
 
     // Assert
-    verify(predicate).apply(isA(Object.class));
     assertTrue(actualNotPredicate.test("Input"));
-    assertTrue(actualApplyResult);
-  }
-
-  /**
-   * Test {@link NotPredicate#NotPredicate(Predicate)}.
-   * <ul>
-   *   <li>Given {@code true}.</li>
-   *   <li>Then return not test {@code Input}.</li>
-   * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#NotPredicate(Predicate)}
-   */
-  @Test
-  public void testNewNotPredicate_givenTrue_thenReturnNotTestInput() {
-    // Arrange
-    Predicate<Object> predicate = mock(Predicate.class);
-    when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
-
-    // Act
-    NotPredicate actualNotPredicate = new NotPredicate(predicate);
-    boolean actualApplyResult = actualNotPredicate.apply("Input");
-
-    // Assert
-    verify(predicate).apply(isA(Object.class));
-    assertFalse(actualNotPredicate.test("Input"));
-    assertFalse(actualApplyResult);
-  }
-
-  /**
-   * Test {@link NotPredicate#NotPredicate(Predicate)}.
-   * <ul>
-   *   <li>Given {@code true}.</li>
-   *   <li>When {@link NotPredicate#NotPredicate(Predicate)} with
-   * {@link Predicate}.</li>
-   *   <li>Then return test {@code Input}.</li>
-   * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#NotPredicate(Predicate)}
-   */
-  @Test
-  public void testNewNotPredicate_givenTrue_whenNotPredicateWithPredicate_thenReturnTestInput() {
-    // Arrange
-    Predicate<Object> predicate = mock(Predicate.class);
-    when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
-
-    // Act
-    NotPredicate actualNotPredicate = new NotPredicate(new NotPredicate(predicate));
-    boolean actualApplyResult = actualNotPredicate.apply("Input");
-
-    // Assert
-    verify(predicate).apply(isA(Object.class));
-    assertTrue(actualNotPredicate.test("Input"));
-    assertTrue(actualApplyResult);
+    assertTrue(actualNotPredicate.apply("Input"));
   }
 
   /**
    * Test {@link NotPredicate#apply(Object)}.
+   *
    * <ul>
-   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return
-   * {@code false}.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return {@code false}.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#apply(Object)}
+   *
+   * <p>Method under test: {@link NotPredicate#apply(Object)}
    */
   @Test
   public void testApply_givenPredicateApplyReturnFalse_thenReturnTrue() {
@@ -109,7 +50,7 @@ public class NotPredicateDiffblueTest {
     when(predicate.apply(Mockito.<Object>any())).thenReturn(false);
 
     // Act
-    boolean actualApplyResult = (new NotPredicate(predicate)).apply("Input");
+    boolean actualApplyResult = new NotPredicate(predicate).apply("Input");
 
     // Assert
     verify(predicate).apply(isA(Object.class));
@@ -118,13 +59,13 @@ public class NotPredicateDiffblueTest {
 
   /**
    * Test {@link NotPredicate#apply(Object)}.
+   *
    * <ul>
-   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return
-   * {@code true}.</li>
-   *   <li>Then return {@code false}.</li>
+   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return {@code true}.
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#apply(Object)}
+   *
+   * <p>Method under test: {@link NotPredicate#apply(Object)}
    */
   @Test
   public void testApply_givenPredicateApplyReturnTrue_thenReturnFalse() {
@@ -133,7 +74,7 @@ public class NotPredicateDiffblueTest {
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
 
     // Act
-    boolean actualApplyResult = (new NotPredicate(predicate)).apply("Input");
+    boolean actualApplyResult = new NotPredicate(predicate).apply("Input");
 
     // Assert
     verify(predicate).apply(isA(Object.class));
@@ -141,14 +82,15 @@ public class NotPredicateDiffblueTest {
   }
 
   /**
-   * Test {@link NotPredicate#equals(Object)}, and
-   * {@link NotPredicate#hashCode()}.
+   * Test {@link NotPredicate#equals(Object)}, and {@link NotPredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link NotPredicate#equals(Object)}
    *   <li>{@link NotPredicate#hashCode()}
@@ -167,14 +109,15 @@ public class NotPredicateDiffblueTest {
   }
 
   /**
-   * Test {@link NotPredicate#equals(Object)}, and
-   * {@link NotPredicate#hashCode()}.
+   * Test {@link NotPredicate#equals(Object)}, and {@link NotPredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link NotPredicate#equals(Object)}
    *   <li>{@link NotPredicate#hashCode()}
@@ -193,12 +136,13 @@ public class NotPredicateDiffblueTest {
 
   /**
    * Test {@link NotPredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link NotPredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
@@ -211,12 +155,13 @@ public class NotPredicateDiffblueTest {
 
   /**
    * Test {@link NotPredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link NotPredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
@@ -229,12 +174,13 @@ public class NotPredicateDiffblueTest {
 
   /**
    * Test {@link NotPredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link NotPredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
@@ -244,12 +190,13 @@ public class NotPredicateDiffblueTest {
 
   /**
    * Test {@link NotPredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link NotPredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link NotPredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {

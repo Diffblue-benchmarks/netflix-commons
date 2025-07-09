@@ -8,8 +8,8 @@ import org.junit.Test;
 public class AlwaysTruePredicateDiffblueTest {
   /**
    * Test {@link AlwaysTruePredicate#apply(Object)}.
-   * <p>
-   * Method under test: {@link AlwaysTruePredicate#apply(Object)}
+   *
+   * <p>Method under test: {@link AlwaysTruePredicate#apply(Object)}
    */
   @Test
   public void testApply() {
@@ -19,8 +19,8 @@ public class AlwaysTruePredicateDiffblueTest {
 
   /**
    * Test {@link AlwaysTruePredicate#toString()}.
-   * <p>
-   * Method under test: {@link AlwaysTruePredicate#toString()}
+   *
+   * <p>Method under test: {@link AlwaysTruePredicate#toString()}
    */
   @Test
   public void testToString() {
@@ -29,14 +29,15 @@ public class AlwaysTruePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link AlwaysTruePredicate#equals(Object)}, and
-   * {@link AlwaysTruePredicate#hashCode()}.
+   * Test {@link AlwaysTruePredicate#equals(Object)}, and {@link AlwaysTruePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link AlwaysTruePredicate#equals(Object)}
    *   <li>{@link AlwaysTruePredicate#hashCode()}
@@ -55,14 +56,15 @@ public class AlwaysTruePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link AlwaysTruePredicate#equals(Object)}, and
-   * {@link AlwaysTruePredicate#hashCode()}.
+   * Test {@link AlwaysTruePredicate#equals(Object)}, and {@link AlwaysTruePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link AlwaysTruePredicate#equals(Object)}
    *   <li>{@link AlwaysTruePredicate#hashCode()}
@@ -81,12 +83,13 @@ public class AlwaysTruePredicateDiffblueTest {
 
   /**
    * Test {@link AlwaysTruePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link AlwaysTruePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link AlwaysTruePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
@@ -96,12 +99,13 @@ public class AlwaysTruePredicateDiffblueTest {
 
   /**
    * Test {@link AlwaysTruePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link AlwaysTruePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link AlwaysTruePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
@@ -111,12 +115,13 @@ public class AlwaysTruePredicateDiffblueTest {
 
   /**
    * Test {@link AlwaysTruePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link AlwaysTruePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link AlwaysTruePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {

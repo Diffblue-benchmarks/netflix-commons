@@ -15,11 +15,13 @@ import org.mockito.Mockito;
 public class InfixEventFilterDiffblueTest {
   /**
    * Test getters and setters.
+   *
    * <ul>
-   *   <li>Then return toString is {@code InfixEventFilter{input=null}}.</li>
+   *   <li>Then return toString is {@code InfixEventFilter{input=null}}.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link InfixEventFilter#InfixEventFilter(Predicate)}
    *   <li>{@link InfixEventFilter#toString()}
@@ -39,11 +41,13 @@ public class InfixEventFilterDiffblueTest {
 
   /**
    * Test getters and setters.
+   *
    * <ul>
-   *   <li>Then return toString is {@code InfixEventFilter{input=Original}}.</li>
+   *   <li>Then return toString is {@code InfixEventFilter{input=Original}}.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link InfixEventFilter#InfixEventFilter(Predicate, String)}
    *   <li>{@link InfixEventFilter#toString()}
@@ -53,7 +57,8 @@ public class InfixEventFilterDiffblueTest {
   @Test
   public void testGettersAndSetters_thenReturnToStringIsInfixEventFilterInputOriginal() {
     // Arrange and Act
-    InfixEventFilter actualInfixEventFilter = new InfixEventFilter(mock(Predicate.class), "Original");
+    InfixEventFilter actualInfixEventFilter =
+        new InfixEventFilter(mock(Predicate.class), "Original");
     String actualToStringResult = actualInfixEventFilter.toString();
 
     // Assert
@@ -63,13 +68,13 @@ public class InfixEventFilterDiffblueTest {
 
   /**
    * Test {@link InfixEventFilter#apply(Object)}.
+   *
    * <ul>
-   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return
-   * {@code false}.</li>
-   *   <li>Then return {@code false}.</li>
+   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return {@code false}.
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixEventFilter#apply(Object)}
+   *
+   * <p>Method under test: {@link InfixEventFilter#apply(Object)}
    */
   @Test
   public void testApply_givenPredicateApplyReturnFalse_thenReturnFalse() {
@@ -78,7 +83,7 @@ public class InfixEventFilterDiffblueTest {
     when(predicate.apply(Mockito.<Object>any())).thenReturn(false);
 
     // Act
-    boolean actualApplyResult = (new InfixEventFilter(predicate, "Original")).apply("Input");
+    boolean actualApplyResult = new InfixEventFilter(predicate, "Original").apply("Input");
 
     // Assert
     verify(predicate).apply(isA(Object.class));
@@ -87,13 +92,13 @@ public class InfixEventFilterDiffblueTest {
 
   /**
    * Test {@link InfixEventFilter#apply(Object)}.
+   *
    * <ul>
-   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return
-   * {@code true}.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return {@code true}.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixEventFilter#apply(Object)}
+   *
+   * <p>Method under test: {@link InfixEventFilter#apply(Object)}
    */
   @Test
   public void testApply_givenPredicateApplyReturnTrue_thenReturnTrue() {
@@ -102,7 +107,7 @@ public class InfixEventFilterDiffblueTest {
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
 
     // Act
-    boolean actualApplyResult = (new InfixEventFilter(predicate, "Original")).apply("Input");
+    boolean actualApplyResult = new InfixEventFilter(predicate, "Original").apply("Input");
 
     // Assert
     verify(predicate).apply(isA(Object.class));
@@ -111,24 +116,25 @@ public class InfixEventFilterDiffblueTest {
 
   /**
    * Test {@link InfixEventFilter#serialize()}.
-   * <p>
-   * Method under test: {@link InfixEventFilter#serialize()}
+   *
+   * <p>Method under test: {@link InfixEventFilter#serialize()}
    */
   @Test
   public void testSerialize() {
     // Arrange, Act and Assert
-    assertEquals("Original", (new InfixEventFilter(mock(Predicate.class), "Original")).serialize());
+    assertEquals("Original", new InfixEventFilter(mock(Predicate.class), "Original").serialize());
   }
 
   /**
-   * Test {@link InfixEventFilter#equals(Object)}, and
-   * {@link InfixEventFilter#hashCode()}.
+   * Test {@link InfixEventFilter#equals(Object)}, and {@link InfixEventFilter#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link InfixEventFilter#equals(Object)}
    *   <li>{@link InfixEventFilter#hashCode()}
@@ -147,14 +153,15 @@ public class InfixEventFilterDiffblueTest {
   }
 
   /**
-   * Test {@link InfixEventFilter#equals(Object)}, and
-   * {@link InfixEventFilter#hashCode()}.
+   * Test {@link InfixEventFilter#equals(Object)}, and {@link InfixEventFilter#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link InfixEventFilter#equals(Object)}
    *   <li>{@link InfixEventFilter#hashCode()}
@@ -173,12 +180,13 @@ public class InfixEventFilterDiffblueTest {
 
   /**
    * Test {@link InfixEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link InfixEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
@@ -191,15 +199,36 @@ public class InfixEventFilterDiffblueTest {
 
   /**
    * Test {@link InfixEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link InfixEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
+    // Arrange
+    InfixEventFilter infixEventFilter =
+        new InfixEventFilter(new InfixEventFilter(mock(Predicate.class), "Original"), "Original");
+
+    // Act and Assert
+    assertNotEquals(infixEventFilter, new InfixEventFilter(mock(Predicate.class), "Original"));
+  }
+
+  /**
+   * Test {@link InfixEventFilter#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link InfixEventFilter#equals(Object)}
+   */
+  @Test
+  public void testEquals_whenOtherIsDifferent_thenReturnNotEqual3() {
     // Arrange
     InfixEventFilter infixEventFilter = new InfixEventFilter(null, "Original");
 
@@ -209,30 +238,13 @@ public class InfixEventFilterDiffblueTest {
 
   /**
    * Test {@link InfixEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixEventFilter#equals(Object)}
-   */
-  @Test
-  public void testEquals_whenOtherIsDifferent_thenReturnNotEqual3() {
-    // Arrange
-    InfixEventFilter infixEventFilter = new InfixEventFilter(new InfixEventFilter(mock(Predicate.class)), "Original");
-
-    // Act and Assert
-    assertNotEquals(infixEventFilter, new InfixEventFilter(mock(Predicate.class), "Original"));
-  }
-
-  /**
-   * Test {@link InfixEventFilter#equals(Object)}.
-   * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
-   * </ul>
-   * <p>
-   * Method under test: {@link InfixEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link InfixEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
@@ -242,16 +254,19 @@ public class InfixEventFilterDiffblueTest {
 
   /**
    * Test {@link InfixEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link InfixEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {
     // Arrange, Act and Assert
-    assertNotEquals(new InfixEventFilter(mock(Predicate.class), "Original"), "Different type to InfixEventFilter");
+    assertNotEquals(
+        new InfixEventFilter(mock(Predicate.class), "Original"),
+        "Different type to InfixEventFilter");
   }
 }

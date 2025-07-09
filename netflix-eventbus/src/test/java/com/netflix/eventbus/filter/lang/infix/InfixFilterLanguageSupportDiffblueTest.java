@@ -7,43 +7,90 @@ import org.junit.Test;
 public class InfixFilterLanguageSupportDiffblueTest {
   /**
    * Test {@link InfixFilterLanguageSupport#convert(String)} with {@code String}.
+   *
    * <ul>
-   *   <li>When empty string.</li>
+   *   <li>When empty string.
+   *   <li>Then throw {@link InvalidFilterException}.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixFilterLanguageSupport#convert(String)}
+   *
+   * <p>Method under test: {@link InfixFilterLanguageSupport#convert(String)}
    */
   @Test
-  public void testConvertWithString_whenEmptyString() throws InvalidFilterException {
+  public void testConvertWithString_whenEmptyString_thenThrowInvalidFilterException()
+      throws InvalidFilterException {
     // Arrange, Act and Assert
-    assertThrows(InvalidFilterException.class, () -> (new InfixFilterLanguageSupport()).convert(""));
+    assertThrows(InvalidFilterException.class, () -> new InfixFilterLanguageSupport().convert(""));
   }
 
   /**
    * Test {@link InfixFilterLanguageSupport#convert(String)} with {@code String}.
+   *
    * <ul>
-   *   <li>When {@code Filter}.</li>
+   *   <li>When {@code exists}.
+   *   <li>Then throw {@link InvalidFilterException}.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixFilterLanguageSupport#convert(String)}
+   *
+   * <p>Method under test: {@link InfixFilterLanguageSupport#convert(String)}
    */
   @Test
-  public void testConvertWithString_whenFilter() throws InvalidFilterException {
+  public void testConvertWithString_whenExists_thenThrowInvalidFilterException()
+      throws InvalidFilterException {
     // Arrange, Act and Assert
-    assertThrows(InvalidFilterException.class, () -> (new InfixFilterLanguageSupport()).convert("Filter"));
+    assertThrows(
+        InvalidFilterException.class, () -> new InfixFilterLanguageSupport().convert("exists"));
   }
 
   /**
    * Test {@link InfixFilterLanguageSupport#convert(String)} with {@code String}.
+   *
    * <ul>
-   *   <li>When space.</li>
+   *   <li>When {@code Filter}.
+   *   <li>Then throw {@link InvalidFilterException}.
    * </ul>
-   * <p>
-   * Method under test: {@link InfixFilterLanguageSupport#convert(String)}
+   *
+   * <p>Method under test: {@link InfixFilterLanguageSupport#convert(String)}
    */
   @Test
-  public void testConvertWithString_whenSpace() throws InvalidFilterException {
+  public void testConvertWithString_whenFilter_thenThrowInvalidFilterException()
+      throws InvalidFilterException {
     // Arrange, Act and Assert
-    assertThrows(InvalidFilterException.class, () -> (new InfixFilterLanguageSupport()).convert(" "));
+    assertThrows(
+        InvalidFilterException.class, () -> new InfixFilterLanguageSupport().convert("Filter"));
+  }
+
+  /**
+   * Test {@link InfixFilterLanguageSupport#convert(String)} with {@code String}.
+   *
+   * <ul>
+   *   <li>When {@code not empty}.
+   *   <li>Then throw {@link InvalidFilterException}.
+   * </ul>
+   *
+   * <p>Method under test: {@link InfixFilterLanguageSupport#convert(String)}
+   */
+  @Test
+  public void testConvertWithString_whenNotEmpty_thenThrowInvalidFilterException()
+      throws InvalidFilterException {
+    // Arrange, Act and Assert
+    assertThrows(
+        InvalidFilterException.class, () -> new InfixFilterLanguageSupport().convert("not empty"));
+  }
+
+  /**
+   * Test {@link InfixFilterLanguageSupport#convert(String)} with {@code String}.
+   *
+   * <ul>
+   *   <li>When {@code not}.
+   *   <li>Then throw {@link InvalidFilterException}.
+   * </ul>
+   *
+   * <p>Method under test: {@link InfixFilterLanguageSupport#convert(String)}
+   */
+  @Test
+  public void testConvertWithString_whenNot_thenThrowInvalidFilterException()
+      throws InvalidFilterException {
+    // Arrange, Act and Assert
+    assertThrows(
+        InvalidFilterException.class, () -> new InfixFilterLanguageSupport().convert("not"));
   }
 }

@@ -8,13 +8,13 @@ import org.junit.Test;
 public class AbstractEventBusStatsDiffblueTest {
   /**
    * Test LatencyStats {@link LatencyStats#compute()}.
-   * <p>
-   * Method under test: {@link AbstractEventBusStats.LatencyStats#compute()}
+   *
+   * <p>Method under test: {@link LatencyStats#compute()}
    */
   @Test
   public void testLatencyStatsCompute() {
     // Arrange
-    AbstractEventBusStats.LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
+    LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
 
     // Act
     latencyStats.compute();
@@ -31,13 +31,13 @@ public class AbstractEventBusStatsDiffblueTest {
 
   /**
    * Test LatencyStats {@link LatencyStats#compute()}.
-   * <p>
-   * Method under test: {@link AbstractEventBusStats.LatencyStats#compute()}
+   *
+   * <p>Method under test: {@link LatencyStats#compute()}
    */
   @Test
   public void testLatencyStatsCompute2() {
     // Arrange
-    AbstractEventBusStats.LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
+    LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
     latencyStats.addLatency(10.0d);
 
     // Act
@@ -55,13 +55,13 @@ public class AbstractEventBusStatsDiffblueTest {
 
   /**
    * Test LatencyStats {@link LatencyStats#compute()}.
-   * <p>
-   * Method under test: {@link AbstractEventBusStats.LatencyStats#compute()}
+   *
+   * <p>Method under test: {@link LatencyStats#compute()}
    */
   @Test
   public void testLatencyStatsCompute3() {
     // Arrange
-    AbstractEventBusStats.LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
+    LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
     latencyStats.addLatency(99.0d);
     latencyStats.addLatency(10.0d);
 
@@ -81,105 +81,104 @@ public class AbstractEventBusStatsDiffblueTest {
 
   /**
    * Test LatencyStats {@link LatencyStats#getMax()}.
-   * <p>
-   * Method under test: {@link AbstractEventBusStats.LatencyStats#getMax()}
+   *
+   * <p>Method under test: {@link LatencyStats#getMax()}
    */
   @Test
   public void testLatencyStatsGetMax() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getMax(), 0.0);
+    assertEquals(0.0d, mock(AbstractEventBusStats.class).new LatencyStats().getMax(), 0.0);
   }
 
   /**
    * Test LatencyStats {@link LatencyStats#getMean()}.
-   * <p>
-   * Method under test: {@link AbstractEventBusStats.LatencyStats#getMean()}
+   *
+   * <p>Method under test: {@link LatencyStats#getMean()}
    */
   @Test
   public void testLatencyStatsGetMean() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getMean(), 0.0);
+    assertEquals(0.0d, mock(AbstractEventBusStats.class).new LatencyStats().getMean(), 0.0);
   }
 
   /**
    * Test LatencyStats {@link LatencyStats#getMedian()}.
-   * <p>
-   * Method under test: {@link AbstractEventBusStats.LatencyStats#getMedian()}
+   *
+   * <p>Method under test: {@link LatencyStats#getMedian()}
    */
   @Test
   public void testLatencyStatsGetMedian() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getMedian(), 0.0);
+    assertEquals(0.0d, mock(AbstractEventBusStats.class).new LatencyStats().getMedian(), 0.0);
   }
 
   /**
    * Test LatencyStats {@link LatencyStats#getPercentile_90()}.
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusStats.LatencyStats#getPercentile_90()}
+   *
+   * <p>Method under test: {@link LatencyStats#getPercentile_90()}
    */
   @Test
   public void testLatencyStatsGetPercentile_90() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getPercentile_90(), 0.0);
+    assertEquals(
+        0.0d, mock(AbstractEventBusStats.class).new LatencyStats().getPercentile_90(), 0.0);
   }
 
   /**
    * Test LatencyStats {@link LatencyStats#getPercentile_99()}.
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusStats.LatencyStats#getPercentile_99()}
+   *
+   * <p>Method under test: {@link LatencyStats#getPercentile_99()}
    */
   @Test
   public void testLatencyStatsGetPercentile_99() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getPercentile_99(), 0.0);
+    assertEquals(
+        0.0d, mock(AbstractEventBusStats.class).new LatencyStats().getPercentile_99(), 0.0);
   }
 
   /**
    * Test LatencyStats {@link LatencyStats#getPercentile_99_5()}.
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusStats.LatencyStats#getPercentile_99_5()}
+   *
+   * <p>Method under test: {@link LatencyStats#getPercentile_99_5()}
    */
   @Test
   public void testLatencyStatsGetPercentile_99_5() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getPercentile_99_5(), 0.0);
+    assertEquals(
+        0.0d, mock(AbstractEventBusStats.class).new LatencyStats().getPercentile_99_5(), 0.0);
   }
 
   /**
    * Test LatencyStats {@link LatencyStats#getSampleSize()}.
-   * <p>
-   * Method under test: {@link AbstractEventBusStats.LatencyStats#getSampleSize()}
+   *
+   * <p>Method under test: {@link LatencyStats#getSampleSize()}
    */
   @Test
   public void testLatencyStatsGetSampleSize() {
     // Arrange, Act and Assert
-    assertEquals(0, (mock(AbstractEventBusStats.class).new LatencyStats()).getSampleSize());
+    assertEquals(0, mock(AbstractEventBusStats.class).new LatencyStats().getSampleSize());
   }
 
   /**
    * Test LatencyStats {@link LatencyStats#getStddev()}.
-   * <p>
-   * Method under test: {@link AbstractEventBusStats.LatencyStats#getStddev()}
+   *
+   * <p>Method under test: {@link LatencyStats#getStddev()}
    */
   @Test
   public void testLatencyStatsGetStddev() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getStddev(), 0.0);
+    assertEquals(0.0d, mock(AbstractEventBusStats.class).new LatencyStats().getStddev(), 0.0);
   }
 
   /**
    * Test LatencyStats {@link LatencyStats#LatencyStats(AbstractEventBusStats)}.
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusStats.LatencyStats#LatencyStats(AbstractEventBusStats)}
+   *
+   * <p>Method under test: {@link LatencyStats#LatencyStats(AbstractEventBusStats)}
    */
   @Test
   public void testLatencyStatsNewLatencyStats() {
     // Arrange and Act
-    AbstractEventBusStats.LatencyStats actualLatencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
+    LatencyStats actualLatencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
 
     // Assert
     assertEquals(0, actualLatencyStats.getSampleSize());

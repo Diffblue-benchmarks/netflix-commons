@@ -13,8 +13,8 @@ import org.junit.Test;
 public class StringInTreeNodeDiffblueTest {
   /**
    * Test {@link StringInTreeNode#StringInTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link StringInTreeNode#StringInTreeNode(Token)}
+   *
+   * <p>Method under test: {@link StringInTreeNode#StringInTreeNode(Token)}
    */
   @Test
   public void testNewStringInTreeNode() {
@@ -33,12 +33,12 @@ public class StringInTreeNodeDiffblueTest {
 
   /**
    * Test {@link StringInTreeNode#StringInTreeNode(StringInTreeNode)}.
+   *
    * <ul>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link StringInTreeNode#StringInTreeNode(StringInTreeNode)}
+   *
+   * <p>Method under test: {@link StringInTreeNode#StringInTreeNode(StringInTreeNode)}
    */
   @Test
   public void testNewStringInTreeNode_thenTokenReturnClassicToken() {
@@ -69,8 +69,8 @@ public class StringInTreeNodeDiffblueTest {
 
   /**
    * Test {@link StringInTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link StringInTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link StringInTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -78,7 +78,7 @@ public class StringInTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new StringInTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new StringInTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof StringInTreeNode);

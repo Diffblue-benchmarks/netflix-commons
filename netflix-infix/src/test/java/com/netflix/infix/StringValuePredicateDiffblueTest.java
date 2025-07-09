@@ -9,8 +9,9 @@ import org.junit.Test;
 public class StringValuePredicateDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link StringValuePredicate#StringValuePredicate(String)}
    *   <li>{@link StringValuePredicate#toString()}
@@ -30,43 +31,66 @@ public class StringValuePredicateDiffblueTest {
 
   /**
    * Test {@link StringValuePredicate#apply(Object)}.
+   *
    * <ul>
-   *   <li>When {@code 42}.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>Given {@link StringValuePredicate#StringValuePredicate(String)} with value is {@code 42}.
+   *   <li>When {@code 42}.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test: {@link StringValuePredicate#apply(Object)}
+   *
+   * <p>Method under test: {@link StringValuePredicate#apply(Object)}
    */
   @Test
-  public void testApply_when42_thenReturnTrue() {
+  public void testApply_givenStringValuePredicateWithValueIs42_when42_thenReturnTrue() {
     // Arrange, Act and Assert
-    assertTrue((new StringValuePredicate("42")).apply("42"));
+    assertTrue(new StringValuePredicate("42").apply("42"));
   }
 
   /**
    * Test {@link StringValuePredicate#apply(Object)}.
+   *
    * <ul>
-   *   <li>When {@code Input}.</li>
-   *   <li>Then return {@code false}.</li>
+   *   <li>Given {@link StringValuePredicate#StringValuePredicate(String)} with value is {@code 42}.
+   *   <li>When {@code Input}.
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Method under test: {@link StringValuePredicate#apply(Object)}
+   *
+   * <p>Method under test: {@link StringValuePredicate#apply(Object)}
    */
   @Test
-  public void testApply_whenInput_thenReturnFalse() {
+  public void testApply_givenStringValuePredicateWithValueIs42_whenInput_thenReturnFalse() {
     // Arrange, Act and Assert
-    assertFalse((new StringValuePredicate("42")).apply("Input"));
+    assertFalse(new StringValuePredicate("42").apply("Input"));
   }
 
   /**
-   * Test {@link StringValuePredicate#equals(Object)}, and
-   * {@link StringValuePredicate#hashCode()}.
+   * Test {@link StringValuePredicate#apply(Object)}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>Given {@link StringValuePredicate#StringValuePredicate(String)} with value is {@code
+   *       null}.
+   *   <li>When {@code Input}.
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Method under test: {@link StringValuePredicate#apply(Object)}
+   */
+  @Test
+  public void testApply_givenStringValuePredicateWithValueIsNull_whenInput_thenReturnFalse() {
+    // Arrange, Act and Assert
+    assertFalse(new StringValuePredicate(null).apply("Input"));
+  }
+
+  /**
+   * Test {@link StringValuePredicate#equals(Object)}, and {@link StringValuePredicate#hashCode()}.
+   *
+   * <ul>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link StringValuePredicate#equals(Object)}
    *   <li>{@link StringValuePredicate#hashCode()}
@@ -85,14 +109,15 @@ public class StringValuePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link StringValuePredicate#equals(Object)}, and
-   * {@link StringValuePredicate#hashCode()}.
+   * Test {@link StringValuePredicate#equals(Object)}, and {@link StringValuePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link StringValuePredicate#equals(Object)}
    *   <li>{@link StringValuePredicate#hashCode()}
@@ -111,14 +136,15 @@ public class StringValuePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link StringValuePredicate#equals(Object)}, and
-   * {@link StringValuePredicate#hashCode()}.
+   * Test {@link StringValuePredicate#equals(Object)}, and {@link StringValuePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link StringValuePredicate#equals(Object)}
    *   <li>{@link StringValuePredicate#hashCode()}
@@ -137,12 +163,13 @@ public class StringValuePredicateDiffblueTest {
 
   /**
    * Test {@link StringValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link StringValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link StringValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
@@ -155,12 +182,13 @@ public class StringValuePredicateDiffblueTest {
 
   /**
    * Test {@link StringValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link StringValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link StringValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
@@ -173,12 +201,13 @@ public class StringValuePredicateDiffblueTest {
 
   /**
    * Test {@link StringValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link StringValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link StringValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
@@ -188,12 +217,13 @@ public class StringValuePredicateDiffblueTest {
 
   /**
    * Test {@link StringValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link StringValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link StringValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {

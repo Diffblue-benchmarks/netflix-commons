@@ -13,9 +13,8 @@ import org.junit.Test;
 public class BetweenTimeStringTreeNodeDiffblueTest {
   /**
    * Test {@link BetweenTimeStringTreeNode#BetweenTimeStringTreeNode(Token)}.
-   * <p>
-   * Method under test:
-   * {@link BetweenTimeStringTreeNode#BetweenTimeStringTreeNode(Token)}
+   *
+   * <p>Method under test: {@link BetweenTimeStringTreeNode#BetweenTimeStringTreeNode(Token)}
    */
   @Test
   public void testNewBetweenTimeStringTreeNode() {
@@ -33,14 +32,14 @@ public class BetweenTimeStringTreeNodeDiffblueTest {
   }
 
   /**
-   * Test
-   * {@link BetweenTimeStringTreeNode#BetweenTimeStringTreeNode(BetweenTimeStringTreeNode)}.
+   * Test {@link BetweenTimeStringTreeNode#BetweenTimeStringTreeNode(BetweenTimeStringTreeNode)}.
+   *
    * <ul>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link BetweenTimeStringTreeNode#BetweenTimeStringTreeNode(BetweenTimeStringTreeNode)}
+   *
+   * <p>Method under test: {@link
+   * BetweenTimeStringTreeNode#BetweenTimeStringTreeNode(BetweenTimeStringTreeNode)}
    */
   @Test
   public void testNewBetweenTimeStringTreeNode_thenTokenReturnClassicToken() {
@@ -48,8 +47,8 @@ public class BetweenTimeStringTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    BetweenTimeStringTreeNode actualBetweenTimeStringTreeNode = new BetweenTimeStringTreeNode(
-        new BetweenTimeStringTreeNode(t));
+    BetweenTimeStringTreeNode actualBetweenTimeStringTreeNode =
+        new BetweenTimeStringTreeNode(new BetweenTimeStringTreeNode(t));
 
     // Assert
     Token token = actualBetweenTimeStringTreeNode.getToken();
@@ -72,8 +71,8 @@ public class BetweenTimeStringTreeNodeDiffblueTest {
 
   /**
    * Test {@link BetweenTimeStringTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link BetweenTimeStringTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link BetweenTimeStringTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -81,7 +80,7 @@ public class BetweenTimeStringTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new BetweenTimeStringTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new BetweenTimeStringTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof BetweenTimeStringTreeNode);

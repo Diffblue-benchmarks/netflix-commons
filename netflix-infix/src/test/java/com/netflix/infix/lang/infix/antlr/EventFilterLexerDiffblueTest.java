@@ -30,8 +30,8 @@ import org.junit.Test;
 public class EventFilterLexerDiffblueTest {
   /**
    * Test DFA11 {@link DFA11#getDescription()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer.DFA11#getDescription()}
+   *
+   * <p>Method under test: {@link DFA11#getDescription()}
    */
   @Test
   public void testDFA11GetDescription() {
@@ -42,14 +42,13 @@ public class EventFilterLexerDiffblueTest {
     assertEquals(
         "197:1: NUMBER : ( ( '+' | '-' )? ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* ( EXPONENT )? )? | ( '+' | '-'"
             + " )? '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '+' | '-' )? ( '0' .. '9' )+ EXPONENT );",
-        (eventFilterLexer.new DFA11(new EventFilterLexer())).getDescription());
+        eventFilterLexer.new DFA11(new EventFilterLexer()).getDescription());
   }
 
   /**
    * Test DFA11 {@link DFA11#DFA11(EventFilterLexer, BaseRecognizer)}.
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer.DFA11#DFA11(EventFilterLexer, BaseRecognizer)}
+   *
+   * <p>Method under test: {@link DFA11#DFA11(EventFilterLexer, BaseRecognizer)}
    */
   @Test
   public void testDFA11NewDfa11() {
@@ -60,13 +59,13 @@ public class EventFilterLexerDiffblueTest {
     assertEquals(
         "197:1: NUMBER : ( ( '+' | '-' )? ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* ( EXPONENT )? )? | ( '+' | '-'"
             + " )? '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '+' | '-' )? ( '0' .. '9' )+ EXPONENT );",
-        (eventFilterLexer.new DFA11(new EventFilterLexer())).getDescription());
+        eventFilterLexer.new DFA11(new EventFilterLexer()).getDescription());
   }
 
   /**
    * Test {@link EventFilterLexer#reportError(RecognitionException)}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
    */
   @Test
   public void testReportError() {
@@ -74,18 +73,22 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.reportError(new EarlyExitException(EventFilterLexer.EXPONENT, new ANTLRInputStream())));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.reportError(
+                new EarlyExitException(EventFilterLexer.EXPONENT, new ANTLRInputStream())));
   }
 
   /**
    * Test {@link EventFilterLexer#reportError(RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link EarlyExitException#EarlyExitException()}.</li>
-   *   <li>Then throw {@link EventFilterParsingException}.</li>
+   *   <li>When {@link EarlyExitException#EarlyExitException()}.
+   *   <li>Then throw {@link EventFilterParsingException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
    */
   @Test
   public void testReportError_whenEarlyExitException_thenThrowEventFilterParsingException() {
@@ -93,16 +96,19 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class, () -> eventFilterLexer.reportError(new EarlyExitException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () -> eventFilterLexer.reportError(new EarlyExitException()));
   }
 
   /**
    * Test {@link EventFilterLexer#reportError(RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link FailedPredicateException#FailedPredicateException()}.</li>
+   *   <li>When {@link FailedPredicateException#FailedPredicateException()}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
    */
   @Test
   public void testReportError_whenFailedPredicateException() {
@@ -110,16 +116,19 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class, () -> eventFilterLexer.reportError(new FailedPredicateException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () -> eventFilterLexer.reportError(new FailedPredicateException()));
   }
 
   /**
    * Test {@link EventFilterLexer#reportError(RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link MismatchedNotSetException#MismatchedNotSetException()}.</li>
+   *   <li>When {@link MismatchedNotSetException#MismatchedNotSetException()}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
    */
   @Test
   public void testReportError_whenMismatchedNotSetException() {
@@ -127,17 +136,19 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
+    assertThrows(
+        EventFilterParsingException.class,
         () -> eventFilterLexer.reportError(new MismatchedNotSetException()));
   }
 
   /**
    * Test {@link EventFilterLexer#reportError(RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link MismatchedRangeException#MismatchedRangeException()}.</li>
+   *   <li>When {@link MismatchedRangeException#MismatchedRangeException()}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
    */
   @Test
   public void testReportError_whenMismatchedRangeException() {
@@ -145,17 +156,20 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class, () -> eventFilterLexer.reportError(new MismatchedRangeException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () -> eventFilterLexer.reportError(new MismatchedRangeException()));
   }
 
   /**
    * Test {@link EventFilterLexer#reportError(RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link MismatchedSetException#MismatchedSetException()}.</li>
-   *   <li>Then throw {@link EventFilterParsingException}.</li>
+   *   <li>When {@link MismatchedSetException#MismatchedSetException()}.
+   *   <li>Then throw {@link EventFilterParsingException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
    */
   @Test
   public void testReportError_whenMismatchedSetException_thenThrowEventFilterParsingException() {
@@ -163,16 +177,19 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class, () -> eventFilterLexer.reportError(new MismatchedSetException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () -> eventFilterLexer.reportError(new MismatchedSetException()));
   }
 
   /**
    * Test {@link EventFilterLexer#reportError(RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link MismatchedTokenException#MismatchedTokenException()}.</li>
+   *   <li>When {@link MismatchedTokenException#MismatchedTokenException()}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
    */
   @Test
   public void testReportError_whenMismatchedTokenException() {
@@ -180,17 +197,20 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class, () -> eventFilterLexer.reportError(new MismatchedTokenException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () -> eventFilterLexer.reportError(new MismatchedTokenException()));
   }
 
   /**
    * Test {@link EventFilterLexer#reportError(RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link RecognitionException#RecognitionException()}.</li>
-   *   <li>Then throw {@link EventFilterParsingException}.</li>
+   *   <li>When {@link RecognitionException#RecognitionException()}.
+   *   <li>Then throw {@link EventFilterParsingException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#reportError(RecognitionException)}
    */
   @Test
   public void testReportError_whenRecognitionException_thenThrowEventFilterParsingException() {
@@ -198,15 +218,16 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class, () -> eventFilterLexer.reportError(new RecognitionException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () -> eventFilterLexer.reportError(new RecognitionException()));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException() {
@@ -214,19 +235,23 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class, () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"},
-        new EarlyExitException(EventFilterLexer.EXPONENT, new ANTLRInputStream())));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"},
+                new EarlyExitException(EventFilterLexer.EXPONENT, new ANTLRInputStream())));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link EarlyExitException#EarlyExitException()}.</li>
+   *   <li>When {@link EarlyExitException#EarlyExitException()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException_whenEarlyExitException() {
@@ -234,19 +259,22 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"}, new EarlyExitException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"}, new EarlyExitException()));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link FailedPredicateException#FailedPredicateException()}.</li>
+   *   <li>When {@link FailedPredicateException#FailedPredicateException()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException_whenFailedPredicateException() {
@@ -254,19 +282,22 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"}, new FailedPredicateException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"}, new FailedPredicateException()));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link MismatchedNotSetException#MismatchedNotSetException()}.</li>
+   *   <li>When {@link MismatchedNotSetException#MismatchedNotSetException()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException_whenMismatchedNotSetException() {
@@ -274,19 +305,22 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"}, new MismatchedNotSetException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"}, new MismatchedNotSetException()));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link MismatchedRangeException#MismatchedRangeException()}.</li>
+   *   <li>When {@link MismatchedRangeException#MismatchedRangeException()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException_whenMismatchedRangeException() {
@@ -294,19 +328,22 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"}, new MismatchedRangeException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"}, new MismatchedRangeException()));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link MismatchedSetException#MismatchedSetException()}.</li>
+   *   <li>When {@link MismatchedSetException#MismatchedSetException()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException_whenMismatchedSetException() {
@@ -314,19 +351,22 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"}, new MismatchedSetException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"}, new MismatchedSetException()));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link MismatchedTokenException#MismatchedTokenException()}.</li>
+   *   <li>When {@link MismatchedTokenException#MismatchedTokenException()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException_whenMismatchedTokenException() {
@@ -334,20 +374,22 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"}, new MismatchedTokenException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"}, new MismatchedTokenException()));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
    * <ul>
-   *   <li>When
-   * {@link MismatchedTreeNodeException#MismatchedTreeNodeException()}.</li>
+   *   <li>When {@link MismatchedTreeNodeException#MismatchedTreeNodeException()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException_whenMismatchedTreeNodeException() {
@@ -355,19 +397,22 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"}, new MismatchedTreeNodeException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"}, new MismatchedTreeNodeException()));
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   * Test {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}.
+   *
    * <ul>
-   *   <li>When {@link RecognitionException#RecognitionException()}.</li>
+   *   <li>When {@link RecognitionException#RecognitionException()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#throwLexerException(String[], RecognitionException)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#throwLexerException(String[],
+   * RecognitionException)}
    */
   @Test
   public void testThrowLexerException_whenRecognitionException() {
@@ -375,25 +420,28 @@ public class EventFilterLexerDiffblueTest {
     EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
 
     // Act and Assert
-    assertThrows(EventFilterParsingException.class,
-        () -> eventFilterLexer.throwLexerException(new String[]{"ABC123"}, new RecognitionException()));
+    assertThrows(
+        EventFilterParsingException.class,
+        () ->
+            eventFilterLexer.throwLexerException(
+                new String[] {"ABC123"}, new RecognitionException()));
   }
 
   /**
    * Test {@link EventFilterLexer#getDelegates()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#getDelegates()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#getDelegates()}
    */
   @Test
   public void testGetDelegates() {
     // Arrange, Act and Assert
-    assertEquals(0, (new EventFilterLexer()).getDelegates().length);
+    assertEquals(0, new EventFilterLexer().getDelegates().length);
   }
 
   /**
    * Test {@link EventFilterLexer#EventFilterLexer()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#EventFilterLexer()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#EventFilterLexer()}
    */
   @Test
   public void testNewEventFilterLexer() {
@@ -417,8 +465,8 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#EventFilterLexer(CharStream)}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#EventFilterLexer(CharStream)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#EventFilterLexer(CharStream)}
    */
   @Test
   public void testNewEventFilterLexer2() {
@@ -433,8 +481,8 @@ public class EventFilterLexerDiffblueTest {
     assertTrue(charStream instanceof ANTLRInputStream);
     assertTrue(actualEventFilterLexer.getEOFToken() instanceof CommonToken);
     assertEquals("EventFilter.g", actualEventFilterLexer.getGrammarFileName());
-    assertNull(actualEventFilterLexer.getTokenNames());
     assertNull(actualEventFilterLexer.getSourceName());
+    assertNull(actualEventFilterLexer.getTokenNames());
     assertEquals(0, actualEventFilterLexer.getBacktrackingLevel());
     assertEquals(0, actualEventFilterLexer.getNumberOfSyntaxErrors());
     assertEquals(0, actualEventFilterLexer.getRuleMemoizationCacheSize());
@@ -447,14 +495,14 @@ public class EventFilterLexerDiffblueTest {
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#EventFilterLexer(CharStream, RecognizerSharedState)}.
+   * Test {@link EventFilterLexer#EventFilterLexer(CharStream, RecognizerSharedState)}.
+   *
    * <ul>
-   *   <li>When {@code null}.</li>
+   *   <li>When {@code null}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#EventFilterLexer(CharStream, RecognizerSharedState)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#EventFilterLexer(CharStream,
+   * RecognizerSharedState)}
    */
   @Test
   public void testNewEventFilterLexer_whenNull() {
@@ -469,8 +517,8 @@ public class EventFilterLexerDiffblueTest {
     assertTrue(charStream instanceof ANTLRInputStream);
     assertTrue(actualEventFilterLexer.getEOFToken() instanceof CommonToken);
     assertEquals("EventFilter.g", actualEventFilterLexer.getGrammarFileName());
-    assertNull(actualEventFilterLexer.getTokenNames());
     assertNull(actualEventFilterLexer.getSourceName());
+    assertNull(actualEventFilterLexer.getTokenNames());
     assertEquals(0, actualEventFilterLexer.getBacktrackingLevel());
     assertEquals(0, actualEventFilterLexer.getNumberOfSyntaxErrors());
     assertEquals(0, actualEventFilterLexer.getRuleMemoizationCacheSize());
@@ -483,14 +531,14 @@ public class EventFilterLexerDiffblueTest {
   }
 
   /**
-   * Test
-   * {@link EventFilterLexer#EventFilterLexer(CharStream, RecognizerSharedState)}.
+   * Test {@link EventFilterLexer#EventFilterLexer(CharStream, RecognizerSharedState)}.
+   *
    * <ul>
-   *   <li>When {@link RecognizerSharedState#RecognizerSharedState()}.</li>
+   *   <li>When {@link RecognizerSharedState#RecognizerSharedState()}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventFilterLexer#EventFilterLexer(CharStream, RecognizerSharedState)}
+   *
+   * <p>Method under test: {@link EventFilterLexer#EventFilterLexer(CharStream,
+   * RecognizerSharedState)}
    */
   @Test
   public void testNewEventFilterLexer_whenRecognizerSharedState() {
@@ -498,15 +546,16 @@ public class EventFilterLexerDiffblueTest {
     ANTLRInputStream input = new ANTLRInputStream();
 
     // Act
-    EventFilterLexer actualEventFilterLexer = new EventFilterLexer(input, new RecognizerSharedState());
+    EventFilterLexer actualEventFilterLexer =
+        new EventFilterLexer(input, new RecognizerSharedState());
 
     // Assert
     CharStream charStream = actualEventFilterLexer.getCharStream();
     assertTrue(charStream instanceof ANTLRInputStream);
     assertTrue(actualEventFilterLexer.getEOFToken() instanceof CommonToken);
     assertEquals("EventFilter.g", actualEventFilterLexer.getGrammarFileName());
-    assertNull(actualEventFilterLexer.getTokenNames());
     assertNull(actualEventFilterLexer.getSourceName());
+    assertNull(actualEventFilterLexer.getTokenNames());
     assertEquals(0, actualEventFilterLexer.getBacktrackingLevel());
     assertEquals(0, actualEventFilterLexer.getNumberOfSyntaxErrors());
     assertEquals(0, actualEventFilterLexer.getRuleMemoizationCacheSize());
@@ -520,24 +569,25 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#getGrammarFileName()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#getGrammarFileName()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#getGrammarFileName()}
    */
   @Test
   public void testGetGrammarFileName() {
     // Arrange, Act and Assert
-    assertEquals("EventFilter.g", (new EventFilterLexer()).getGrammarFileName());
+    assertEquals("EventFilter.g", new EventFilterLexer().getGrammarFileName());
   }
 
   /**
    * Test {@link EventFilterLexer#mAND()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mAND()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mAND()}
    */
   @Test
   public void testMAND() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("and")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("and")));
 
     // Act
     eventFilterLexer.mAND();
@@ -559,13 +609,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mBETWEEN()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mBETWEEN()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mBETWEEN()}
    */
   @Test
   public void testMBETWEEN() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("between")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("between")));
 
     // Act
     eventFilterLexer.mBETWEEN();
@@ -587,13 +638,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mEXISTS()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mEXISTS()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mEXISTS()}
    */
   @Test
   public void testMEXISTS() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("exists")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("exists")));
 
     // Act
     eventFilterLexer.mEXISTS();
@@ -615,14 +667,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mFALSE()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mFALSE()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mFALSE()}
    */
   @Test
   public void testMFALSE() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(
-        new ANTLRReaderStream(new StringReader(Boolean.FALSE.toString())));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader(Boolean.FALSE.toString())));
 
     // Act
     eventFilterLexer.mFALSE();
@@ -644,13 +696,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mGE()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mGE()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mGE()}
    */
   @Test
   public void testMGE() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader(">=")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader(">=")));
 
     // Act
     eventFilterLexer.mGE();
@@ -672,13 +725,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mIN()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mIN()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mIN()}
    */
   @Test
   public void testMIN() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("in")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("in")));
 
     // Act
     eventFilterLexer.mIN();
@@ -700,13 +754,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mIS()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mIS()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mIS()}
    */
   @Test
   public void testMIS() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("is")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("is")));
 
     // Act
     eventFilterLexer.mIS();
@@ -728,13 +783,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mLE()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mLE()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mLE()}
    */
   @Test
   public void testMLE() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("<=")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("<=")));
 
     // Act
     eventFilterLexer.mLE();
@@ -756,13 +812,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mMATCHES()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mMATCHES()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mMATCHES()}
    */
   @Test
   public void testMMATCHES() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("=~")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("=~")));
 
     // Act
     eventFilterLexer.mMATCHES();
@@ -784,13 +841,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mNOT()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mNOT()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mNOT()}
    */
   @Test
   public void testMNOT() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("not")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("not")));
 
     // Act
     eventFilterLexer.mNOT();
@@ -812,13 +870,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mNOT_EQUALS()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mNOT_EQUALS()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mNOT_EQUALS()}
    */
   @Test
   public void testMNOT_EQUALS() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("!=")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("!=")));
 
     // Act
     eventFilterLexer.mNOT_EQUALS();
@@ -840,13 +899,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mNULL()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mNULL()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mNULL()}
    */
   @Test
   public void testMNULL() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("null")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("null")));
 
     // Act
     eventFilterLexer.mNULL();
@@ -868,13 +928,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mOR()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mOR()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mOR()}
    */
   @Test
   public void testMOR() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("or")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("or")));
 
     // Act
     eventFilterLexer.mOR();
@@ -896,13 +957,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mTIME_MILLIS_FUN_NAME()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mTIME_MILLIS_FUN_NAME()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mTIME_MILLIS_FUN_NAME()}
    */
   @Test
   public void testMTIME_MILLIS_FUN_NAME() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("time-millis")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("time-millis")));
 
     // Act
     eventFilterLexer.mTIME_MILLIS_FUN_NAME();
@@ -924,13 +986,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mTIME_STRING_FUN_NAME()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mTIME_STRING_FUN_NAME()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mTIME_STRING_FUN_NAME()}
    */
   @Test
   public void testMTIME_STRING_FUN_NAME() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("time-string")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("time-string")));
 
     // Act
     eventFilterLexer.mTIME_STRING_FUN_NAME();
@@ -952,14 +1015,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mTRUE()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mTRUE()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mTRUE()}
    */
   @Test
   public void testMTRUE() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(
-        new ANTLRReaderStream(new StringReader(Boolean.TRUE.toString())));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader(Boolean.TRUE.toString())));
 
     // Act
     eventFilterLexer.mTRUE();
@@ -981,13 +1044,14 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mXPATH_FUN_NAME()}.
-   * <p>
-   * Method under test: {@link EventFilterLexer#mXPATH_FUN_NAME()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mXPATH_FUN_NAME()}
    */
   @Test
   public void testMXPATH_FUN_NAME() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRReaderStream(new StringReader("xpath")));
+    EventFilterLexer eventFilterLexer =
+        new EventFilterLexer(new ANTLRReaderStream(new StringReader("xpath")));
 
     // Act
     eventFilterLexer.mXPATH_FUN_NAME();
@@ -1009,20 +1073,18 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mNUMBER()}.
-   * <ul>
-   *   <li>Then {@link EventFilterLexer#EventFilterLexer()} CharStream
-   * {@link ANTLRReaderStream}.</li>
-   * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mNUMBER()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mNUMBER()}
    */
   @Test
-  public void testMNUMBER_thenEventFilterLexerCharStreamANTLRReaderStream() throws IOException, RecognitionException {
+  public void testMNUMBER() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
-    eventFilterLexer.setCharStream(new ANTLRReaderStream(new StringReader(
-        "197:1: NUMBER : ( ( '+' | '-' )? ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* ( EXPONENT )? )? | ( '+' | '-'"
-            + " )? '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '+' | '-' )? ( '0' .. '9' )+ EXPONENT );")));
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
+    eventFilterLexer.setCharStream(
+        new ANTLRReaderStream(
+            new StringReader(
+                "197:1: NUMBER : ( ( '+' | '-' )? ( '0' .. '9' )+ ( '.' ( '0' .. '9' )* ( EXPONENT )? )? | ( '+' | '-'"
+                    + " )? '.' ( '0' .. '9' )+ ( EXPONENT )? | ( '+' | '-' )? ( '0' .. '9' )+ EXPONENT );")));
 
     // Act
     eventFilterLexer.mNUMBER();
@@ -1044,16 +1106,17 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mCOMMENT()}.
+   *
    * <ul>
-   *   <li>Then throw {@link NoViableAltException}.</li>
+   *   <li>Then throw {@link NoViableAltException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mCOMMENT()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mCOMMENT()}
    */
   @Test
   public void testMCOMMENT_thenThrowNoViableAltException() throws RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
     eventFilterLexer.setCharStream(new ANTLRInputStream());
 
     // Act and Assert
@@ -1062,37 +1125,13 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mWS()}.
-   * <ul>
-   *   <li>Given {@code A}.</li>
-   *   <li>Then throw {@link MismatchedSetException}.</li>
-   * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mWS()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mWS()}
    */
   @Test
-  public void testMWS_givenA_thenThrowMismatchedSetException() throws IOException, RecognitionException {
+  public void testMWS() throws RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
-    eventFilterLexer
-        .setCharStream(new ANTLRInputStream(new ByteArrayInputStream(new byte[]{'A', 31, 'A', 31, 'A', 31, 'A', 31})));
-
-    // Act and Assert
-    assertThrows(MismatchedSetException.class, () -> eventFilterLexer.mWS());
-  }
-
-  /**
-   * Test {@link EventFilterLexer#mWS()}.
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer()} CharStream is
-   * {@link ANTLRInputStream#ANTLRInputStream()}.</li>
-   * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mWS()}
-   */
-  @Test
-  public void testMWS_givenEventFilterLexerCharStreamIsANTLRInputStream() throws RecognitionException {
-    // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
     eventFilterLexer.setCharStream(new ANTLRInputStream());
 
     // Act and Assert
@@ -1100,22 +1139,40 @@ public class EventFilterLexerDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterLexer#mHEX_DIGIT()}.
+   * Test {@link EventFilterLexer#mWS()}.
+   *
    * <ul>
-   *   <li>Given {@code A}.</li>
-   *   <li>Then {@link EventFilterLexer#EventFilterLexer()} CharStream
-   * {@link ANTLRInputStream}.</li>
+   *   <li>Given {@code A}.
+   *   <li>Then throw {@link MismatchedSetException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mHEX_DIGIT()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mWS()}
    */
   @Test
-  public void testMHEX_DIGIT_givenA_thenEventFilterLexerCharStreamANTLRInputStream()
+  public void testMWS_givenA_thenThrowMismatchedSetException()
       throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
-    eventFilterLexer
-        .setCharStream(new ANTLRInputStream(new ByteArrayInputStream(new byte[]{'A', 1, 'A', 1, 'A', 1, 'A', 1})));
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
+    eventFilterLexer.setCharStream(
+        new ANTLRInputStream(
+            new ByteArrayInputStream(new byte[] {'A', 31, 'A', 31, 'A', 31, 'A', 31})));
+
+    // Act and Assert
+    assertThrows(MismatchedSetException.class, () -> eventFilterLexer.mWS());
+  }
+
+  /**
+   * Test {@link EventFilterLexer#mHEX_DIGIT()}.
+   *
+   * <p>Method under test: {@link EventFilterLexer#mHEX_DIGIT()}
+   */
+  @Test
+  public void testMHEX_DIGIT() throws IOException, RecognitionException {
+    // Arrange
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
+    eventFilterLexer.setCharStream(
+        new ANTLRInputStream(
+            new ByteArrayInputStream(new byte[] {'A', 1, 'A', 1, 'A', 1, 'A', 1})));
 
     // Act
     eventFilterLexer.mHEX_DIGIT();
@@ -1137,18 +1194,13 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mHEX_DIGIT()}.
-   * <ul>
-   *   <li>Then {@link EventFilterLexer#EventFilterLexer()} CharStream
-   * {@link ANTLRReaderStream}.</li>
-   * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mHEX_DIGIT()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mHEX_DIGIT()}
    */
   @Test
-  public void testMHEX_DIGIT_thenEventFilterLexerCharStreamANTLRReaderStream()
-      throws IOException, RecognitionException {
+  public void testMHEX_DIGIT2() throws IOException, RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
     eventFilterLexer.setCharStream(new ANTLRReaderStream(new StringReader("foo")));
 
     // Act
@@ -1171,16 +1223,17 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mHEX_DIGIT()}.
+   *
    * <ul>
-   *   <li>Then throw {@link MismatchedSetException}.</li>
+   *   <li>Then throw {@link MismatchedSetException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mHEX_DIGIT()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mHEX_DIGIT()}
    */
   @Test
   public void testMHEX_DIGIT_thenThrowMismatchedSetException() throws RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
     eventFilterLexer.setCharStream(new ANTLRInputStream());
 
     // Act and Assert
@@ -1189,16 +1242,17 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mESC_SEQ()}.
+   *
    * <ul>
-   *   <li>Then throw {@link NoViableAltException}.</li>
+   *   <li>Then throw {@link NoViableAltException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mESC_SEQ()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mESC_SEQ()}
    */
   @Test
   public void testMESC_SEQ_thenThrowNoViableAltException() throws RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
     eventFilterLexer.setCharStream(new ANTLRInputStream());
 
     // Act and Assert
@@ -1207,16 +1261,17 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mOCTAL_ESC()}.
+   *
    * <ul>
-   *   <li>Then throw {@link NoViableAltException}.</li>
+   *   <li>Then throw {@link NoViableAltException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mOCTAL_ESC()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mOCTAL_ESC()}
    */
   @Test
   public void testMOCTAL_ESC_thenThrowNoViableAltException() throws RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
     eventFilterLexer.setCharStream(new ANTLRInputStream());
 
     // Act and Assert
@@ -1225,16 +1280,17 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mEXPONENT()}.
+   *
    * <ul>
-   *   <li>Then throw {@link MismatchedSetException}.</li>
+   *   <li>Then throw {@link MismatchedSetException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mEXPONENT()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mEXPONENT()}
    */
   @Test
   public void testMEXPONENT_thenThrowMismatchedSetException() throws RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
     eventFilterLexer.setCharStream(new ANTLRInputStream());
 
     // Act and Assert
@@ -1243,16 +1299,17 @@ public class EventFilterLexerDiffblueTest {
 
   /**
    * Test {@link EventFilterLexer#mTokens()}.
+   *
    * <ul>
-   *   <li>Then throw {@link NoViableAltException}.</li>
+   *   <li>Then throw {@link NoViableAltException}.
    * </ul>
-   * <p>
-   * Method under test: {@link EventFilterLexer#mTokens()}
+   *
+   * <p>Method under test: {@link EventFilterLexer#mTokens()}
    */
   @Test
   public void testMTokens_thenThrowNoViableAltException() throws RecognitionException {
     // Arrange
-    EventFilterLexer eventFilterLexer = new EventFilterLexer();
+    EventFilterLexer eventFilterLexer = new EventFilterLexer(new ANTLRInputStream());
     eventFilterLexer.setCharStream(new ANTLRInputStream());
 
     // Act and Assert

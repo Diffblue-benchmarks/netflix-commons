@@ -6,11 +6,10 @@ import org.junit.Test;
 
 public class EventFilterParsingExceptionDiffblueTest {
   /**
-   * Test
-   * {@link EventFilterParsingException#EventFilterParsingException(String, Throwable)}.
-   * <p>
-   * Method under test:
-   * {@link EventFilterParsingException#EventFilterParsingException(String, Throwable)}
+   * Test {@link EventFilterParsingException#EventFilterParsingException(String, Throwable)}.
+   *
+   * <p>Method under test: {@link EventFilterParsingException#EventFilterParsingException(String,
+   * Throwable)}
    */
   @Test
   public void testNewEventFilterParsingException() {
@@ -18,7 +17,8 @@ public class EventFilterParsingExceptionDiffblueTest {
     Throwable cause = new Throwable();
 
     // Act
-    EventFilterParsingException actualEventFilterParsingException = new EventFilterParsingException("Msg", cause);
+    EventFilterParsingException actualEventFilterParsingException =
+        new EventFilterParsingException("Msg", cause);
 
     // Assert
     assertEquals("Msg", actualEventFilterParsingException.getMessage());

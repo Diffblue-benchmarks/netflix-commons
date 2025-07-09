@@ -9,8 +9,9 @@ import org.junit.Test;
 public class PathValueEventFilterDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link PathValueEventFilter#PathValueEventFilter(String, ValuePredicate)}
    *   <li>{@link PathValueEventFilter#toString()}
@@ -21,32 +22,34 @@ public class PathValueEventFilterDiffblueTest {
   @Test
   public void testGettersAndSetters() {
     // Arrange and Act
-    PathValueEventFilter<Object> actualPathValueEventFilter = new PathValueEventFilter<>("Path",
-        NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> actualPathValueEventFilter =
+        new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
     String actualToStringResult = actualPathValueEventFilter.toString();
     ValuePredicate<?> actualPredicate = actualPathValueEventFilter.getPredicate();
 
     // Assert
     assertTrue(actualPredicate instanceof NullValuePredicate);
     assertEquals("Path", actualPathValueEventFilter.getXpath());
-    assertEquals("PathValueEventFilter [xpath=Path, predicate=NullValuePredicate []]", actualToStringResult);
+    assertEquals(
+        "PathValueEventFilter [xpath=Path, predicate=NullValuePredicate []]", actualToStringResult);
   }
 
   /**
    * Test {@link PathValueEventFilter#apply(Object)}.
+   *
    * <ul>
-   *   <li>Given
-   * {@link PathValueEventFilter#PathValueEventFilter(String, ValuePredicate)}
-   * with {@code Path} and predicate is {@link NullValuePredicate#INSTANCE}.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>Given {@link PathValueEventFilter#PathValueEventFilter(String, ValuePredicate)} with
+   *       {@code Path} and predicate is {@link NullValuePredicate#INSTANCE}.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test: {@link PathValueEventFilter#apply(Object)}
+   *
+   * <p>Method under test: {@link PathValueEventFilter#apply(Object)}
    */
   @Test
   public void testApply_givenPathValueEventFilterWithPathAndPredicateIsInstance_thenReturnTrue() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
 
     // Act and Assert
     assertTrue(pathValueEventFilter.apply("Input"));
@@ -54,30 +57,33 @@ public class PathValueEventFilterDiffblueTest {
 
   /**
    * Test {@link PathValueEventFilter#apply(Object)}.
+   *
    * <ul>
-   *   <li>Then return {@code false}.</li>
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Method under test: {@link PathValueEventFilter#apply(Object)}
+   *
+   * <p>Method under test: {@link PathValueEventFilter#apply(Object)}
    */
   @Test
   public void testApply_thenReturnFalse() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("42", NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>("42", NullValuePredicate.INSTANCE);
 
     // Act and Assert
     assertFalse(pathValueEventFilter.apply("Input"));
   }
 
   /**
-   * Test {@link PathValueEventFilter#equals(Object)}, and
-   * {@link PathValueEventFilter#hashCode()}.
+   * Test {@link PathValueEventFilter#equals(Object)}, and {@link PathValueEventFilter#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link PathValueEventFilter#equals(Object)}
    *   <li>{@link PathValueEventFilter#hashCode()}
@@ -86,9 +92,10 @@ public class PathValueEventFilterDiffblueTest {
   @Test
   public void testEqualsAndHashCode_whenOtherIsEqual_thenReturnEqual() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
-    PathValueEventFilter<Object> pathValueEventFilter2 = new PathValueEventFilter<>("Path",
-        NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter2 =
+        new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
 
     // Act and Assert
     assertEquals(pathValueEventFilter, pathValueEventFilter2);
@@ -97,14 +104,15 @@ public class PathValueEventFilterDiffblueTest {
   }
 
   /**
-   * Test {@link PathValueEventFilter#equals(Object)}, and
-   * {@link PathValueEventFilter#hashCode()}.
+   * Test {@link PathValueEventFilter#equals(Object)}, and {@link PathValueEventFilter#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link PathValueEventFilter#equals(Object)}
    *   <li>{@link PathValueEventFilter#hashCode()}
@@ -113,8 +121,10 @@ public class PathValueEventFilterDiffblueTest {
   @Test
   public void testEqualsAndHashCode_whenOtherIsEqual_thenReturnEqual2() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>(null, NullValuePredicate.INSTANCE);
-    PathValueEventFilter<Object> pathValueEventFilter2 = new PathValueEventFilter<>(null, NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>(null, NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter2 =
+        new PathValueEventFilter<>(null, NullValuePredicate.INSTANCE);
 
     // Act and Assert
     assertEquals(pathValueEventFilter, pathValueEventFilter2);
@@ -123,14 +133,15 @@ public class PathValueEventFilterDiffblueTest {
   }
 
   /**
-   * Test {@link PathValueEventFilter#equals(Object)}, and
-   * {@link PathValueEventFilter#hashCode()}.
+   * Test {@link PathValueEventFilter#equals(Object)}, and {@link PathValueEventFilter#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link PathValueEventFilter#equals(Object)}
    *   <li>{@link PathValueEventFilter#hashCode()}
@@ -149,14 +160,15 @@ public class PathValueEventFilterDiffblueTest {
   }
 
   /**
-   * Test {@link PathValueEventFilter#equals(Object)}, and
-   * {@link PathValueEventFilter#hashCode()}.
+   * Test {@link PathValueEventFilter#equals(Object)}, and {@link PathValueEventFilter#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link PathValueEventFilter#equals(Object)}
    *   <li>{@link PathValueEventFilter#hashCode()}
@@ -165,7 +177,8 @@ public class PathValueEventFilterDiffblueTest {
   @Test
   public void testEqualsAndHashCode_whenOtherIsSame_thenReturnEqual() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
 
     // Act and Assert
     assertEquals(pathValueEventFilter, pathValueEventFilter);
@@ -175,67 +188,76 @@ public class PathValueEventFilterDiffblueTest {
 
   /**
    * Test {@link PathValueEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link PathValueEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link PathValueEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>(null, NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>(null, NullValuePredicate.INSTANCE);
 
     // Act and Assert
-    assertNotEquals(pathValueEventFilter, new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE));
+    assertNotEquals(
+        pathValueEventFilter, new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE));
   }
 
   /**
    * Test {@link PathValueEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link PathValueEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link PathValueEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("42", NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>("42", NullValuePredicate.INSTANCE);
 
     // Act and Assert
-    assertNotEquals(pathValueEventFilter, new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE));
+    assertNotEquals(
+        pathValueEventFilter, new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE));
   }
 
   /**
    * Test {@link PathValueEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link PathValueEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link PathValueEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual3() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("Path",
-        new StringValuePredicate("42"));
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>("Path", new StringValuePredicate("42"));
 
     // Act and Assert
-    assertNotEquals(pathValueEventFilter, new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE));
+    assertNotEquals(
+        pathValueEventFilter, new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE));
   }
 
   /**
    * Test {@link PathValueEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link PathValueEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link PathValueEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual4() {
@@ -243,22 +265,25 @@ public class PathValueEventFilterDiffblueTest {
     PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("Path", null);
 
     // Act and Assert
-    assertNotEquals(pathValueEventFilter, new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE));
+    assertNotEquals(
+        pathValueEventFilter, new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE));
   }
 
   /**
    * Test {@link PathValueEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link PathValueEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link PathValueEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
 
     // Act and Assert
     assertNotEquals(pathValueEventFilter, null);
@@ -266,17 +291,19 @@ public class PathValueEventFilterDiffblueTest {
 
   /**
    * Test {@link PathValueEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link PathValueEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link PathValueEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {
     // Arrange
-    PathValueEventFilter<Object> pathValueEventFilter = new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
+    PathValueEventFilter<Object> pathValueEventFilter =
+        new PathValueEventFilter<>("Path", NullValuePredicate.INSTANCE);
 
     // Act and Assert
     assertNotEquals(pathValueEventFilter, "Different type to PathValueEventFilter");

@@ -15,8 +15,9 @@ import org.junit.Test;
 public class FalseValueTreeNodeDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link FalseValueTreeNode#FalseValueTreeNode(Token)}
    *   <li>{@link FalseValueTreeNode#getValue()}
@@ -41,12 +42,12 @@ public class FalseValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link FalseValueTreeNode#FalseValueTreeNode(FalseValueTreeNode)}.
+   *
    * <ul>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link FalseValueTreeNode#FalseValueTreeNode(FalseValueTreeNode)}
+   *
+   * <p>Method under test: {@link FalseValueTreeNode#FalseValueTreeNode(FalseValueTreeNode)}
    */
   @Test
   public void testNewFalseValueTreeNode_thenTokenReturnClassicToken() {
@@ -78,8 +79,8 @@ public class FalseValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link FalseValueTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link FalseValueTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link FalseValueTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -87,7 +88,7 @@ public class FalseValueTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new FalseValueTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new FalseValueTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof FalseValueTreeNode);
@@ -112,13 +113,14 @@ public class FalseValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link FalseValueTreeNode#translate()}.
-   * <p>
-   * Method under test: {@link FalseValueTreeNode#translate()}
+   *
+   * <p>Method under test: {@link FalseValueTreeNode#translate()}
    */
   @Test
   public void testTranslate() {
     // Arrange and Act
-    Predicate<Object> actualTranslateResult = (new FalseValueTreeNode(new ClassicToken(1))).translate();
+    Predicate<Object> actualTranslateResult =
+        new FalseValueTreeNode(new ClassicToken(1)).translate();
 
     // Assert
     assertTrue(actualTranslateResult instanceof AlwaysFalsePredicate);

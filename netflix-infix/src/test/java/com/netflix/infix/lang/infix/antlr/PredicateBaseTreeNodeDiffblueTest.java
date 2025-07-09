@@ -8,29 +8,31 @@ import org.junit.Test;
 public class PredicateBaseTreeNodeDiffblueTest {
   /**
    * Test {@link PredicateBaseTreeNode#toString()}.
+   *
    * <ul>
-   *   <li>Given {@link AndTreeNode#AndTreeNode(Token)} with t is {@code null}.</li>
+   *   <li>Given {@link AndTreeNode#AndTreeNode(Token)} with t is {@code null}.
    * </ul>
-   * <p>
-   * Method under test: {@link PredicateBaseTreeNode#toString()}
+   *
+   * <p>Method under test: {@link PredicateBaseTreeNode#toString()}
    */
   @Test
   public void testToString_givenAndTreeNodeWithTIsNull() {
     // Arrange, Act and Assert
-    assertEquals("null<AndTreeNode>", (new AndTreeNode((Token) null)).toString());
+    assertEquals("null<AndTreeNode>", new AndTreeNode((Token) null).toString());
   }
 
   /**
    * Test {@link PredicateBaseTreeNode#toString()}.
+   *
    * <ul>
-   *   <li>Given {@link ClassicToken#ClassicToken(int)} with type is one.</li>
+   *   <li>Given {@link ClassicToken#ClassicToken(int)} with type is one.
    * </ul>
-   * <p>
-   * Method under test: {@link PredicateBaseTreeNode#toString()}
+   *
+   * <p>Method under test: {@link PredicateBaseTreeNode#toString()}
    */
   @Test
   public void testToString_givenClassicTokenWithTypeIsOne() {
     // Arrange, Act and Assert
-    assertEquals("null<AndTreeNode>", (new AndTreeNode(new ClassicToken(1))).toString());
+    assertEquals("null<AndTreeNode>", new AndTreeNode(new ClassicToken(1)).toString());
   }
 }

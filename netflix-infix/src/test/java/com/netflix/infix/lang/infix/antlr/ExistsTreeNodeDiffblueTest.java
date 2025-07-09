@@ -13,8 +13,8 @@ import org.junit.Test;
 public class ExistsTreeNodeDiffblueTest {
   /**
    * Test {@link ExistsTreeNode#ExistsTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link ExistsTreeNode#ExistsTreeNode(Token)}
+   *
+   * <p>Method under test: {@link ExistsTreeNode#ExistsTreeNode(Token)}
    */
   @Test
   public void testNewExistsTreeNode() {
@@ -33,12 +33,13 @@ public class ExistsTreeNodeDiffblueTest {
 
   /**
    * Test {@link ExistsTreeNode#ExistsTreeNode(ExistsTreeNode)}.
+   *
    * <ul>
-   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.</li>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test: {@link ExistsTreeNode#ExistsTreeNode(ExistsTreeNode)}
+   *
+   * <p>Method under test: {@link ExistsTreeNode#ExistsTreeNode(ExistsTreeNode)}
    */
   @Test
   public void testNewExistsTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
@@ -69,8 +70,8 @@ public class ExistsTreeNodeDiffblueTest {
 
   /**
    * Test {@link ExistsTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link ExistsTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link ExistsTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -78,7 +79,7 @@ public class ExistsTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new ExistsTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new ExistsTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof ExistsTreeNode);

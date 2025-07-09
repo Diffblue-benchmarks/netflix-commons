@@ -13,9 +13,8 @@ import org.junit.Test;
 public class TimeMillisValueTreeNodeDiffblueTest {
   /**
    * Test {@link TimeMillisValueTreeNode#TimeMillisValueTreeNode(Token)}.
-   * <p>
-   * Method under test:
-   * {@link TimeMillisValueTreeNode#TimeMillisValueTreeNode(Token)}
+   *
+   * <p>Method under test: {@link TimeMillisValueTreeNode#TimeMillisValueTreeNode(Token)}
    */
   @Test
   public void testNewTimeMillisValueTreeNode() {
@@ -33,14 +32,14 @@ public class TimeMillisValueTreeNodeDiffblueTest {
   }
 
   /**
-   * Test
-   * {@link TimeMillisValueTreeNode#TimeMillisValueTreeNode(TimeMillisValueTreeNode)}.
+   * Test {@link TimeMillisValueTreeNode#TimeMillisValueTreeNode(TimeMillisValueTreeNode)}.
+   *
    * <ul>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link TimeMillisValueTreeNode#TimeMillisValueTreeNode(TimeMillisValueTreeNode)}
+   *
+   * <p>Method under test: {@link
+   * TimeMillisValueTreeNode#TimeMillisValueTreeNode(TimeMillisValueTreeNode)}
    */
   @Test
   public void testNewTimeMillisValueTreeNode_thenTokenReturnClassicToken() {
@@ -48,7 +47,8 @@ public class TimeMillisValueTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    TimeMillisValueTreeNode actualTimeMillisValueTreeNode = new TimeMillisValueTreeNode(new TimeMillisValueTreeNode(t));
+    TimeMillisValueTreeNode actualTimeMillisValueTreeNode =
+        new TimeMillisValueTreeNode(new TimeMillisValueTreeNode(t));
 
     // Assert
     Token token = actualTimeMillisValueTreeNode.getToken();
@@ -71,8 +71,8 @@ public class TimeMillisValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link TimeMillisValueTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link TimeMillisValueTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link TimeMillisValueTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -80,7 +80,7 @@ public class TimeMillisValueTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new TimeMillisValueTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new TimeMillisValueTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof TimeMillisValueTreeNode);

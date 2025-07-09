@@ -13,8 +13,8 @@ import org.junit.Test;
 public class ComparableTreeNodeDiffblueTest {
   /**
    * Test {@link ComparableTreeNode#ComparableTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link ComparableTreeNode#ComparableTreeNode(Token)}
+   *
+   * <p>Method under test: {@link ComparableTreeNode#ComparableTreeNode(Token)}
    */
   @Test
   public void testNewComparableTreeNode() {
@@ -33,12 +33,12 @@ public class ComparableTreeNodeDiffblueTest {
 
   /**
    * Test {@link ComparableTreeNode#ComparableTreeNode(ComparableTreeNode)}.
+   *
    * <ul>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link ComparableTreeNode#ComparableTreeNode(ComparableTreeNode)}
+   *
+   * <p>Method under test: {@link ComparableTreeNode#ComparableTreeNode(ComparableTreeNode)}
    */
   @Test
   public void testNewComparableTreeNode_thenTokenReturnClassicToken() {
@@ -69,8 +69,8 @@ public class ComparableTreeNodeDiffblueTest {
 
   /**
    * Test {@link ComparableTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link ComparableTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link ComparableTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -78,7 +78,7 @@ public class ComparableTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new ComparableTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new ComparableTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof ComparableTreeNode);

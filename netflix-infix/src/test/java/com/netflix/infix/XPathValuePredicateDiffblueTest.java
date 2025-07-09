@@ -9,8 +9,9 @@ import org.junit.Test;
 public class XPathValuePredicateDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link XPathValuePredicate#XPathValuePredicate(String, String)}
    *   <li>{@link XPathValuePredicate#toString()}
@@ -28,44 +29,69 @@ public class XPathValuePredicateDiffblueTest {
     // Assert
     assertEquals("42", actualXPathValuePredicate.getValueXpath());
     assertEquals("Input Xpath", actualInputXpath);
-    assertEquals("PathValuePredicate [valueXpath=42, inputXpath=Input Xpath]", actualToStringResult);
+    assertEquals(
+        "PathValuePredicate [valueXpath=42, inputXpath=Input Xpath]", actualToStringResult);
   }
 
   /**
    * Test {@link XPathValuePredicate#apply(String)} with {@code String}.
-   * <p>
-   * Method under test: {@link XPathValuePredicate#apply(String)}
+   *
+   * <p>Method under test: {@link XPathValuePredicate#apply(String)}
    */
   @Test
   public void testApplyWithString() {
     // Arrange, Act and Assert
-    assertFalse((new XPathValuePredicate("42", "java.lang.String")).apply("Input"));
-    assertFalse((new XPathValuePredicate("java.lang.String", "42")).apply("Input"));
+    assertFalse(new XPathValuePredicate("42", "java.lang.String").apply("Input"));
   }
 
   /**
    * Test {@link XPathValuePredicate#apply(String)} with {@code String}.
-   * <ul>
-   *   <li>Then return {@code true}.</li>
-   * </ul>
-   * <p>
-   * Method under test: {@link XPathValuePredicate#apply(String)}
+   *
+   * <p>Method under test: {@link XPathValuePredicate#apply(String)}
    */
   @Test
-  public void testApplyWithString_thenReturnTrue() {
+  public void testApplyWithString2() {
     // Arrange, Act and Assert
-    assertTrue((new XPathValuePredicate("42", "42")).apply("Input"));
+    assertTrue(new XPathValuePredicate("java.lang.String", "java.lang.String").apply("Input"));
   }
 
   /**
-   * Test {@link XPathValuePredicate#equals(Object)}, and
-   * {@link XPathValuePredicate#hashCode()}.
+   * Test {@link XPathValuePredicate#apply(String)} with {@code String}.
+   *
+   * <p>Method under test: {@link XPathValuePredicate#apply(String)}
+   */
+  @Test
+  public void testApplyWithString3() {
+    // Arrange, Act and Assert
+    assertFalse(new XPathValuePredicate("java.lang.String", "42").apply("Input"));
+  }
+
+  /**
+   * Test {@link XPathValuePredicate#apply(String)} with {@code String}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>Given {@link XPathValuePredicate#XPathValuePredicate(String, String)} with valueXpath is
+   *       {@code 42} and inputXpath is {@code 42}.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Method under test: {@link XPathValuePredicate#apply(String)}
+   */
+  @Test
+  public void testApplyWithString_givenXPathValuePredicateWithValueXpathIs42AndInputXpathIs42() {
+    // Arrange, Act and Assert
+    assertTrue(new XPathValuePredicate("42", "42").apply("Input"));
+  }
+
+  /**
+   * Test {@link XPathValuePredicate#equals(Object)}, and {@link XPathValuePredicate#hashCode()}.
+   *
+   * <ul>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
+   * </ul>
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link XPathValuePredicate#equals(Object)}
    *   <li>{@link XPathValuePredicate#hashCode()}
@@ -84,14 +110,15 @@ public class XPathValuePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link XPathValuePredicate#equals(Object)}, and
-   * {@link XPathValuePredicate#hashCode()}.
+   * Test {@link XPathValuePredicate#equals(Object)}, and {@link XPathValuePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link XPathValuePredicate#equals(Object)}
    *   <li>{@link XPathValuePredicate#hashCode()}
@@ -110,14 +137,15 @@ public class XPathValuePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link XPathValuePredicate#equals(Object)}, and
-   * {@link XPathValuePredicate#hashCode()}.
+   * Test {@link XPathValuePredicate#equals(Object)}, and {@link XPathValuePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link XPathValuePredicate#equals(Object)}
    *   <li>{@link XPathValuePredicate#hashCode()}
@@ -136,14 +164,15 @@ public class XPathValuePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link XPathValuePredicate#equals(Object)}, and
-   * {@link XPathValuePredicate#hashCode()}.
+   * Test {@link XPathValuePredicate#equals(Object)}, and {@link XPathValuePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link XPathValuePredicate#equals(Object)}
    *   <li>{@link XPathValuePredicate#hashCode()}
@@ -162,12 +191,13 @@ public class XPathValuePredicateDiffblueTest {
 
   /**
    * Test {@link XPathValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link XPathValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
@@ -180,12 +210,13 @@ public class XPathValuePredicateDiffblueTest {
 
   /**
    * Test {@link XPathValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link XPathValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
@@ -198,12 +229,13 @@ public class XPathValuePredicateDiffblueTest {
 
   /**
    * Test {@link XPathValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link XPathValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual3() {
@@ -216,12 +248,13 @@ public class XPathValuePredicateDiffblueTest {
 
   /**
    * Test {@link XPathValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link XPathValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual4() {
@@ -234,12 +267,13 @@ public class XPathValuePredicateDiffblueTest {
 
   /**
    * Test {@link XPathValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link XPathValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
@@ -249,16 +283,18 @@ public class XPathValuePredicateDiffblueTest {
 
   /**
    * Test {@link XPathValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link XPathValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {
     // Arrange, Act and Assert
-    assertNotEquals(new XPathValuePredicate("42", "Input Xpath"), "Different type to XPathValuePredicate");
+    assertNotEquals(
+        new XPathValuePredicate("42", "Input Xpath"), "Different type to XPathValuePredicate");
   }
 }

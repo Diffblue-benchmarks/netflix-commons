@@ -13,8 +13,8 @@ import org.junit.Test;
 public class NotTreeNodeDiffblueTest {
   /**
    * Test {@link NotTreeNode#NotTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link NotTreeNode#NotTreeNode(Token)}
+   *
+   * <p>Method under test: {@link NotTreeNode#NotTreeNode(Token)}
    */
   @Test
   public void testNewNotTreeNode() {
@@ -33,12 +33,13 @@ public class NotTreeNodeDiffblueTest {
 
   /**
    * Test {@link NotTreeNode#NotTreeNode(NotTreeNode)}.
+   *
    * <ul>
-   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.</li>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test: {@link NotTreeNode#NotTreeNode(NotTreeNode)}
+   *
+   * <p>Method under test: {@link NotTreeNode#NotTreeNode(NotTreeNode)}
    */
   @Test
   public void testNewNotTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
@@ -69,8 +70,8 @@ public class NotTreeNodeDiffblueTest {
 
   /**
    * Test {@link NotTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link NotTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link NotTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -78,7 +79,7 @@ public class NotTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new NotTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new NotTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof NotTreeNode);

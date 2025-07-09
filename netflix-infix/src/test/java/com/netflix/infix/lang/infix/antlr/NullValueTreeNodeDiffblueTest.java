@@ -13,8 +13,9 @@ import org.junit.Test;
 public class NullValueTreeNodeDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link NullValueTreeNode#NullValueTreeNode(Token)}
    *   <li>{@link NullValueTreeNode#getValue()}
@@ -38,12 +39,12 @@ public class NullValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link NullValueTreeNode#NullValueTreeNode(NullValueTreeNode)}.
+   *
    * <ul>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link NullValueTreeNode#NullValueTreeNode(NullValueTreeNode)}
+   *
+   * <p>Method under test: {@link NullValueTreeNode#NullValueTreeNode(NullValueTreeNode)}
    */
   @Test
   public void testNewNullValueTreeNode_thenTokenReturnClassicToken() {
@@ -75,8 +76,8 @@ public class NullValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link NullValueTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link NullValueTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link NullValueTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -84,7 +85,7 @@ public class NullValueTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new NullValueTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new NullValueTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof NullValueTreeNode);

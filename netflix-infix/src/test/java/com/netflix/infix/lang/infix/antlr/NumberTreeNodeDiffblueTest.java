@@ -13,22 +13,24 @@ import org.junit.Test;
 public class NumberTreeNodeDiffblueTest {
   /**
    * Test {@link NumberTreeNode#getValue()}.
+   *
    * <ul>
-   *   <li>Then return doubleValue is forty-two.</li>
+   *   <li>Then return doubleValue is forty-two.
    * </ul>
-   * <p>
-   * Method under test: {@link NumberTreeNode#getValue()}
+   *
+   * <p>Method under test: {@link NumberTreeNode#getValue()}
    */
   @Test
   public void testGetValue_thenReturnDoubleValueIsFortyTwo() {
     // Arrange, Act and Assert
-    assertEquals(42.0d, (new NumberTreeNode(new ClassicToken(1, "42"))).getValue().doubleValue(), 0.0);
+    assertEquals(
+        42.0d, new NumberTreeNode(new ClassicToken(1, "42")).getValue().doubleValue(), 0.0);
   }
 
   /**
    * Test {@link NumberTreeNode#NumberTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link NumberTreeNode#NumberTreeNode(Token)}
+   *
+   * <p>Method under test: {@link NumberTreeNode#NumberTreeNode(Token)}
    */
   @Test
   public void testNewNumberTreeNode() {
@@ -47,12 +49,13 @@ public class NumberTreeNodeDiffblueTest {
 
   /**
    * Test {@link NumberTreeNode#NumberTreeNode(NumberTreeNode)}.
+   *
    * <ul>
-   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.</li>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test: {@link NumberTreeNode#NumberTreeNode(NumberTreeNode)}
+   *
+   * <p>Method under test: {@link NumberTreeNode#NumberTreeNode(NumberTreeNode)}
    */
   @Test
   public void testNewNumberTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
@@ -83,8 +86,8 @@ public class NumberTreeNodeDiffblueTest {
 
   /**
    * Test {@link NumberTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link NumberTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link NumberTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -92,7 +95,7 @@ public class NumberTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new NumberTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new NumberTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof NumberTreeNode);

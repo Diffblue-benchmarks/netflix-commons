@@ -6,8 +6,8 @@ import org.junit.Test;
 public class MeasuredRateDiffblueTest {
   /**
    * Test {@link MeasuredRate#MeasuredRate(long)}.
-   * <p>
-   * Method under test: {@link MeasuredRate#MeasuredRate(long)}
+   *
+   * <p>Method under test: {@link MeasuredRate#MeasuredRate(long)}
    */
   @Test
   public void testNewMeasuredRate() {
@@ -21,72 +21,72 @@ public class MeasuredRateDiffblueTest {
 
   /**
    * Test {@link MeasuredRate#getCount()}.
+   *
    * <ul>
-   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is
-   * {@code -84894203}.</li>
+   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is {@code -446547637}.
    * </ul>
-   * <p>
-   * Method under test: {@link MeasuredRate#getCount()}
+   *
+   * <p>Method under test: {@link MeasuredRate#getCount()}
    */
   @Test
-  public void testGetCount_givenMeasuredRateWithSampleIntervalIs84894203() {
+  public void testGetCount_givenMeasuredRateWithSampleIntervalIs446547637() {
     // Arrange, Act and Assert
-    assertEquals(0L, (new MeasuredRate(-84894203L)).getCount());
+    assertEquals(0L, new MeasuredRate(-446547637L).getCount());
   }
 
   /**
    * Test {@link MeasuredRate#getCount()}.
+   *
    * <ul>
-   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is
-   * forty-two.</li>
+   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is forty-two.
    * </ul>
-   * <p>
-   * Method under test: {@link MeasuredRate#getCount()}
+   *
+   * <p>Method under test: {@link MeasuredRate#getCount()}
    */
   @Test
   public void testGetCount_givenMeasuredRateWithSampleIntervalIsFortyTwo() {
     // Arrange, Act and Assert
-    assertEquals(0L, (new MeasuredRate(42L)).getCount());
+    assertEquals(0L, new MeasuredRate(42L).getCount());
   }
 
   /**
    * Test {@link MeasuredRate#getCurrentCount()}.
+   *
    * <ul>
-   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is
-   * {@code -84893071}.</li>
+   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is {@code -446546650}.
    * </ul>
-   * <p>
-   * Method under test: {@link MeasuredRate#getCurrentCount()}
+   *
+   * <p>Method under test: {@link MeasuredRate#getCurrentCount()}
    */
   @Test
-  public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIs84893071() {
+  public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIs446546650() {
     // Arrange, Act and Assert
-    assertEquals(0L, (new MeasuredRate(-84893071L)).getCurrentCount());
+    assertEquals(0L, new MeasuredRate(-446546650L).getCurrentCount());
   }
 
   /**
    * Test {@link MeasuredRate#getCurrentCount()}.
+   *
    * <ul>
-   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is
-   * forty-two.</li>
+   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is forty-two.
    * </ul>
-   * <p>
-   * Method under test: {@link MeasuredRate#getCurrentCount()}
+   *
+   * <p>Method under test: {@link MeasuredRate#getCurrentCount()}
    */
   @Test
   public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIsFortyTwo() {
     // Arrange, Act and Assert
-    assertEquals(0L, (new MeasuredRate(42L)).getCurrentCount());
+    assertEquals(0L, new MeasuredRate(42L).getCurrentCount());
   }
 
   /**
    * Test {@link MeasuredRate#toString()}.
-   * <p>
-   * Method under test: {@link MeasuredRate#toString()}
+   *
+   * <p>Method under test: {@link MeasuredRate#toString()}
    */
   @Test
   public void testToString() {
     // Arrange, Act and Assert
-    assertEquals("count:0currentCount:0", (new MeasuredRate(42L)).toString());
+    assertEquals("count:0currentCount:0", new MeasuredRate(42L).toString());
   }
 }

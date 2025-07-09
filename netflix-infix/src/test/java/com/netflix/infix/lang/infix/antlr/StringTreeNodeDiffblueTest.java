@@ -13,37 +13,38 @@ import org.junit.Test;
 public class StringTreeNodeDiffblueTest {
   /**
    * Test {@link StringTreeNode#getValue()}.
+   *
    * <ul>
-   *   <li>Given {@link ClassicToken#ClassicToken(int)} with type is one.</li>
+   *   <li>Given {@link ClassicToken#ClassicToken(int)} with type is one.
    * </ul>
-   * <p>
-   * Method under test: {@link StringTreeNode#getValue()}
+   *
+   * <p>Method under test: {@link StringTreeNode#getValue()}
    */
   @Test
   public void testGetValue_givenClassicTokenWithTypeIsOne() {
     // Arrange, Act and Assert
-    assertNull((new StringTreeNode(new ClassicToken(1))).getValue());
+    assertNull(new StringTreeNode(new ClassicToken(1)).getValue());
   }
 
   /**
    * Test {@link StringTreeNode#getValue()}.
+   *
    * <ul>
-   *   <li>Given {@link StringTreeNode#StringTreeNode(Token)} with t is
-   * {@code null}.</li>
+   *   <li>Given {@link StringTreeNode#StringTreeNode(Token)} with t is {@code null}.
    * </ul>
-   * <p>
-   * Method under test: {@link StringTreeNode#getValue()}
+   *
+   * <p>Method under test: {@link StringTreeNode#getValue()}
    */
   @Test
   public void testGetValue_givenStringTreeNodeWithTIsNull() {
     // Arrange, Act and Assert
-    assertNull((new StringTreeNode((Token) null)).getValue());
+    assertNull(new StringTreeNode((Token) null).getValue());
   }
 
   /**
    * Test {@link StringTreeNode#StringTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link StringTreeNode#StringTreeNode(Token)}
+   *
+   * <p>Method under test: {@link StringTreeNode#StringTreeNode(Token)}
    */
   @Test
   public void testNewStringTreeNode() {
@@ -62,12 +63,13 @@ public class StringTreeNodeDiffblueTest {
 
   /**
    * Test {@link StringTreeNode#StringTreeNode(StringTreeNode)}.
+   *
    * <ul>
-   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.</li>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test: {@link StringTreeNode#StringTreeNode(StringTreeNode)}
+   *
+   * <p>Method under test: {@link StringTreeNode#StringTreeNode(StringTreeNode)}
    */
   @Test
   public void testNewStringTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
@@ -99,8 +101,8 @@ public class StringTreeNodeDiffblueTest {
 
   /**
    * Test {@link StringTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link StringTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link StringTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -108,7 +110,7 @@ public class StringTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new StringTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new StringTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof StringTreeNode);

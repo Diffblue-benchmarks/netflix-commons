@@ -10,14 +10,14 @@ import org.junit.Test;
 public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
   /**
    * Test {@link CoreCountBasedScheduledExecutorServiceProvider#get()}.
-   * <p>
-   * Method under test:
-   * {@link CoreCountBasedScheduledExecutorServiceProvider#get()}
+   *
+   * <p>Method under test: {@link CoreCountBasedScheduledExecutorServiceProvider#get()}
    */
   @Test
   public void testGet() {
     // Arrange and Act
-    ScheduledExecutorService actualGetResult = (new CoreCountBasedScheduledExecutorServiceProvider()).get();
+    ScheduledExecutorService actualGetResult =
+        new CoreCountBasedScheduledExecutorServiceProvider().get();
 
     // Assert
     assertTrue(actualGetResult instanceof ScheduledThreadPoolExecutor);
@@ -27,24 +27,28 @@ public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
     assertEquals(0L, ((ScheduledThreadPoolExecutor) actualGetResult).getCompletedTaskCount());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) actualGetResult).getTaskCount());
     assertEquals(10, ((ScheduledThreadPoolExecutor) actualGetResult).getCorePoolSize());
-    assertFalse(((ScheduledThreadPoolExecutor) actualGetResult).getContinueExistingPeriodicTasksAfterShutdownPolicy());
+    assertFalse(
+        ((ScheduledThreadPoolExecutor) actualGetResult)
+            .getContinueExistingPeriodicTasksAfterShutdownPolicy());
     assertFalse(((ScheduledThreadPoolExecutor) actualGetResult).getRemoveOnCancelPolicy());
     assertTrue(((ScheduledThreadPoolExecutor) actualGetResult).getQueue().isEmpty());
-    assertTrue(((ScheduledThreadPoolExecutor) actualGetResult).getExecuteExistingDelayedTasksAfterShutdownPolicy());
-    assertEquals(Integer.MAX_VALUE, ((ScheduledThreadPoolExecutor) actualGetResult).getMaximumPoolSize());
+    assertTrue(
+        ((ScheduledThreadPoolExecutor) actualGetResult)
+            .getExecuteExistingDelayedTasksAfterShutdownPolicy());
+    assertEquals(
+        Integer.MAX_VALUE, ((ScheduledThreadPoolExecutor) actualGetResult).getMaximumPoolSize());
   }
 
   /**
-   * Test new {@link CoreCountBasedScheduledExecutorServiceProvider} (default
-   * constructor).
-   * <p>
-   * Method under test: default or parameterless constructor of
-   * {@link CoreCountBasedScheduledExecutorServiceProvider}
+   * Test new {@link CoreCountBasedScheduledExecutorServiceProvider} (default constructor).
+   *
+   * <p>Method under test: default or parameterless constructor of {@link
+   * CoreCountBasedScheduledExecutorServiceProvider}
    */
   @Test
   public void testNewCoreCountBasedScheduledExecutorServiceProvider() {
     // Arrange, Act and Assert
-    ScheduledExecutorService getResult = (new CoreCountBasedScheduledExecutorServiceProvider()).get();
+    ScheduledExecutorService getResult = new CoreCountBasedScheduledExecutorServiceProvider().get();
     assertTrue(getResult instanceof ScheduledThreadPoolExecutor);
     assertEquals(0, ((ScheduledThreadPoolExecutor) getResult).getActiveCount());
     assertEquals(0, ((ScheduledThreadPoolExecutor) getResult).getLargestPoolSize());
@@ -53,10 +57,14 @@ public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
     assertEquals(0L, ((ScheduledThreadPoolExecutor) getResult).getTaskCount());
     assertEquals(10, ((ScheduledThreadPoolExecutor) getResult).getCorePoolSize());
     assertFalse(getResult.isShutdown());
-    assertFalse(((ScheduledThreadPoolExecutor) getResult).getContinueExistingPeriodicTasksAfterShutdownPolicy());
+    assertFalse(
+        ((ScheduledThreadPoolExecutor) getResult)
+            .getContinueExistingPeriodicTasksAfterShutdownPolicy());
     assertFalse(((ScheduledThreadPoolExecutor) getResult).getRemoveOnCancelPolicy());
     assertTrue(((ScheduledThreadPoolExecutor) getResult).getQueue().isEmpty());
-    assertTrue(((ScheduledThreadPoolExecutor) getResult).getExecuteExistingDelayedTasksAfterShutdownPolicy());
+    assertTrue(
+        ((ScheduledThreadPoolExecutor) getResult)
+            .getExecuteExistingDelayedTasksAfterShutdownPolicy());
     assertEquals(Integer.MAX_VALUE, ((ScheduledThreadPoolExecutor) getResult).getMaximumPoolSize());
   }
 }

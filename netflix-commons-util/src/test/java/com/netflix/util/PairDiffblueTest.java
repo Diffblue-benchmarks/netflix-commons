@@ -7,8 +7,9 @@ import org.junit.Test;
 public class PairDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link Pair#Pair(Object, Object)}
    *   <li>{@link Pair#setFirst(Object)}
@@ -29,8 +30,8 @@ public class PairDiffblueTest {
 
   /**
    * Test {@link Pair#first()}.
-   * <p>
-   * Method under test: {@link Pair#first()}
+   *
+   * <p>Method under test: {@link Pair#first()}
    */
   @Test
   public void testFirst() {
@@ -43,8 +44,8 @@ public class PairDiffblueTest {
 
   /**
    * Test {@link Pair#second()}.
-   * <p>
-   * Method under test: {@link Pair#second()}
+   *
+   * <p>Method under test: {@link Pair#second()}
    */
   @Test
   public void testSecond() {
@@ -57,12 +58,14 @@ public class PairDiffblueTest {
 
   /**
    * Test {@link Pair#equals(Object)}, and {@link Pair#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link Pair#equals(Object)}
    *   <li>{@link Pair#hashCode()}
@@ -82,12 +85,14 @@ public class PairDiffblueTest {
 
   /**
    * Test {@link Pair#equals(Object)}, and {@link Pair#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link Pair#equals(Object)}
    *   <li>{@link Pair#hashCode()}
@@ -106,12 +111,13 @@ public class PairDiffblueTest {
 
   /**
    * Test {@link Pair#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link Pair#equals(Object)}
+   *
+   * <p>Method under test: {@link Pair#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
@@ -124,15 +130,35 @@ public class PairDiffblueTest {
 
   /**
    * Test {@link Pair#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link Pair#equals(Object)}
+   *
+   * <p>Method under test: {@link Pair#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
+    // Arrange
+    Pair<Object, Object> pair = new Pair<>(new Pair<>("First", "Second"), "Second");
+
+    // Act and Assert
+    assertNotEquals(pair, new Pair<>("First", "Second"));
+  }
+
+  /**
+   * Test {@link Pair#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link Pair#equals(Object)}
+   */
+  @Test
+  public void testEquals_whenOtherIsDifferent_thenReturnNotEqual3() {
     // Arrange
     Pair<Object, Object> pair = new Pair<>("First", 1);
 
@@ -142,12 +168,32 @@ public class PairDiffblueTest {
 
   /**
    * Test {@link Pair#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link Pair#equals(Object)}
+   *
+   * <p>Method under test: {@link Pair#equals(Object)}
+   */
+  @Test
+  public void testEquals_whenOtherIsDifferent_thenReturnNotEqual4() {
+    // Arrange
+    Pair<Object, Object> pair = new Pair<>("First", new Pair<>("First", "Second"));
+
+    // Act and Assert
+    assertNotEquals(pair, new Pair<>("First", "Second"));
+  }
+
+  /**
+   * Test {@link Pair#equals(Object)}.
+   *
+   * <ul>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
+   * </ul>
+   *
+   * <p>Method under test: {@link Pair#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
@@ -160,12 +206,13 @@ public class PairDiffblueTest {
 
   /**
    * Test {@link Pair#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link Pair#equals(Object)}
+   *
+   * <p>Method under test: {@link Pair#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {

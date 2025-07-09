@@ -8,8 +8,9 @@ import org.junit.Test;
 public class SubscriberInfoDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link SubscriberInfo#SubscriberInfo(Method, Object)}
    *   <li>{@link SubscriberInfo#getSubscriberInstance()}

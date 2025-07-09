@@ -8,21 +8,22 @@ import org.junit.Test;
 
 public class UnexpectedTokenExceptionDiffblueTest {
   /**
-   * Test
-   * {@link UnexpectedTokenException#UnexpectedTokenException(Tree, String[])}.
-   * <p>
-   * Method under test:
-   * {@link UnexpectedTokenException#UnexpectedTokenException(Tree, String[])}
+   * Test {@link UnexpectedTokenException#UnexpectedTokenException(Tree, String[])}.
+   *
+   * <p>Method under test: {@link UnexpectedTokenException#UnexpectedTokenException(Tree, String[])}
    */
   @Test
   public void testNewUnexpectedTokenException() {
     // Arrange and Act
-    UnexpectedTokenException actualUnexpectedTokenException = new UnexpectedTokenException(
-        new AndTreeNode(new ClassicToken(1)), "Expected");
+    UnexpectedTokenException actualUnexpectedTokenException =
+        new UnexpectedTokenException(new AndTreeNode(new ClassicToken(1)), "Expected");
 
     // Assert
-    assertEquals("Unexpected token null at 0:0. Expected: Expected", actualUnexpectedTokenException.getMessage());
-    assertEquals("Unexpected token null at 0:0. Expected: Expected",
+    assertEquals(
+        "Unexpected token null at 0:0. Expected: Expected",
+        actualUnexpectedTokenException.getMessage());
+    assertEquals(
+        "Unexpected token null at 0:0. Expected: Expected",
         actualUnexpectedTokenException.getLocalizedMessage());
     assertNull(actualUnexpectedTokenException.getCause());
     assertEquals(0, actualUnexpectedTokenException.getSuppressed().length);
@@ -30,29 +31,32 @@ public class UnexpectedTokenExceptionDiffblueTest {
 
   /**
    * Test {@link UnexpectedTokenException#toString()}.
-   * <p>
-   * Method under test: {@link UnexpectedTokenException#toString()}
+   *
+   * <p>Method under test: {@link UnexpectedTokenException#toString()}
    */
   @Test
   public void testToString() {
     // Arrange, Act and Assert
-    assertEquals("Unexpected token null at 0:0. Expected: Expected",
-        (new UnexpectedTokenException(new AndTreeNode(new ClassicToken(1)), "Expected")).toString());
+    assertEquals(
+        "Unexpected token null at 0:0. Expected: Expected",
+        new UnexpectedTokenException(new AndTreeNode(new ClassicToken(1)), "Expected").toString());
   }
 
   /**
    * Test {@link UnexpectedTokenException#getMessage()}.
+   *
    * <ul>
-   *   <li>Then return
-   * {@code Unexpected token null at 0:0. Expected: Expected}.</li>
+   *   <li>Then return {@code Unexpected token null at 0:0. Expected: Expected}.
    * </ul>
-   * <p>
-   * Method under test: {@link UnexpectedTokenException#getMessage()}
+   *
+   * <p>Method under test: {@link UnexpectedTokenException#getMessage()}
    */
   @Test
   public void testGetMessage_thenReturnUnexpectedTokenNullAt00ExpectedExpected() {
     // Arrange, Act and Assert
-    assertEquals("Unexpected token null at 0:0. Expected: Expected",
-        (new UnexpectedTokenException(new AndTreeNode(new ClassicToken(1)), "Expected")).getMessage());
+    assertEquals(
+        "Unexpected token null at 0:0. Expected: Expected",
+        new UnexpectedTokenException(new AndTreeNode(new ClassicToken(1)), "Expected")
+            .getMessage());
   }
 }

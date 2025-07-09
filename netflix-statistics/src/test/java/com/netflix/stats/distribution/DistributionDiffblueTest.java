@@ -6,8 +6,9 @@ import org.junit.Test;
 public class DistributionDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>default or parameterless constructor of {@link Distribution}
    *   <li>{@link Distribution#toString()}
@@ -33,8 +34,8 @@ public class DistributionDiffblueTest {
 
   /**
    * Test {@link Distribution#noteValue(double)}.
-   * <p>
-   * Method under test: {@link Distribution#noteValue(double)}
+   *
+   * <p>Method under test: {@link Distribution#noteValue(double)}
    */
   @Test
   public void testNoteValue() {
@@ -53,34 +54,34 @@ public class DistributionDiffblueTest {
 
   /**
    * Test {@link Distribution#getMean()}.
-   * <p>
-   * Method under test: {@link Distribution#getMean()}
+   *
+   * <p>Method under test: {@link Distribution#getMean()}
    */
   @Test
   public void testGetMean() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (new Distribution()).getMean(), 0.0);
+    assertEquals(0.0d, new Distribution().getMean(), 0.0);
   }
 
   /**
    * Test {@link Distribution#getVariance()}.
-   * <p>
-   * Method under test: {@link Distribution#getVariance()}
+   *
+   * <p>Method under test: {@link Distribution#getVariance()}
    */
   @Test
   public void testGetVariance() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (new Distribution()).getVariance(), 0.0);
+    assertEquals(0.0d, new Distribution().getVariance(), 0.0);
   }
 
   /**
    * Test {@link Distribution#getStdDev()}.
-   * <p>
-   * Method under test: {@link Distribution#getStdDev()}
+   *
+   * <p>Method under test: {@link Distribution#getStdDev()}
    */
   @Test
   public void testGetStdDev() {
     // Arrange, Act and Assert
-    assertEquals(0.0d, (new Distribution()).getStdDev(), 0.0);
+    assertEquals(0.0d, new Distribution().getStdDev(), 0.0);
   }
 }

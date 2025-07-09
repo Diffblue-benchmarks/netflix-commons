@@ -15,8 +15,8 @@ import org.junit.Test;
 public class TrueValueTreeNodeDiffblueTest {
   /**
    * Test {@link TrueValueTreeNode#TrueValueTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link TrueValueTreeNode#TrueValueTreeNode(Token)}
+   *
+   * <p>Method under test: {@link TrueValueTreeNode#TrueValueTreeNode(Token)}
    */
   @Test
   public void testNewTrueValueTreeNode() {
@@ -35,12 +35,12 @@ public class TrueValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link TrueValueTreeNode#TrueValueTreeNode(TrueValueTreeNode)}.
+   *
    * <ul>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link TrueValueTreeNode#TrueValueTreeNode(TrueValueTreeNode)}
+   *
+   * <p>Method under test: {@link TrueValueTreeNode#TrueValueTreeNode(TrueValueTreeNode)}
    */
   @Test
   public void testNewTrueValueTreeNode_thenTokenReturnClassicToken() {
@@ -71,8 +71,8 @@ public class TrueValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link TrueValueTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link TrueValueTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link TrueValueTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -80,7 +80,7 @@ public class TrueValueTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new TrueValueTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new TrueValueTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof TrueValueTreeNode);
@@ -104,13 +104,14 @@ public class TrueValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link TrueValueTreeNode#translate()}.
-   * <p>
-   * Method under test: {@link TrueValueTreeNode#translate()}
+   *
+   * <p>Method under test: {@link TrueValueTreeNode#translate()}
    */
   @Test
   public void testTranslate() {
     // Arrange and Act
-    Predicate<Object> actualTranslateResult = (new TrueValueTreeNode(new ClassicToken(1))).translate();
+    Predicate<Object> actualTranslateResult =
+        new TrueValueTreeNode(new ClassicToken(1)).translate();
 
     // Assert
     assertTrue(actualTranslateResult instanceof AlwaysTruePredicate);

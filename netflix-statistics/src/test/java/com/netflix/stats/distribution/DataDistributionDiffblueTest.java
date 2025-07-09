@@ -12,17 +12,19 @@ import org.mockito.Mockito;
 public class DataDistributionDiffblueTest {
   /**
    * Test {@link DataDistribution#DataDistribution(int, double[])}.
+   *
    * <ul>
-   *   <li>When three.</li>
-   *   <li>Then return SampleSize is zero.</li>
+   *   <li>When three.
+   *   <li>Then return SampleSize is zero.
    * </ul>
-   * <p>
-   * Method under test: {@link DataDistribution#DataDistribution(int, double[])}
+   *
+   * <p>Method under test: {@link DataDistribution#DataDistribution(int, double[])}
    */
   @Test
   public void testNewDataDistribution_whenThree_thenReturnSampleSizeIsZero() {
     // Arrange and Act
-    DataDistribution actualDataDistribution = new DataDistribution(3, new double[]{10.0d, 1.0d, 10.0d, 1.0d});
+    DataDistribution actualDataDistribution =
+        new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
 
     // Assert
     assertEquals(0, actualDataDistribution.getSampleSize());
@@ -34,19 +36,22 @@ public class DataDistributionDiffblueTest {
     assertEquals(0L, actualDataDistribution.getNumValues());
     assertEquals(0L, actualDataDistribution.getSampleIntervalMillis());
     assertEquals(0L, actualDataDistribution.getTimestampMillis());
-    assertArrayEquals(new double[]{0.0d, 0.0d, 0.0d, 0.0d}, actualDataDistribution.getPercentiles(), 0.0);
-    assertArrayEquals(new double[]{10.0d, 1.0d, 10.0d, 1.0d}, actualDataDistribution.getPercents(), 0.0);
+    assertArrayEquals(
+        new double[] {0.0d, 0.0d, 0.0d, 0.0d}, actualDataDistribution.getPercentiles(), 0.0);
+    assertArrayEquals(
+        new double[] {10.0d, 1.0d, 10.0d, 1.0d}, actualDataDistribution.getPercents(), 0.0);
   }
 
   /**
    * Test {@link DataDistribution#publish(DataBuffer)} with {@code DataBuffer}.
-   * <p>
-   * Method under test: {@link DataDistribution#publish(DataBuffer)}
+   *
+   * <p>Method under test: {@link DataDistribution#publish(DataBuffer)}
    */
   @Test
   public void testPublishWithDataBuffer() {
     // Arrange
-    DataDistribution dataDistribution = new DataDistribution(3, new double[]{10.0d, 1.0d, 10.0d, 1.0d});
+    DataDistribution dataDistribution =
+        new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
 
     // Act
     dataDistribution.publish(new DataBuffer(3));
@@ -64,13 +69,14 @@ public class DataDistributionDiffblueTest {
 
   /**
    * Test {@link DataDistribution#publish(DataBuffer)} with {@code DataBuffer}.
-   * <p>
-   * Method under test: {@link DataDistribution#publish(DataBuffer)}
+   *
+   * <p>Method under test: {@link DataDistribution#publish(DataBuffer)}
    */
   @Test
   public void testPublishWithDataBuffer2() {
     // Arrange
-    DataDistribution dataDistribution = new DataDistribution(3, new double[]{10.0d, 1.0d, 10.0d, 1.0d});
+    DataDistribution dataDistribution =
+        new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
     DataBuffer buf = mock(DataBuffer.class);
     when(buf.getMaximum()).thenReturn(10.0d);
     when(buf.getMean()).thenReturn(10.0d);
@@ -78,7 +84,7 @@ public class DataDistributionDiffblueTest {
     when(buf.getStdDev()).thenReturn(10.0d);
     when(buf.getVariance()).thenReturn(10.0d);
     when(buf.getPercentiles(Mockito.<double[]>any(), Mockito.<double[]>any()))
-        .thenReturn(new double[]{10.0d, 1.0d, 10.0d, 1.0d});
+        .thenReturn(new double[] {10.0d, 1.0d, 10.0d, 1.0d});
     when(buf.getSampleSize()).thenReturn(3);
     when(buf.getSampleIntervalMillis()).thenReturn(42L);
     when(buf.getNumValues()).thenReturn(42L);
@@ -108,8 +114,9 @@ public class DataDistributionDiffblueTest {
 
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link DataDistribution#getMaximum()}
    *   <li>{@link DataDistribution#getMean()}
@@ -127,7 +134,8 @@ public class DataDistributionDiffblueTest {
   @Test
   public void testGettersAndSetters() {
     // Arrange
-    DataDistribution dataDistribution = new DataDistribution(3, new double[]{10.0d, 1.0d, 10.0d, 1.0d});
+    DataDistribution dataDistribution =
+        new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
 
     // Act
     double actualMaximum = dataDistribution.getMaximum();
@@ -151,7 +159,7 @@ public class DataDistributionDiffblueTest {
     assertEquals(0L, actualNumValues);
     assertEquals(0L, actualSampleIntervalMillis);
     assertEquals(0L, actualTimestampMillis);
-    assertArrayEquals(new double[]{0.0d, 0.0d, 0.0d, 0.0d}, actualPercentiles, 0.0);
-    assertArrayEquals(new double[]{10.0d, 1.0d, 10.0d, 1.0d}, actualPercents, 0.0);
+    assertArrayEquals(new double[] {0.0d, 0.0d, 0.0d, 0.0d}, actualPercentiles, 0.0);
+    assertArrayEquals(new double[] {10.0d, 1.0d, 10.0d, 1.0d}, actualPercents, 0.0);
   }
 }

@@ -7,8 +7,9 @@ import org.junit.Test;
 public class DataPublisherDiffblueTest {
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link DataPublisher#DataPublisher(DataAccumulator, long)}
    *   <li>{@link DataPublisher#handleException(Exception)}
@@ -18,7 +19,7 @@ public class DataPublisherDiffblueTest {
   @Test
   public void testGettersAndSetters() {
     // Arrange
-    DataDistribution accumulator = new DataDistribution(3, new double[]{10.0d, 1.0d, 10.0d, 1.0d});
+    DataDistribution accumulator = new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
 
     // Act
     DataPublisher actualDataPublisher = new DataPublisher(accumulator, 1L);
@@ -30,12 +31,14 @@ public class DataPublisherDiffblueTest {
 
   /**
    * Test {@link DataPublisher#isRunning()}.
-   * <p>
-   * Method under test: {@link DataPublisher#isRunning()}
+   *
+   * <p>Method under test: {@link DataPublisher#isRunning()}
    */
   @Test
   public void testIsRunning() {
     // Arrange, Act and Assert
-    assertFalse((new DataPublisher(new DataDistribution(3, new double[]{10.0d, 1.0d, 10.0d, 1.0d}), 1L)).isRunning());
+    assertFalse(
+        new DataPublisher(new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d}), 1L)
+            .isRunning());
   }
 }

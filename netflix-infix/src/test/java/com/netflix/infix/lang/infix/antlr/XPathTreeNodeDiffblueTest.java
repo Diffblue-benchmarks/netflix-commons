@@ -14,11 +14,12 @@ import org.junit.Test;
 public class XPathTreeNodeDiffblueTest {
   /**
    * Test {@link XPathTreeNode#getValue()}.
+   *
    * <ul>
-   *   <li>Then return {@code Label}.</li>
+   *   <li>Then return {@code Label}.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathTreeNode#getValue()}
+   *
+   * <p>Method under test: {@link XPathTreeNode#getValue()}
    */
   @Test
   public void testGetValue_thenReturnLabel() {
@@ -37,11 +38,12 @@ public class XPathTreeNodeDiffblueTest {
 
   /**
    * Test {@link XPathTreeNode#getValue()}.
+   *
    * <ul>
-   *   <li>Then return {@code null}.</li>
+   *   <li>Then return {@code null}.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathTreeNode#getValue()}
+   *
+   * <p>Method under test: {@link XPathTreeNode#getValue()}
    */
   @Test
   public void testGetValue_thenReturnNull() {
@@ -55,8 +57,8 @@ public class XPathTreeNodeDiffblueTest {
 
   /**
    * Test {@link XPathTreeNode#XPathTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link XPathTreeNode#XPathTreeNode(Token)}
+   *
+   * <p>Method under test: {@link XPathTreeNode#XPathTreeNode(Token)}
    */
   @Test
   public void testNewXPathTreeNode() {
@@ -75,12 +77,13 @@ public class XPathTreeNodeDiffblueTest {
 
   /**
    * Test {@link XPathTreeNode#XPathTreeNode(XPathTreeNode)}.
+   *
    * <ul>
-   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.</li>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test: {@link XPathTreeNode#XPathTreeNode(XPathTreeNode)}
+   *
+   * <p>Method under test: {@link XPathTreeNode#XPathTreeNode(XPathTreeNode)}
    */
   @Test
   public void testNewXPathTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
@@ -111,8 +114,8 @@ public class XPathTreeNodeDiffblueTest {
 
   /**
    * Test {@link XPathTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link XPathTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link XPathTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -120,7 +123,7 @@ public class XPathTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new XPathTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new XPathTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof XPathTreeNode);

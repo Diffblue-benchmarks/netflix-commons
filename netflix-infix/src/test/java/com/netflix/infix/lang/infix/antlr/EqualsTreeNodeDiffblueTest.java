@@ -13,8 +13,8 @@ import org.junit.Test;
 public class EqualsTreeNodeDiffblueTest {
   /**
    * Test {@link EqualsTreeNode#EqualsTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link EqualsTreeNode#EqualsTreeNode(Token)}
+   *
+   * <p>Method under test: {@link EqualsTreeNode#EqualsTreeNode(Token)}
    */
   @Test
   public void testNewEqualsTreeNode() {
@@ -33,8 +33,8 @@ public class EqualsTreeNodeDiffblueTest {
 
   /**
    * Test {@link EqualsTreeNode#EqualsTreeNode(EqualsTreeNode)}.
-   * <p>
-   * Method under test: {@link EqualsTreeNode#EqualsTreeNode(EqualsTreeNode)}
+   *
+   * <p>Method under test: {@link EqualsTreeNode#EqualsTreeNode(EqualsTreeNode)}
    */
   @Test
   public void testNewEqualsTreeNode2() {
@@ -65,8 +65,8 @@ public class EqualsTreeNodeDiffblueTest {
 
   /**
    * Test {@link EqualsTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link EqualsTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link EqualsTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -74,7 +74,7 @@ public class EqualsTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new EqualsTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new EqualsTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof EqualsTreeNode);

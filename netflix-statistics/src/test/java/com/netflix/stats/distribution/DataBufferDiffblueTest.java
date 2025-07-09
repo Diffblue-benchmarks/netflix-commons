@@ -10,12 +10,13 @@ import org.junit.Test;
 public class DataBufferDiffblueTest {
   /**
    * Test {@link DataBuffer#DataBuffer(int)}.
+   *
    * <ul>
-   *   <li>When three.</li>
-   *   <li>Then Lock return {@link ReentrantLock}.</li>
+   *   <li>When three.
+   *   <li>Then Lock return {@link ReentrantLock}.
    * </ul>
-   * <p>
-   * Method under test: {@link DataBuffer#DataBuffer(int)}
+   *
+   * <p>Method under test: {@link DataBuffer#DataBuffer(int)}
    */
   @Test
   public void testNewDataBuffer_whenThree_thenLockReturnReentrantLock() {
@@ -37,8 +38,9 @@ public class DataBufferDiffblueTest {
 
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link DataBuffer#getLock()}
    *   <li>{@link DataBuffer#getSampleSize()}
@@ -59,34 +61,34 @@ public class DataBufferDiffblueTest {
 
   /**
    * Test {@link DataBuffer#getCapacity()}.
-   * <p>
-   * Method under test: {@link DataBuffer#getCapacity()}
+   *
+   * <p>Method under test: {@link DataBuffer#getCapacity()}
    */
   @Test
   public void testGetCapacity() {
     // Arrange, Act and Assert
-    assertEquals(3, (new DataBuffer(3)).getCapacity());
+    assertEquals(3, new DataBuffer(3).getCapacity());
   }
 
   /**
    * Test {@link DataBuffer#getSampleIntervalMillis()}.
-   * <p>
-   * Method under test: {@link DataBuffer#getSampleIntervalMillis()}
+   *
+   * <p>Method under test: {@link DataBuffer#getSampleIntervalMillis()}
    */
   @Test
   public void testGetSampleIntervalMillis() {
     // Arrange, Act and Assert
-    assertEquals(0L, (new DataBuffer(3)).getSampleIntervalMillis());
+    assertEquals(0L, new DataBuffer(3).getSampleIntervalMillis());
   }
 
   /**
    * Test {@link DataBuffer#noteValue(double)}.
+   *
    * <ul>
-   *   <li>Then {@link DataBuffer#DataBuffer(int)} with capacity is one SampleSize
-   * is one.</li>
+   *   <li>Then {@link DataBuffer#DataBuffer(int)} with capacity is one SampleSize is one.
    * </ul>
-   * <p>
-   * Method under test: {@link DataBuffer#noteValue(double)}
+   *
+   * <p>Method under test: {@link DataBuffer#noteValue(double)}
    */
   @Test
   public void testNoteValue_thenDataBufferWithCapacityIsOneSampleSizeIsOne() {
@@ -106,12 +108,12 @@ public class DataBufferDiffblueTest {
 
   /**
    * Test {@link DataBuffer#noteValue(double)}.
+   *
    * <ul>
-   *   <li>Then {@link DataBuffer#DataBuffer(int)} with capacity is three SampleSize
-   * is one.</li>
+   *   <li>Then {@link DataBuffer#DataBuffer(int)} with capacity is three SampleSize is one.
    * </ul>
-   * <p>
-   * Method under test: {@link DataBuffer#noteValue(double)}
+   *
+   * <p>Method under test: {@link DataBuffer#noteValue(double)}
    */
   @Test
   public void testNoteValue_thenDataBufferWithCapacityIsThreeSampleSizeIsOne() {
@@ -131,16 +133,21 @@ public class DataBufferDiffblueTest {
 
   /**
    * Test {@link DataBuffer#getPercentiles(double[], double[])}.
+   *
    * <ul>
-   *   <li>Then return array of {@code double} with zero and zero.</li>
+   *   <li>Then return array of {@code double} with zero and zero.
    * </ul>
-   * <p>
-   * Method under test: {@link DataBuffer#getPercentiles(double[], double[])}
+   *
+   * <p>Method under test: {@link DataBuffer#getPercentiles(double[], double[])}
    */
   @Test
   public void testGetPercentiles_thenReturnArrayOfDoubleWithZeroAndZero() {
     // Arrange, Act and Assert
-    assertArrayEquals(new double[]{0.0d, 0.0d, 0.0d, 0.0d}, (new DataBuffer(3))
-        .getPercentiles(new double[]{10.0d, 1.0d, 10.0d, 1.0d}, new double[]{10.0d, 1.0d, 10.0d, 1.0d}), 0.0);
+    assertArrayEquals(
+        new double[] {0.0d, 0.0d, 0.0d, 0.0d},
+        new DataBuffer(3)
+            .getPercentiles(
+                new double[] {10.0d, 1.0d, 10.0d, 1.0d}, new double[] {10.0d, 1.0d, 10.0d, 1.0d}),
+        0.0);
   }
 }

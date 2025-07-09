@@ -9,12 +9,13 @@ import org.junit.Test;
 public class NullValuePredicateDiffblueTest {
   /**
    * Test {@link NullValuePredicate#apply(Object)}.
+   *
    * <ul>
-   *   <li>When {@code Input}.</li>
-   *   <li>Then return {@code false}.</li>
+   *   <li>When {@code Input}.
+   *   <li>Then return {@code false}.
    * </ul>
-   * <p>
-   * Method under test: {@link NullValuePredicate#apply(Object)}
+   *
+   * <p>Method under test: {@link NullValuePredicate#apply(Object)}
    */
   @Test
   public void testApply_whenInput_thenReturnFalse() {
@@ -24,12 +25,13 @@ public class NullValuePredicateDiffblueTest {
 
   /**
    * Test {@link NullValuePredicate#apply(Object)}.
+   *
    * <ul>
-   *   <li>When {@code null}.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>When {@code null}.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test: {@link NullValuePredicate#apply(Object)}
+   *
+   * <p>Method under test: {@link NullValuePredicate#apply(Object)}
    */
   @Test
   public void testApply_whenNull_thenReturnTrue() {
@@ -39,8 +41,8 @@ public class NullValuePredicateDiffblueTest {
 
   /**
    * Test {@link NullValuePredicate#toString()}.
-   * <p>
-   * Method under test: {@link NullValuePredicate#toString()}
+   *
+   * <p>Method under test: {@link NullValuePredicate#toString()}
    */
   @Test
   public void testToString() {
@@ -49,14 +51,15 @@ public class NullValuePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link NullValuePredicate#equals(Object)}, and
-   * {@link NullValuePredicate#hashCode()}.
+   * Test {@link NullValuePredicate#equals(Object)}, and {@link NullValuePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link NullValuePredicate#equals(Object)}
    *   <li>{@link NullValuePredicate#hashCode()}
@@ -75,14 +78,15 @@ public class NullValuePredicateDiffblueTest {
   }
 
   /**
-   * Test {@link NullValuePredicate#equals(Object)}, and
-   * {@link NullValuePredicate#hashCode()}.
+   * Test {@link NullValuePredicate#equals(Object)}, and {@link NullValuePredicate#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link NullValuePredicate#equals(Object)}
    *   <li>{@link NullValuePredicate#hashCode()}
@@ -101,12 +105,13 @@ public class NullValuePredicateDiffblueTest {
 
   /**
    * Test {@link NullValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link NullValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link NullValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
@@ -116,12 +121,13 @@ public class NullValuePredicateDiffblueTest {
 
   /**
    * Test {@link NullValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link NullValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link NullValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
@@ -131,12 +137,13 @@ public class NullValuePredicateDiffblueTest {
 
   /**
    * Test {@link NullValuePredicate#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link NullValuePredicate#equals(Object)}
+   *
+   * <p>Method under test: {@link NullValuePredicate#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {

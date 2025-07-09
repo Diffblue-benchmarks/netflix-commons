@@ -13,9 +13,8 @@ import org.junit.Test;
 public class TimeStringValueTreeNodeDiffblueTest {
   /**
    * Test {@link TimeStringValueTreeNode#TimeStringValueTreeNode(Token)}.
-   * <p>
-   * Method under test:
-   * {@link TimeStringValueTreeNode#TimeStringValueTreeNode(Token)}
+   *
+   * <p>Method under test: {@link TimeStringValueTreeNode#TimeStringValueTreeNode(Token)}
    */
   @Test
   public void testNewTimeStringValueTreeNode() {
@@ -33,14 +32,14 @@ public class TimeStringValueTreeNodeDiffblueTest {
   }
 
   /**
-   * Test
-   * {@link TimeStringValueTreeNode#TimeStringValueTreeNode(TimeStringValueTreeNode)}.
+   * Test {@link TimeStringValueTreeNode#TimeStringValueTreeNode(TimeStringValueTreeNode)}.
+   *
    * <ul>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link TimeStringValueTreeNode#TimeStringValueTreeNode(TimeStringValueTreeNode)}
+   *
+   * <p>Method under test: {@link
+   * TimeStringValueTreeNode#TimeStringValueTreeNode(TimeStringValueTreeNode)}
    */
   @Test
   public void testNewTimeStringValueTreeNode_thenTokenReturnClassicToken() {
@@ -48,7 +47,8 @@ public class TimeStringValueTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    TimeStringValueTreeNode actualTimeStringValueTreeNode = new TimeStringValueTreeNode(new TimeStringValueTreeNode(t));
+    TimeStringValueTreeNode actualTimeStringValueTreeNode =
+        new TimeStringValueTreeNode(new TimeStringValueTreeNode(t));
 
     // Assert
     Token token = actualTimeStringValueTreeNode.getToken();
@@ -71,8 +71,8 @@ public class TimeStringValueTreeNodeDiffblueTest {
 
   /**
    * Test {@link TimeStringValueTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link TimeStringValueTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link TimeStringValueTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -80,7 +80,7 @@ public class TimeStringValueTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new TimeStringValueTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new TimeStringValueTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof TimeStringValueTreeNode);

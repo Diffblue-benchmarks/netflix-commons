@@ -16,9 +16,8 @@ import org.junit.Test;
 public class AbstractEventBusBridgeDiffblueTest {
   /**
    * Test Builder {@link Builder#withAutoStart(Boolean)}.
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusBridge.Builder#withAutoStart(Boolean)}
+   *
+   * <p>Method under test: {@link Builder#withAutoStart(Boolean)}
    */
   @Test
   public void testBuilderWithAutoStart() {
@@ -31,13 +30,13 @@ public class AbstractEventBusBridgeDiffblueTest {
 
   /**
    * Test Builder {@link Builder#withEventBus(EventBus)}.
+   *
    * <ul>
-   *   <li>When {@code null}.</li>
-   *   <li>Then return builder.</li>
+   *   <li>When {@code null}.
+   *   <li>Then return builder.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusBridge.Builder#withEventBus(EventBus)}
+   *
+   * <p>Method under test: {@link Builder#withEventBus(EventBus)}
    */
   @Test
   public void testBuilderWithEventBus_whenNull_thenReturnBuilder() {
@@ -50,9 +49,8 @@ public class AbstractEventBusBridgeDiffblueTest {
 
   /**
    * Test Builder {@link Builder#withEventType(Class)}.
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusBridge.Builder#withEventType(Class)}
+   *
+   * <p>Method under test: {@link Builder#withEventType(Class)}
    */
   @Test
   public void testBuilderWithEventType() {
@@ -71,9 +69,8 @@ public class AbstractEventBusBridgeDiffblueTest {
 
   /**
    * Test Builder {@link Builder#withFilter(EventFilter)}.
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusBridge.Builder#withFilter(EventFilter)}
+   *
+   * <p>Method under test: {@link Builder#withFilter(EventFilter)}
    */
   @Test
   public void testBuilderWithFilter() {
@@ -81,8 +78,8 @@ public class AbstractEventBusBridgeDiffblueTest {
     DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
 
     // Act
-    DummyEventBusBridge.Builder actualWithFilterResult = builderResult
-        .withFilter(new InfixEventFilter(mock(Predicate.class), "Original"));
+    DummyEventBusBridge.Builder actualWithFilterResult =
+        builderResult.withFilter(new InfixEventFilter(mock(Predicate.class), "Original"));
 
     // Assert
     EventFilter eventFilter = builderResult.filter;
@@ -93,12 +90,12 @@ public class AbstractEventBusBridgeDiffblueTest {
 
   /**
    * Test Builder {@link Builder#withStatsSupplier(Supplier)}.
+   *
    * <ul>
-   *   <li>When {@code null}.</li>
+   *   <li>When {@code null}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusBridge.Builder#withStatsSupplier(Supplier)}
+   *
+   * <p>Method under test: {@link Builder#withStatsSupplier(Supplier)}
    */
   @Test
   public void testBuilderWithStatsSupplier_whenNull() {
@@ -111,12 +108,12 @@ public class AbstractEventBusBridgeDiffblueTest {
 
   /**
    * Test Builder {@link Builder#withStatsSupplier(Supplier)}.
+   *
    * <ul>
-   *   <li>When {@link Supplier}.</li>
+   *   <li>When {@link Supplier}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusBridge.Builder#withStatsSupplier(Supplier)}
+   *
+   * <p>Method under test: {@link Builder#withStatsSupplier(Supplier)}
    */
   @Test
   public void testBuilderWithStatsSupplier_whenSupplier() {
@@ -129,12 +126,12 @@ public class AbstractEventBusBridgeDiffblueTest {
 
   /**
    * Test Builder {@link Builder#withStats(EventBusBridgeStats)}.
+   *
    * <ul>
-   *   <li>When {@code null}.</li>
+   *   <li>When {@code null}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusBridge.Builder#withStats(EventBusBridgeStats)}
+   *
+   * <p>Method under test: {@link Builder#withStats(EventBusBridgeStats)}
    */
   @Test
   public void testBuilderWithStats_whenNull() {
@@ -147,12 +144,12 @@ public class AbstractEventBusBridgeDiffblueTest {
 
   /**
    * Test Builder {@link Builder#withStats(EventBusBridgeStats)}.
+   *
    * <ul>
-   *   <li>When {@link SimpleEventBusBridgeStats} (default constructor).</li>
+   *   <li>When {@link SimpleEventBusBridgeStats} (default constructor).
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link AbstractEventBusBridge.Builder#withStats(EventBusBridgeStats)}
+   *
+   * <p>Method under test: {@link Builder#withStats(EventBusBridgeStats)}
    */
   @Test
   public void testBuilderWithStats_whenSimpleEventBusBridgeStats() {

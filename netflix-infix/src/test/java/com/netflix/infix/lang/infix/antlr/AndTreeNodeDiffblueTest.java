@@ -5,16 +5,106 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.ArgumentMatchers.eq;
+import static org.mockito.ArgumentMatchers.isA;
+import static org.mockito.Mockito.anyInt;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
+import com.google.common.base.Predicate;
+import com.netflix.infix.AndPredicate;
 import org.antlr.runtime.ClassicToken;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class AndTreeNodeDiffblueTest {
   /**
+   * Test {@link AndTreeNode#translate()}.
+   *
+   * <ul>
+   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return {@code false}.
+   *   <li>Then return not apply {@code 42}.
+   * </ul>
+   *
+   * <p>Method under test: {@link AndTreeNode#translate()}
+   */
+  @Test
+  public void testTranslate_givenPredicateApplyReturnFalse_thenReturnNotApply42() {
+    // Arrange
+    Predicate<Object> predicate = mock(Predicate.class);
+    when(predicate.apply(Mockito.<Object>any())).thenReturn(false);
+    BetweenTimeMillisTreeNode t = mock(BetweenTimeMillisTreeNode.class);
+    when(t.isNil()).thenReturn(false);
+    when(t.translate()).thenReturn(predicate);
+    doNothing().when(t).setChildIndex(anyInt());
+    doNothing().when(t).setParent(Mockito.<Tree>any());
+
+    AndTreeNode andTreeNode = new AndTreeNode(new ClassicToken(1));
+    andTreeNode.addChild(t);
+
+    // Act
+    Predicate<Object> actualTranslateResult = andTreeNode.translate();
+    boolean actualApplyResult = actualTranslateResult.apply("42");
+
+    // Assert
+    verify(predicate).apply(isA(Object.class));
+    verify(t).translate();
+    verify(t).isNil();
+    verify(t).setChildIndex(eq(0));
+    verify(t).setParent(isA(Tree.class));
+    assertTrue(actualTranslateResult instanceof AndPredicate);
+    assertFalse(actualApplyResult);
+    assertFalse(actualTranslateResult.apply("Input"));
+    assertFalse(actualTranslateResult.test("Input"));
+  }
+
+  /**
+   * Test {@link AndTreeNode#translate()}.
+   *
+   * <ul>
+   *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return {@code true}.
+   *   <li>Then return apply {@code 42}.
+   * </ul>
+   *
+   * <p>Method under test: {@link AndTreeNode#translate()}
+   */
+  @Test
+  public void testTranslate_givenPredicateApplyReturnTrue_thenReturnApply42() {
+    // Arrange
+    Predicate<Object> predicate = mock(Predicate.class);
+    when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
+    BetweenTimeMillisTreeNode t = mock(BetweenTimeMillisTreeNode.class);
+    when(t.isNil()).thenReturn(false);
+    when(t.translate()).thenReturn(predicate);
+    doNothing().when(t).setChildIndex(anyInt());
+    doNothing().when(t).setParent(Mockito.<Tree>any());
+
+    AndTreeNode andTreeNode = new AndTreeNode(new ClassicToken(1));
+    andTreeNode.addChild(t);
+
+    // Act
+    Predicate<Object> actualTranslateResult = andTreeNode.translate();
+    boolean actualApplyResult = actualTranslateResult.apply("42");
+
+    // Assert
+    verify(predicate).apply(isA(Object.class));
+    verify(t).translate();
+    verify(t).isNil();
+    verify(t).setChildIndex(eq(0));
+    verify(t).setParent(isA(Tree.class));
+    assertTrue(actualTranslateResult instanceof AndPredicate);
+    assertTrue(actualApplyResult);
+    assertTrue(actualTranslateResult.apply("Input"));
+    assertTrue(actualTranslateResult.test("Input"));
+  }
+
+  /**
    * Test {@link AndTreeNode#AndTreeNode(Token)}.
-   * <p>
-   * Method under test: {@link AndTreeNode#AndTreeNode(Token)}
+   *
+   * <p>Method under test: {@link AndTreeNode#AndTreeNode(Token)}
    */
   @Test
   public void testNewAndTreeNode() {
@@ -33,12 +123,13 @@ public class AndTreeNodeDiffblueTest {
 
   /**
    * Test {@link AndTreeNode#AndTreeNode(AndTreeNode)}.
+   *
    * <ul>
-   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.</li>
-   *   <li>Then Token return {@link ClassicToken}.</li>
+   *   <li>When {@link ClassicToken#ClassicToken(int)} with type is one.
+   *   <li>Then Token return {@link ClassicToken}.
    * </ul>
-   * <p>
-   * Method under test: {@link AndTreeNode#AndTreeNode(AndTreeNode)}
+   *
+   * <p>Method under test: {@link AndTreeNode#AndTreeNode(AndTreeNode)}
    */
   @Test
   public void testNewAndTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
@@ -69,8 +160,8 @@ public class AndTreeNodeDiffblueTest {
 
   /**
    * Test {@link AndTreeNode#dupNode()}.
-   * <p>
-   * Method under test: {@link AndTreeNode#dupNode()}
+   *
+   * <p>Method under test: {@link AndTreeNode#dupNode()}
    */
   @Test
   public void testDupNode() {
@@ -78,7 +169,7 @@ public class AndTreeNodeDiffblueTest {
     ClassicToken t = new ClassicToken(1);
 
     // Act
-    Tree actualDupNodeResult = (new AndTreeNode(t)).dupNode();
+    Tree actualDupNodeResult = new AndTreeNode(t).dupNode();
 
     // Assert
     assertTrue(actualDupNodeResult instanceof AndTreeNode);

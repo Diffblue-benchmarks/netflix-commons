@@ -8,8 +8,8 @@ import org.junit.Test;
 public class AlwaysFalseEventFilterDiffblueTest {
   /**
    * Test {@link AlwaysFalseEventFilter#apply(Object)}.
-   * <p>
-   * Method under test: {@link AlwaysFalseEventFilter#apply(Object)}
+   *
+   * <p>Method under test: {@link AlwaysFalseEventFilter#apply(Object)}
    */
   @Test
   public void testApply() {
@@ -19,8 +19,9 @@ public class AlwaysFalseEventFilterDiffblueTest {
 
   /**
    * Test getters and setters.
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link AlwaysFalseEventFilter#toString()}
    *   <li>{@link AlwaysFalseEventFilter#getLanguage()}
@@ -41,8 +42,8 @@ public class AlwaysFalseEventFilterDiffblueTest {
 
   /**
    * Test {@link AlwaysFalseEventFilter#serialize()}.
-   * <p>
-   * Method under test: {@link AlwaysFalseEventFilter#serialize()}
+   *
+   * <p>Method under test: {@link AlwaysFalseEventFilter#serialize()}
    */
   @Test
   public void testSerialize() {
@@ -54,14 +55,16 @@ public class AlwaysFalseEventFilterDiffblueTest {
   }
 
   /**
-   * Test {@link AlwaysFalseEventFilter#equals(Object)}, and
-   * {@link AlwaysFalseEventFilter#hashCode()}.
+   * Test {@link AlwaysFalseEventFilter#equals(Object)}, and {@link
+   * AlwaysFalseEventFilter#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is equal.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is equal.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link AlwaysFalseEventFilter#equals(Object)}
    *   <li>{@link AlwaysFalseEventFilter#hashCode()}
@@ -80,14 +83,16 @@ public class AlwaysFalseEventFilterDiffblueTest {
   }
 
   /**
-   * Test {@link AlwaysFalseEventFilter#equals(Object)}, and
-   * {@link AlwaysFalseEventFilter#hashCode()}.
+   * Test {@link AlwaysFalseEventFilter#equals(Object)}, and {@link
+   * AlwaysFalseEventFilter#hashCode()}.
+   *
    * <ul>
-   *   <li>When other is same.</li>
-   *   <li>Then return equal.</li>
+   *   <li>When other is same.
+   *   <li>Then return equal.
    * </ul>
-   * <p>
-   * Methods under test:
+   *
+   * <p>Methods under test:
+   *
    * <ul>
    *   <li>{@link AlwaysFalseEventFilter#equals(Object)}
    *   <li>{@link AlwaysFalseEventFilter#hashCode()}
@@ -106,12 +111,13 @@ public class AlwaysFalseEventFilterDiffblueTest {
 
   /**
    * Test {@link AlwaysFalseEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is different.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is different.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link AlwaysFalseEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link AlwaysFalseEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
@@ -121,12 +127,13 @@ public class AlwaysFalseEventFilterDiffblueTest {
 
   /**
    * Test {@link AlwaysFalseEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is {@code null}.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is {@code null}.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link AlwaysFalseEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link AlwaysFalseEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsNull_thenReturnNotEqual() {
@@ -136,12 +143,13 @@ public class AlwaysFalseEventFilterDiffblueTest {
 
   /**
    * Test {@link AlwaysFalseEventFilter#equals(Object)}.
+   *
    * <ul>
-   *   <li>When other is wrong type.</li>
-   *   <li>Then return not equal.</li>
+   *   <li>When other is wrong type.
+   *   <li>Then return not equal.
    * </ul>
-   * <p>
-   * Method under test: {@link AlwaysFalseEventFilter#equals(Object)}
+   *
+   * <p>Method under test: {@link AlwaysFalseEventFilter#equals(Object)}
    */
   @Test
   public void testEquals_whenOtherIsWrongType_thenReturnNotEqual() {

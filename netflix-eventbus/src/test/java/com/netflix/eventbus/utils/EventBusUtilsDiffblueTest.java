@@ -10,55 +10,57 @@ import static org.mockito.Mockito.when;
 import com.netflix.eventbus.spi.DynamicSubscriber;
 import com.netflix.eventbus.spi.EventFilter;
 import com.netflix.eventbus.spi.SubscriberConfigProvider;
+import com.netflix.eventbus.spi.SubscriberConfigProvider.SubscriberConfig;
 import com.netflix.servo.monitor.StatsTimer;
 import java.lang.reflect.Method;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Set;
 import org.junit.Test;
-import org.mockito.Mockito;
 import org.slf4j.Logger;
 import org.slf4j.helpers.SubstituteLogger;
 
 public class EventBusUtilsDiffblueTest {
   /**
    * Test {@link EventBusUtils#getQueueSize(SubscriberConfig)}.
+   *
    * <ul>
-   *   <li>Given three.</li>
-   *   <li>Then return three.</li>
+   *   <li>Given one.
+   *   <li>Then return one.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventBusUtils#getQueueSize(SubscriberConfigProvider.SubscriberConfig)}
+   *
+   * <p>Method under test: {@link
+   * EventBusUtils#getQueueSize(SubscriberConfigProvider.SubscriberConfig)}
    */
   @Test
-  public void testGetQueueSize_givenThree_thenReturnThree() {
+  public void testGetQueueSize_givenOne_thenReturnOne() {
     // Arrange
-    SubscriberConfigProvider.SubscriberConfig subscribe = mock(SubscriberConfigProvider.SubscriberConfig.class);
-    when(subscribe.getQueueSize()).thenReturn(3);
+    SubscriberConfig subscribe = mock(SubscriberConfig.class);
+    when(subscribe.getQueueSize()).thenReturn(1);
 
     // Act
     int actualQueueSize = EventBusUtils.getQueueSize(subscribe);
 
     // Assert
     verify(subscribe).getQueueSize();
-    assertEquals(3, actualQueueSize);
+    assertEquals(1, actualQueueSize);
   }
 
   /**
    * Test {@link EventBusUtils#getQueueSize(SubscriberConfig)}.
+   *
    * <ul>
-   *   <li>Given zero.</li>
-   *   <li>Then return one thousand.</li>
+   *   <li>Given zero.
+   *   <li>Then return one thousand.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventBusUtils#getQueueSize(SubscriberConfigProvider.SubscriberConfig)}
+   *
+   * <p>Method under test: {@link
+   * EventBusUtils#getQueueSize(SubscriberConfigProvider.SubscriberConfig)}
    */
   @Test
   public void testGetQueueSize_givenZero_thenReturnOneThousand() {
     // Arrange
-    SubscriberConfigProvider.SubscriberConfig subscribe = mock(SubscriberConfigProvider.SubscriberConfig.class);
+    SubscriberConfig subscribe = mock(SubscriberConfig.class);
     when(subscribe.getQueueSize()).thenReturn(0);
 
     // Act
@@ -71,17 +73,18 @@ public class EventBusUtilsDiffblueTest {
 
   /**
    * Test {@link EventBusUtils#getQueueSize(SubscriberConfig)}.
+   *
    * <ul>
-   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventBusUtils#getQueueSize(SubscriberConfigProvider.SubscriberConfig)}
+   *
+   * <p>Method under test: {@link
+   * EventBusUtils#getQueueSize(SubscriberConfigProvider.SubscriberConfig)}
    */
   @Test
   public void testGetQueueSize_thenThrowIllegalArgumentException() {
     // Arrange
-    SubscriberConfigProvider.SubscriberConfig subscribe = mock(SubscriberConfigProvider.SubscriberConfig.class);
+    SubscriberConfig subscribe = mock(SubscriberConfig.class);
     when(subscribe.getQueueSize()).thenThrow(new IllegalArgumentException("foo"));
 
     // Act and Assert
@@ -91,8 +94,8 @@ public class EventBusUtilsDiffblueTest {
 
   /**
    * Test {@link EventBusUtils#isAnEventBatch(Object)}.
-   * <p>
-   * Method under test: {@link EventBusUtils#isAnEventBatch(Object)}
+   *
+   * <p>Method under test: {@link EventBusUtils#isAnEventBatch(Object)}
    */
   @Test
   public void testIsAnEventBatch() {
@@ -102,34 +105,37 @@ public class EventBusUtilsDiffblueTest {
 
   /**
    * Test {@link EventBusUtils#getInterestedEventType(Object, Method)}.
+   *
    * <ul>
-   *   <li>Then throw {@link IllegalArgumentException}.</li>
+   *   <li>Then throw {@link IllegalArgumentException}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventBusUtils#getInterestedEventType(Object, Method)}
+   *
+   * <p>Method under test: {@link EventBusUtils#getInterestedEventType(Object, Method)}
    */
   @Test
   public void testGetInterestedEventType_thenThrowIllegalArgumentException() {
     // Arrange
     DynamicSubscriber dynamicSubscriber = mock(DynamicSubscriber.class);
-    Mockito.<Class<?>>when(dynamicSubscriber.getEventType()).thenThrow(new IllegalArgumentException("foo"));
+    org.mockito.Mockito.<Class<?>>when(dynamicSubscriber.getEventType())
+        .thenThrow(new IllegalArgumentException("foo"));
 
     // Act and Assert
-    assertThrows(IllegalArgumentException.class, () -> EventBusUtils.getInterestedEventType(dynamicSubscriber, null));
+    assertThrows(
+        IllegalArgumentException.class,
+        () -> EventBusUtils.getInterestedEventType(dynamicSubscriber, null));
     verify(dynamicSubscriber).getEventType();
   }
 
   /**
-   * Test
-   * {@link EventBusUtils#applyFilters(Object, Set, StatsTimer, String, Logger)}.
+   * Test {@link EventBusUtils#applyFilters(Object, Set, StatsTimer, String, Logger)}.
+   *
    * <ul>
-   *   <li>When {@link HashSet#HashSet()}.</li>
-   *   <li>Then return {@code true}.</li>
+   *   <li>When {@link HashSet#HashSet()}.
+   *   <li>Then return {@code true}.
    * </ul>
-   * <p>
-   * Method under test:
-   * {@link EventBusUtils#applyFilters(Object, Set, StatsTimer, String, Logger)}
+   *
+   * <p>Method under test: {@link EventBusUtils#applyFilters(Object, Set, StatsTimer, String,
+   * Logger)}
    */
   @Test
   public void testApplyFilters_whenHashSet_thenReturnTrue() {
@@ -137,7 +143,12 @@ public class EventBusUtilsDiffblueTest {
     HashSet<EventFilter> filters = new HashSet<>();
 
     // Act and Assert
-    assertTrue(EventBusUtils.applyFilters("Event", filters, null, "Invoker Desc",
-        new SubstituteLogger("Name", new LinkedList<>(), true)));
+    assertTrue(
+        EventBusUtils.applyFilters(
+            "Event",
+            filters,
+            null,
+            "Invoker Desc",
+            new SubstituteLogger("Name", new LinkedList<>(), true)));
   }
 }
