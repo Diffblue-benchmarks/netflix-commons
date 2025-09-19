@@ -23,7 +23,7 @@ public class DataPublisherDiffblueTest {
 
     // Act
     DataPublisher actualDataPublisher = new DataPublisher(accumulator, 1L);
-    actualDataPublisher.handleException(new Exception("foo"));
+    actualDataPublisher.handleException(new Exception());
 
     // Assert
     assertSame(accumulator, actualDataPublisher.getDataAccumulator());
@@ -36,9 +36,10 @@ public class DataPublisherDiffblueTest {
    */
   @Test
   public void testIsRunning() {
-    // Arrange, Act and Assert
-    assertFalse(
-        new DataPublisher(new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d}), 1L)
-            .isRunning());
+    // Arrange
+    DataDistribution accumulator = new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
+
+    // Act and Assert
+    assertFalse(new DataPublisher(accumulator, 1L).isRunning());
   }
 }

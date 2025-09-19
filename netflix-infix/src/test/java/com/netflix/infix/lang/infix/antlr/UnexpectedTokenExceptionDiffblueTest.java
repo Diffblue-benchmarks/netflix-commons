@@ -2,7 +2,7 @@ package com.netflix.infix.lang.infix.antlr;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import org.antlr.runtime.ClassicToken;
+import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
 
@@ -16,7 +16,7 @@ public class UnexpectedTokenExceptionDiffblueTest {
   public void testNewUnexpectedTokenException() {
     // Arrange and Act
     UnexpectedTokenException actualUnexpectedTokenException =
-        new UnexpectedTokenException(new AndTreeNode(new ClassicToken(1)), "Expected");
+        new UnexpectedTokenException(new CommonTree(), "Expected");
 
     // Assert
     assertEquals(
@@ -39,7 +39,42 @@ public class UnexpectedTokenExceptionDiffblueTest {
     // Arrange, Act and Assert
     assertEquals(
         "Unexpected token null at 0:0. Expected: Expected",
-        new UnexpectedTokenException(new AndTreeNode(new ClassicToken(1)), "Expected").toString());
+        new UnexpectedTokenException(new CommonTree(), "Expected").toString());
+  }
+
+  /**
+   * Test {@link UnexpectedTokenException#getMessage()}.
+   *
+   * <p>Method under test: {@link UnexpectedTokenException#getMessage()}
+   */
+  @Test
+  public void testGetMessage() {
+    // Arrange
+    UnexpectedTokenException unexpectedTokenException =
+        new UnexpectedTokenException(
+            new CommonTree(), "Unexpected token %s at %d:%d. Expected: %s", "Expected");
+
+    // Act and Assert
+    assertEquals(
+        "Unexpected token null at 0:0. Expected: Unexpected token %s at %d:%d. Expected: %s or Expected",
+        unexpectedTokenException.getMessage());
+  }
+
+  /**
+   * Test {@link UnexpectedTokenException#getMessage()}.
+   *
+   * <ul>
+   *   <li>Then return {@code Unexpected token null at 0:0. Expected:}.
+   * </ul>
+   *
+   * <p>Method under test: {@link UnexpectedTokenException#getMessage()}
+   */
+  @Test
+  public void testGetMessage_thenReturnUnexpectedTokenNullAt00Expected() {
+    // Arrange, Act and Assert
+    assertEquals(
+        "Unexpected token null at 0:0. Expected: ",
+        new UnexpectedTokenException(new CommonTree()).getMessage());
   }
 
   /**
@@ -56,7 +91,6 @@ public class UnexpectedTokenExceptionDiffblueTest {
     // Arrange, Act and Assert
     assertEquals(
         "Unexpected token null at 0:0. Expected: Expected",
-        new UnexpectedTokenException(new AndTreeNode(new ClassicToken(1)), "Expected")
-            .getMessage());
+        new UnexpectedTokenException(new CommonTree(), "Expected").getMessage());
   }
 }

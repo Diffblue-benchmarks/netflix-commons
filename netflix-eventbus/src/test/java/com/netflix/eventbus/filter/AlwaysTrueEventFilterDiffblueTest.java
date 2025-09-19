@@ -47,11 +47,8 @@ public class AlwaysTrueEventFilterDiffblueTest {
    */
   @Test
   public void testSerialize() {
-    // Arrange and Act
-    String actualSerializeResult = AlwaysTrueEventFilter.INSTANCE.serialize();
-
-    // Assert
-    assertEquals(Boolean.TRUE.toString(), actualSerializeResult);
+    // Arrange, Act and Assert
+    assertEquals(Boolean.TRUE.toString(), AlwaysTrueEventFilter.INSTANCE.serialize());
   }
 
   /**
@@ -78,8 +75,7 @@ public class AlwaysTrueEventFilterDiffblueTest {
 
     // Act and Assert
     assertEquals(alwaysTrueEventFilter, alwaysTrueEventFilter2);
-    int expectedHashCodeResult = alwaysTrueEventFilter.hashCode();
-    assertEquals(expectedHashCodeResult, alwaysTrueEventFilter2.hashCode());
+    assertEquals(alwaysTrueEventFilter.hashCode(), alwaysTrueEventFilter2.hashCode());
   }
 
   /**

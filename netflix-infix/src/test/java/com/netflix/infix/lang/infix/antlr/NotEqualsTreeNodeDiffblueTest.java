@@ -40,9 +40,10 @@ public class NotEqualsTreeNodeDiffblueTest {
   public void testNewNotEqualsTreeNode2() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    NotEqualsTreeNode node = new NotEqualsTreeNode(t);
 
     // Act
-    NotEqualsTreeNode actualNotEqualsTreeNode = new NotEqualsTreeNode(new NotEqualsTreeNode(t));
+    NotEqualsTreeNode actualNotEqualsTreeNode = new NotEqualsTreeNode(node);
 
     // Assert
     Token token = actualNotEqualsTreeNode.getToken();

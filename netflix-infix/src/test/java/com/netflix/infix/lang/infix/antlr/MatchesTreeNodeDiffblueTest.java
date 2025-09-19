@@ -45,9 +45,10 @@ public class MatchesTreeNodeDiffblueTest {
   public void testNewMatchesTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    MatchesTreeNode node = new MatchesTreeNode(t);
 
     // Act
-    MatchesTreeNode actualMatchesTreeNode = new MatchesTreeNode(new MatchesTreeNode(t));
+    MatchesTreeNode actualMatchesTreeNode = new MatchesTreeNode(node);
 
     // Assert
     Token token = actualMatchesTreeNode.getToken();

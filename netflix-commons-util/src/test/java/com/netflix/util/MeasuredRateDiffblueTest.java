@@ -23,21 +23,6 @@ public class MeasuredRateDiffblueTest {
    * Test {@link MeasuredRate#getCount()}.
    *
    * <ul>
-   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is {@code -446547637}.
-   * </ul>
-   *
-   * <p>Method under test: {@link MeasuredRate#getCount()}
-   */
-  @Test
-  public void testGetCount_givenMeasuredRateWithSampleIntervalIs446547637() {
-    // Arrange, Act and Assert
-    assertEquals(0L, new MeasuredRate(-446547637L).getCount());
-  }
-
-  /**
-   * Test {@link MeasuredRate#getCount()}.
-   *
-   * <ul>
    *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is forty-two.
    * </ul>
    *
@@ -50,18 +35,18 @@ public class MeasuredRateDiffblueTest {
   }
 
   /**
-   * Test {@link MeasuredRate#getCurrentCount()}.
+   * Test {@link MeasuredRate#getCount()}.
    *
    * <ul>
-   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is {@code -446546650}.
+   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is minus one.
    * </ul>
    *
-   * <p>Method under test: {@link MeasuredRate#getCurrentCount()}
+   * <p>Method under test: {@link MeasuredRate#getCount()}
    */
   @Test
-  public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIs446546650() {
+  public void testGetCount_givenMeasuredRateWithSampleIntervalIsMinusOne() {
     // Arrange, Act and Assert
-    assertEquals(0L, new MeasuredRate(-446546650L).getCurrentCount());
+    assertEquals(0L, new MeasuredRate(-1L).getCount());
   }
 
   /**
@@ -77,6 +62,21 @@ public class MeasuredRateDiffblueTest {
   public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIsFortyTwo() {
     // Arrange, Act and Assert
     assertEquals(0L, new MeasuredRate(42L).getCurrentCount());
+  }
+
+  /**
+   * Test {@link MeasuredRate#getCurrentCount()}.
+   *
+   * <ul>
+   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is minus one.
+   * </ul>
+   *
+   * <p>Method under test: {@link MeasuredRate#getCurrentCount()}
+   */
+  @Test
+  public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIsMinusOne() {
+    // Arrange, Act and Assert
+    assertEquals(0L, new MeasuredRate(-1L).getCurrentCount());
   }
 
   /**

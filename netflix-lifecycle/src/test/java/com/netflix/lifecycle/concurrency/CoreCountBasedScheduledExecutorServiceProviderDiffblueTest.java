@@ -26,7 +26,7 @@ public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
     assertEquals(0, ((ScheduledThreadPoolExecutor) actualGetResult).getPoolSize());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) actualGetResult).getCompletedTaskCount());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) actualGetResult).getTaskCount());
-    assertEquals(10, ((ScheduledThreadPoolExecutor) actualGetResult).getCorePoolSize());
+    assertEquals(8, ((ScheduledThreadPoolExecutor) actualGetResult).getCorePoolSize());
     assertFalse(
         ((ScheduledThreadPoolExecutor) actualGetResult)
             .getContinueExistingPeriodicTasksAfterShutdownPolicy());
@@ -55,7 +55,7 @@ public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
     assertEquals(0, ((ScheduledThreadPoolExecutor) getResult).getPoolSize());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) getResult).getCompletedTaskCount());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) getResult).getTaskCount());
-    assertEquals(10, ((ScheduledThreadPoolExecutor) getResult).getCorePoolSize());
+    assertEquals(8, ((ScheduledThreadPoolExecutor) getResult).getCorePoolSize());
     assertFalse(getResult.isShutdown());
     assertFalse(
         ((ScheduledThreadPoolExecutor) getResult)

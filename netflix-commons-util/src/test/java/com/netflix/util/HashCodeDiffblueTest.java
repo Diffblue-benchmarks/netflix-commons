@@ -34,8 +34,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(31862107, hashCode.addValue(new boolean[] {true, false, true, false}));
+    // Act
+    int actualAddValueResult = hashCode.addValue(new boolean[] {true, false, true, false});
+
+    // Assert
+    assertEquals(31862107, actualAddValueResult);
     assertEquals(1178898024, hashCode.addValue((byte) 'A'));
     assertEquals(669553987, hashCode.addValue('A'));
     assertEquals(-2068213078, hashCode.addValue(10.0d));
@@ -115,8 +118,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(750759236, hashCode.addValue("AXAXAXAX".getBytes("UTF-8")));
+    // Act
+    int actualAddValueResult = hashCode.addValue("AXAXAXAX".getBytes("UTF-8"));
+
+    // Assert
+    assertEquals(750759236, actualAddValueResult);
     assertEquals(2008288019, hashCode.addValue((byte) 'A'));
     assertEquals(1292212753, hashCode.addValue('A'));
     assertEquals(1642808446, hashCode.addValue(10.0d));
@@ -150,8 +156,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(35199427, hashCode.addValue("A A ".toCharArray()));
+    // Act
+    int actualAddValueResult = hashCode.addValue("A A ".toCharArray());
+
+    // Assert
+    assertEquals(35199427, actualAddValueResult);
     assertEquals(1302378864, hashCode.addValue((byte) 'A'));
     assertEquals(943377786, hashCode.addValue('A'));
     assertEquals(1616622250, hashCode.addValue(10.0d));
@@ -185,8 +194,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(-1437465160, hashCode.addValue(new double[] {10.0d, 0.5d, 10.0d, 0.5d}));
+    // Act
+    int actualAddValueResult = hashCode.addValue(new double[] {10.0d, 0.5d, 10.0d, 0.5d});
+
+    // Assert
+    assertEquals(-1437465160, actualAddValueResult);
     assertEquals(1646603306, hashCode.addValue((byte) 'A'));
     assertEquals(794780253, hashCode.addValue('A'));
     assertEquals(-1729284233, hashCode.addValue(10.0d));
@@ -220,8 +232,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(333055537, hashCode.addValue(new float[] {10.0f, 0.5f, 10.0f, 0.5f}));
+    // Act
+    int actualAddValueResult = hashCode.addValue(new float[] {10.0f, 0.5f, 10.0f, 0.5f});
+
+    // Assert
+    assertEquals(333055537, actualAddValueResult);
     assertEquals(-561846956, hashCode.addValue((byte) 'A'));
     assertEquals(-686499170, hashCode.addValue('A'));
     assertEquals(1444964140, hashCode.addValue(10.0d));
@@ -256,8 +271,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(31963487, hashCode.addValue(new int[] {2, 1, 2, 1}));
+    // Act
+    int actualAddValueResult = hashCode.addValue(new int[] {2, 1, 2, 1});
+
+    // Assert
+    assertEquals(31963487, actualAddValueResult);
     assertEquals(1182649084, hashCode.addValue((byte) 'A'));
     assertEquals(808343207, hashCode.addValue('A'));
     assertEquals(-1231649243, hashCode.addValue(10.0d));
@@ -279,8 +297,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(63538350, hashCode.addValue(new Object[] {"Array"}));
+    // Act
+    int actualAddValueResult = hashCode.addValue(new Object[] {"Array"});
+
+    // Assert
+    assertEquals(63538350, actualAddValueResult);
     assertEquals(-1944048281, hashCode.addValue((byte) 'A'));
     assertEquals(-1084657717, hashCode.addValue('A'));
     assertEquals(-405874783, hashCode.addValue(10.0d));
@@ -302,8 +323,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(629, hashCode.addValue(new Object[] {null}));
+    // Act
+    int actualAddValueResult = hashCode.addValue(new Object[] {null});
+
+    // Assert
+    assertEquals(629, actualAddValueResult);
     assertEquals(23338, hashCode.addValue((byte) 'A'));
     assertEquals(863571, hashCode.addValue('A'));
     assertEquals(1103334655, hashCode.addValue(10.0d));
@@ -384,8 +408,11 @@ public class HashCodeDiffblueTest {
     // Arrange
     HashCode hashCode = new HashCode();
 
-    // Act and Assert
-    assertEquals(31934717, hashCode.addValue(new short[] {1, 17, 1, 17}));
+    // Act
+    int actualAddValueResult = hashCode.addValue(new short[] {1, 17, 1, 17});
+
+    // Assert
+    assertEquals(31934717, actualAddValueResult);
     assertEquals(1181584594, hashCode.addValue((byte) 'A'));
     assertEquals(768957073, hashCode.addValue('A'));
     assertEquals(-537782541, hashCode.addValue(10.0d));
@@ -479,8 +506,7 @@ public class HashCodeDiffblueTest {
 
     // Act and Assert
     assertEquals(hashCode, hashCode2);
-    int expectedHashCodeResult = hashCode.hashCode();
-    assertEquals(expectedHashCodeResult, hashCode2.hashCode());
+    assertEquals(hashCode.hashCode(), hashCode2.hashCode());
   }
 
   /**

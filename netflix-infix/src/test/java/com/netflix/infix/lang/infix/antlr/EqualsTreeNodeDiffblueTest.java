@@ -40,9 +40,10 @@ public class EqualsTreeNodeDiffblueTest {
   public void testNewEqualsTreeNode2() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    EqualsTreeNode node = new EqualsTreeNode(t);
 
     // Act
-    EqualsTreeNode actualEqualsTreeNode = new EqualsTreeNode(new EqualsTreeNode(t));
+    EqualsTreeNode actualEqualsTreeNode = new EqualsTreeNode(node);
 
     // Assert
     Token token = actualEqualsTreeNode.getToken();

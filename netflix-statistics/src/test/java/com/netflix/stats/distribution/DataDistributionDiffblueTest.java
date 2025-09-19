@@ -77,6 +77,7 @@ public class DataDistributionDiffblueTest {
     // Arrange
     DataDistribution dataDistribution =
         new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
+
     DataBuffer buf = mock(DataBuffer.class);
     when(buf.getMaximum()).thenReturn(10.0d);
     when(buf.getMean()).thenReturn(10.0d);

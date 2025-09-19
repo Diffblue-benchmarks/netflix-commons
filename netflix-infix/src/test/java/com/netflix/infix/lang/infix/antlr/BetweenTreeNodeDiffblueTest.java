@@ -45,9 +45,10 @@ public class BetweenTreeNodeDiffblueTest {
   public void testNewBetweenTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    BetweenTreeNode node = new BetweenTreeNode(t);
 
     // Act
-    BetweenTreeNode actualBetweenTreeNode = new BetweenTreeNode(new BetweenTreeNode(t));
+    BetweenTreeNode actualBetweenTreeNode = new BetweenTreeNode(node);
 
     // Assert
     Token token = actualBetweenTreeNode.getToken();

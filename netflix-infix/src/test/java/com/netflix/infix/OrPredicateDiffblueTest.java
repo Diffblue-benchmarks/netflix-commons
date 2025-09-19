@@ -67,6 +67,23 @@ public class OrPredicateDiffblueTest {
    * Test {@link OrPredicate#apply(Object)}.
    *
    * <ul>
+   *   <li>Given {@link OrPredicate#OrPredicate(Iterable)} with filters is {@link
+   *       ArrayList#ArrayList()}.
+   *   <li>Then return {@code false}.
+   * </ul>
+   *
+   * <p>Method under test: {@link OrPredicate#apply(Object)}
+   */
+  @Test
+  public void testApply_givenOrPredicateWithFiltersIsArrayList_thenReturnFalse() {
+    // Arrange, Act and Assert
+    assertFalse(new OrPredicate(new ArrayList<>()).apply("Input"));
+  }
+
+  /**
+   * Test {@link OrPredicate#apply(Object)}.
+   *
+   * <ul>
    *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return {@code true}.
    *   <li>Then return {@code true}.
    * </ul>
@@ -79,30 +96,12 @@ public class OrPredicateDiffblueTest {
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
 
-    ArrayList<Predicate<Object>> filters = new ArrayList<>();
-    filters.add(predicate);
-
     // Act
-    boolean actualApplyResult = new OrPredicate(filters).apply("Input");
+    boolean actualApplyResult = new OrPredicate(predicate).apply("Input");
 
     // Assert
     verify(predicate).apply(isA(Object.class));
     assertTrue(actualApplyResult);
-  }
-
-  /**
-   * Test {@link OrPredicate#apply(Object)}.
-   *
-   * <ul>
-   *   <li>Then return {@code false}.
-   * </ul>
-   *
-   * <p>Method under test: {@link OrPredicate#apply(Object)}
-   */
-  @Test
-  public void testApply_thenReturnFalse() {
-    // Arrange, Act and Assert
-    assertFalse(new OrPredicate(new ArrayList<>()).apply("Input"));
   }
 
   /**
@@ -141,8 +140,7 @@ public class OrPredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(orPredicate, orPredicate2);
-    int expectedHashCodeResult = orPredicate.hashCode();
-    assertEquals(expectedHashCodeResult, orPredicate2.hashCode());
+    assertEquals(orPredicate.hashCode(), orPredicate2.hashCode());
   }
 
   /**
@@ -184,9 +182,7 @@ public class OrPredicateDiffblueTest {
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
     // Arrange
-    ArrayList<Predicate<Object>> filters = new ArrayList<>();
-    filters.add(mock(Predicate.class));
-    OrPredicate orPredicate = new OrPredicate(filters);
+    OrPredicate orPredicate = new OrPredicate(mock(Predicate.class));
 
     // Act and Assert
     assertNotEquals(orPredicate, new OrPredicate(new ArrayList<>()));
@@ -205,15 +201,10 @@ public class OrPredicateDiffblueTest {
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
     // Arrange
-    ArrayList<Predicate<Object>> filters = new ArrayList<>();
-    filters.add(new OrPredicate(new ArrayList<>()));
-    OrPredicate orPredicate = new OrPredicate(filters);
-
-    ArrayList<Predicate<Object>> filters2 = new ArrayList<>();
-    filters2.add(mock(Predicate.class));
+    OrPredicate orPredicate = new OrPredicate(new OrPredicate(new ArrayList<>()));
 
     // Act and Assert
-    assertNotEquals(orPredicate, new OrPredicate(filters2));
+    assertNotEquals(orPredicate, new OrPredicate(mock(Predicate.class)));
   }
 
   /**

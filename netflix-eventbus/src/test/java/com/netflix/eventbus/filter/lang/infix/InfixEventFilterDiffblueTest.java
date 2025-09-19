@@ -83,7 +83,7 @@ public class InfixEventFilterDiffblueTest {
     when(predicate.apply(Mockito.<Object>any())).thenReturn(false);
 
     // Act
-    boolean actualApplyResult = new InfixEventFilter(predicate, "Original").apply("Input");
+    boolean actualApplyResult = new InfixEventFilter(predicate).apply("Input");
 
     // Assert
     verify(predicate).apply(isA(Object.class));
@@ -148,8 +148,7 @@ public class InfixEventFilterDiffblueTest {
 
     // Act and Assert
     assertEquals(infixEventFilter, infixEventFilter2);
-    int expectedHashCodeResult = infixEventFilter.hashCode();
-    assertEquals(expectedHashCodeResult, infixEventFilter2.hashCode());
+    assertEquals(infixEventFilter.hashCode(), infixEventFilter2.hashCode());
   }
 
   /**
@@ -210,8 +209,8 @@ public class InfixEventFilterDiffblueTest {
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
     // Arrange
-    InfixEventFilter infixEventFilter =
-        new InfixEventFilter(new InfixEventFilter(mock(Predicate.class), "Original"), "Original");
+    InfixEventFilter predicate = new InfixEventFilter(mock(Predicate.class), "Original");
+    InfixEventFilter infixEventFilter = new InfixEventFilter(predicate, "Original");
 
     // Act and Assert
     assertNotEquals(infixEventFilter, new InfixEventFilter(mock(Predicate.class), "Original"));

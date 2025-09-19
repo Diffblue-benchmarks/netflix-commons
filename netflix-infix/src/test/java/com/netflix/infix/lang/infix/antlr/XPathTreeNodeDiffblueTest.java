@@ -7,6 +7,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import org.antlr.runtime.ClassicToken;
 import org.antlr.runtime.Token;
+import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.ParseTree;
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
@@ -16,16 +17,20 @@ public class XPathTreeNodeDiffblueTest {
    * Test {@link XPathTreeNode#getValue()}.
    *
    * <ul>
+   *   <li>Given {@link ParseTree#ParseTree(Object)} with {@code Label} addChild {@link
+   *       CommonTree#CommonTree()}.
    *   <li>Then return {@code Label}.
    * </ul>
    *
    * <p>Method under test: {@link XPathTreeNode#getValue()}
    */
   @Test
-  public void testGetValue_thenReturnLabel() {
+  public void testGetValue_givenParseTreeWithLabelAddChildCommonTree_thenReturnLabel() {
     // Arrange
-    XPathTreeNode xPathTreeNode = new XPathTreeNode(new ClassicToken(1));
     ParseTree t = new ParseTree("Label");
+    t.addChild(new CommonTree());
+
+    XPathTreeNode xPathTreeNode = new XPathTreeNode(new ClassicToken(1));
     xPathTreeNode.addChild(t);
 
     // Act
@@ -49,7 +54,7 @@ public class XPathTreeNodeDiffblueTest {
   public void testGetValue_thenReturnNull() {
     // Arrange
     XPathTreeNode xPathTreeNode = new XPathTreeNode(new ClassicToken(1));
-    xPathTreeNode.addChild(new AndTreeNode(new ClassicToken(1)));
+    xPathTreeNode.addChild(new CommonTree(new ClassicToken(1)));
 
     // Act and Assert
     assertNull(xPathTreeNode.getValue());
@@ -89,9 +94,10 @@ public class XPathTreeNodeDiffblueTest {
   public void testNewXPathTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    XPathTreeNode node = new XPathTreeNode(t);
 
     // Act
-    XPathTreeNode actualXPathTreeNode = new XPathTreeNode(new XPathTreeNode(t));
+    XPathTreeNode actualXPathTreeNode = new XPathTreeNode(node);
 
     // Assert
     Token token = actualXPathTreeNode.getToken();

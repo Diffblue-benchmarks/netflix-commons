@@ -79,8 +79,7 @@ public class PairDiffblueTest {
 
     // Act and Assert
     assertEquals(pair, pair2);
-    int expectedHashCodeResult = pair.hashCode();
-    assertEquals(expectedHashCodeResult, pair2.hashCode());
+    assertEquals(pair.hashCode(), pair2.hashCode());
   }
 
   /**

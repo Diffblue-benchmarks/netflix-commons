@@ -45,10 +45,10 @@ public class TimeStringValueTreeNodeDiffblueTest {
   public void testNewTimeStringValueTreeNode_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    TimeStringValueTreeNode node = new TimeStringValueTreeNode(t);
 
     // Act
-    TimeStringValueTreeNode actualTimeStringValueTreeNode =
-        new TimeStringValueTreeNode(new TimeStringValueTreeNode(t));
+    TimeStringValueTreeNode actualTimeStringValueTreeNode = new TimeStringValueTreeNode(node);
 
     // Assert
     Token token = actualTimeStringValueTreeNode.getToken();

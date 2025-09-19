@@ -142,12 +142,13 @@ public class DataBufferDiffblueTest {
    */
   @Test
   public void testGetPercentiles_thenReturnArrayOfDoubleWithZeroAndZero() {
-    // Arrange, Act and Assert
-    assertArrayEquals(
-        new double[] {0.0d, 0.0d, 0.0d, 0.0d},
+    // Arrange and Act
+    double[] actualPercentiles =
         new DataBuffer(3)
             .getPercentiles(
-                new double[] {10.0d, 1.0d, 10.0d, 1.0d}, new double[] {10.0d, 1.0d, 10.0d, 1.0d}),
-        0.0);
+                new double[] {10.0d, 1.0d, 10.0d, 1.0d}, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
+
+    // Assert
+    assertArrayEquals(new double[] {0.0d, 0.0d, 0.0d, 0.0d}, actualPercentiles, 0.0);
   }
 }

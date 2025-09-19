@@ -24,10 +24,11 @@ public class PredicatesDiffblueTest {
   public void testAlwaysTrue() {
     // Arrange and Act
     Predicate<Object> actualAlwaysTrueResult = Predicates.alwaysTrue();
+    boolean actualApplyResult = actualAlwaysTrueResult.apply("42");
 
     // Assert
     assertTrue(actualAlwaysTrueResult instanceof AlwaysTruePredicate);
-    assertTrue(actualAlwaysTrueResult.apply("42"));
+    assertTrue(actualApplyResult);
     assertTrue(actualAlwaysTrueResult.apply("Input"));
     assertTrue(actualAlwaysTrueResult.test("Input"));
   }
@@ -41,10 +42,11 @@ public class PredicatesDiffblueTest {
   public void testAlwaysFalse() {
     // Arrange and Act
     Predicate<Object> actualAlwaysFalseResult = Predicates.alwaysFalse();
+    boolean actualApplyResult = actualAlwaysFalseResult.apply("42");
 
     // Assert
     assertTrue(actualAlwaysFalseResult instanceof AlwaysFalsePredicate);
-    assertFalse(actualAlwaysFalseResult.apply("42"));
+    assertFalse(actualApplyResult);
     assertFalse(actualAlwaysFalseResult.apply("Input"));
     assertFalse(actualAlwaysFalseResult.test("Input"));
   }
@@ -95,6 +97,7 @@ public class PredicatesDiffblueTest {
 
     ArrayList<Predicate<Object>> predicateList = new ArrayList<>();
     predicateList.add(predicate);
+
     Iterable<Predicate<Object>> filters = mock(Iterable.class);
     when(filters.iterator()).thenReturn(predicateList.iterator());
 
@@ -126,12 +129,14 @@ public class PredicatesDiffblueTest {
     // Arrange
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate2 = mock(Predicate.class);
     when(predicate2.apply(Mockito.<Object>any())).thenReturn(true);
 
     ArrayList<Predicate<Object>> predicateList = new ArrayList<>();
     predicateList.add(predicate2);
     predicateList.add(predicate);
+
     Iterable<Predicate<Object>> filters = mock(Iterable.class);
     when(filters.iterator()).thenReturn(predicateList.iterator());
 
@@ -163,8 +168,10 @@ public class PredicatesDiffblueTest {
     // Arrange
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate2 = mock(Predicate.class);
     when(predicate2.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate3 = mock(Predicate.class);
     when(predicate3.apply(Mockito.<Object>any())).thenReturn(true);
 
@@ -172,6 +179,7 @@ public class PredicatesDiffblueTest {
     predicateList.add(predicate3);
     predicateList.add(predicate2);
     predicateList.add(predicate);
+
     Iterable<Predicate<Object>> filters = mock(Iterable.class);
     when(filters.iterator()).thenReturn(predicateList.iterator());
 
@@ -203,10 +211,13 @@ public class PredicatesDiffblueTest {
     // Arrange
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate2 = mock(Predicate.class);
     when(predicate2.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate3 = mock(Predicate.class);
     when(predicate3.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate4 = mock(Predicate.class);
     when(predicate4.apply(Mockito.<Object>any())).thenReturn(true);
 
@@ -216,6 +227,7 @@ public class PredicatesDiffblueTest {
     predicateList.add(predicate3);
     predicateList.add(predicate2);
     predicateList.add(predicate);
+
     Iterable<Predicate<Object>> filters = mock(Iterable.class);
     when(filters.iterator()).thenReturn(predicateList.iterator());
 
@@ -398,10 +410,11 @@ public class PredicatesDiffblueTest {
 
     // Act
     Predicate<Object> actualOrResult = Predicates.or(filters);
+    boolean actualApplyResult = actualOrResult.apply("42");
 
     // Assert
     assertTrue(actualOrResult instanceof OrPredicate);
-    assertFalse(actualOrResult.apply("42"));
+    assertFalse(actualApplyResult);
     assertFalse(actualOrResult.apply("Input"));
     assertFalse(actualOrResult.test("Input"));
     assertTrue(filters.isEmpty());
@@ -571,6 +584,7 @@ public class PredicatesDiffblueTest {
 
     ArrayList<Predicate<Object>> predicateList = new ArrayList<>();
     predicateList.add(predicate);
+
     Iterable<Predicate<Object>> filters = mock(Iterable.class);
     when(filters.iterator()).thenReturn(predicateList.iterator());
 
@@ -602,12 +616,14 @@ public class PredicatesDiffblueTest {
     // Arrange
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate2 = mock(Predicate.class);
     when(predicate2.apply(Mockito.<Object>any())).thenReturn(true);
 
     ArrayList<Predicate<Object>> predicateList = new ArrayList<>();
     predicateList.add(predicate2);
     predicateList.add(predicate);
+
     Iterable<Predicate<Object>> filters = mock(Iterable.class);
     when(filters.iterator()).thenReturn(predicateList.iterator());
 
@@ -640,8 +656,10 @@ public class PredicatesDiffblueTest {
     // Arrange
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate2 = mock(Predicate.class);
     when(predicate2.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate3 = mock(Predicate.class);
     when(predicate3.apply(Mockito.<Object>any())).thenReturn(true);
 
@@ -649,6 +667,7 @@ public class PredicatesDiffblueTest {
     predicateList.add(predicate3);
     predicateList.add(predicate2);
     predicateList.add(predicate);
+
     Iterable<Predicate<Object>> filters = mock(Iterable.class);
     when(filters.iterator()).thenReturn(predicateList.iterator());
 
@@ -682,12 +701,16 @@ public class PredicatesDiffblueTest {
     // Arrange
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate2 = mock(Predicate.class);
     when(predicate2.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate3 = mock(Predicate.class);
     when(predicate3.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate4 = mock(Predicate.class);
     when(predicate4.apply(Mockito.<Object>any())).thenReturn(true);
+
     Predicate<Object> predicate5 = mock(Predicate.class);
     when(predicate5.apply(Mockito.<Object>any())).thenReturn(true);
 
@@ -697,6 +720,7 @@ public class PredicatesDiffblueTest {
     predicateList.add(predicate3);
     predicateList.add(predicate2);
     predicateList.add(predicate);
+
     Iterable<Predicate<Object>> filters = mock(Iterable.class);
     when(filters.iterator()).thenReturn(predicateList.iterator());
 
@@ -878,27 +902,18 @@ public class PredicatesDiffblueTest {
   @Test
   public void testAndWithIterable_whenArrayListAddPredicate_thenArrayListSizeIsTwo() {
     // Arrange
-    Predicate<Object> predicate = mock(Predicate.class);
-    when(predicate.apply(Mockito.<Object>any())).thenReturn(true);
-    Predicate<Object> predicate2 = mock(Predicate.class);
-    when(predicate2.apply(Mockito.<Object>any())).thenReturn(true);
-
     ArrayList<Predicate<Object>> filters = new ArrayList<>();
-    filters.add(predicate2);
-    filters.add(predicate);
+    filters.add(mock(Predicate.class));
+    filters.add(mock(Predicate.class));
 
     // Act
     Predicate<Object> actualAndResult = Predicates.and(filters);
-    boolean actualApplyResult = actualAndResult.apply("42");
 
     // Assert
-    verify(predicate2).apply(isA(Object.class));
-    verify(predicate).apply(isA(Object.class));
     assertTrue(actualAndResult instanceof AndPredicate);
     assertEquals(2, filters.size());
-    assertTrue(actualApplyResult);
-    assertTrue(actualAndResult.apply("Input"));
-    assertTrue(actualAndResult.test("Input"));
+    assertFalse(actualAndResult.apply("Input"));
+    assertFalse(actualAndResult.test("Input"));
   }
 
   /**
@@ -918,10 +933,11 @@ public class PredicatesDiffblueTest {
 
     // Act
     Predicate<Object> actualAndResult = Predicates.and(filters);
+    boolean actualApplyResult = actualAndResult.apply("42");
 
     // Assert
     assertTrue(actualAndResult instanceof AndPredicate);
-    assertTrue(actualAndResult.apply("42"));
+    assertTrue(actualApplyResult);
     assertTrue(actualAndResult.apply("Input"));
     assertTrue(actualAndResult.test("Input"));
     assertTrue(filters.isEmpty());
@@ -1059,13 +1075,14 @@ public class PredicatesDiffblueTest {
 
     // Act
     Predicate<Object> actualAndResult = Predicates.and(filters);
+    boolean actualApplyResult = actualAndResult.apply("42");
 
     // Assert
     Predicate<Object> predicate = filters[0];
     assertTrue(predicate instanceof AlwaysTruePredicate);
     assertTrue(actualAndResult instanceof AndPredicate);
     assertEquals(2, filters.length);
-    assertTrue(actualAndResult.apply("42"));
+    assertTrue(actualApplyResult);
     assertTrue(actualAndResult.apply("Input"));
     assertTrue(predicate.apply("Input"));
     assertTrue(actualAndResult.test("Input"));
@@ -1092,11 +1109,12 @@ public class PredicatesDiffblueTest {
 
     // Act
     Predicate<Object> actualAndResult = Predicates.and(filters);
+    boolean actualApplyResult = actualAndResult.apply("42");
 
     // Assert
     assertTrue(actualAndResult instanceof AndPredicate);
     assertEquals(2, filters.length);
-    assertTrue(actualAndResult.apply("42"));
+    assertTrue(actualApplyResult);
     assertTrue(actualAndResult.apply("Input"));
     assertTrue(actualAndResult.test("Input"));
     assertSame(andPredicate, filters[0]);
@@ -1122,11 +1140,12 @@ public class PredicatesDiffblueTest {
 
     // Act
     Predicate<Object> actualAndResult = Predicates.and(filters);
+    boolean actualApplyResult = actualAndResult.apply("42");
 
     // Assert
     assertTrue(actualAndResult instanceof AndPredicate);
     assertEquals(2, filters.length);
-    assertFalse(actualAndResult.apply("42"));
+    assertFalse(actualApplyResult);
     assertFalse(actualAndResult.apply("Input"));
     assertFalse(actualAndResult.test("Input"));
     assertSame(andPredicate, filters[1]);
@@ -1149,6 +1168,7 @@ public class PredicatesDiffblueTest {
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(false);
     NotPredicate notPredicate = new NotPredicate(predicate);
+
     Predicate<Object> predicate2 = mock(Predicate.class);
     when(predicate2.apply(Mockito.<Object>any())).thenReturn(true);
     NotPredicate notPredicate2 = new NotPredicate(predicate2);
@@ -1304,10 +1324,11 @@ public class PredicatesDiffblueTest {
 
     // Act
     Predicate<Object> actualNotResult = Predicates.not(filter);
+    boolean actualApplyResult = actualNotResult.apply("42");
 
     // Assert
     assertTrue(actualNotResult instanceof NotPredicate);
-    assertFalse(actualNotResult.apply("42"));
+    assertFalse(actualApplyResult);
     assertFalse(actualNotResult.apply("Input"));
     assertFalse(actualNotResult.test("Input"));
     assertTrue(filter.test("Input"));

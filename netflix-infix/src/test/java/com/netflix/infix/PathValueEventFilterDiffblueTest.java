@@ -99,8 +99,7 @@ public class PathValueEventFilterDiffblueTest {
 
     // Act and Assert
     assertEquals(pathValueEventFilter, pathValueEventFilter2);
-    int expectedHashCodeResult = pathValueEventFilter.hashCode();
-    assertEquals(expectedHashCodeResult, pathValueEventFilter2.hashCode());
+    assertEquals(pathValueEventFilter.hashCode(), pathValueEventFilter2.hashCode());
   }
 
   /**
@@ -128,8 +127,7 @@ public class PathValueEventFilterDiffblueTest {
 
     // Act and Assert
     assertEquals(pathValueEventFilter, pathValueEventFilter2);
-    int expectedHashCodeResult = pathValueEventFilter.hashCode();
-    assertEquals(expectedHashCodeResult, pathValueEventFilter2.hashCode());
+    assertEquals(pathValueEventFilter.hashCode(), pathValueEventFilter2.hashCode());
   }
 
   /**
@@ -155,8 +153,7 @@ public class PathValueEventFilterDiffblueTest {
 
     // Act and Assert
     assertEquals(pathValueEventFilter, pathValueEventFilter2);
-    int expectedHashCodeResult = pathValueEventFilter.hashCode();
-    assertEquals(expectedHashCodeResult, pathValueEventFilter2.hashCode());
+    assertEquals(pathValueEventFilter.hashCode(), pathValueEventFilter2.hashCode());
   }
 
   /**

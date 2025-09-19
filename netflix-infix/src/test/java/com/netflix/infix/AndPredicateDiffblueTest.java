@@ -132,6 +132,23 @@ public class AndPredicateDiffblueTest {
    * Test {@link AndPredicate#apply(Object)}.
    *
    * <ul>
+   *   <li>Given {@link AndPredicate#AndPredicate(Iterable)} with predicates is {@link
+   *       ArrayList#ArrayList()}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link AndPredicate#apply(Object)}
+   */
+  @Test
+  public void testApply_givenAndPredicateWithPredicatesIsArrayList_thenReturnTrue() {
+    // Arrange, Act and Assert
+    assertTrue(new AndPredicate(new ArrayList<>()).apply("Input"));
+  }
+
+  /**
+   * Test {@link AndPredicate#apply(Object)}.
+   *
+   * <ul>
    *   <li>Given {@link Predicate} {@link Predicate#apply(Object)} return {@code false}.
    *   <li>Then return {@code false}.
    * </ul>
@@ -144,128 +161,12 @@ public class AndPredicateDiffblueTest {
     Predicate<Object> predicate = mock(Predicate.class);
     when(predicate.apply(Mockito.<Object>any())).thenReturn(false);
 
-    ArrayList<Predicate<Object>> predicates = new ArrayList<>();
-    predicates.add(predicate);
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-    predicates.add(mock(Predicate.class));
-
     // Act
-    boolean actualApplyResult = new AndPredicate(predicates).apply("Input");
+    boolean actualApplyResult = new AndPredicate(predicate).apply("Input");
 
     // Assert
     verify(predicate).apply(isA(Object.class));
     assertFalse(actualApplyResult);
-  }
-
-  /**
-   * Test {@link AndPredicate#apply(Object)}.
-   *
-   * <ul>
-   *   <li>Then return {@code true}.
-   * </ul>
-   *
-   * <p>Method under test: {@link AndPredicate#apply(Object)}
-   */
-  @Test
-  public void testApply_thenReturnTrue() {
-    // Arrange, Act and Assert
-    assertTrue(new AndPredicate(new ArrayList<>()).apply("Input"));
   }
 
   /**
@@ -291,8 +192,7 @@ public class AndPredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(andPredicate, andPredicate2);
-    int expectedHashCodeResult = andPredicate.hashCode();
-    assertEquals(expectedHashCodeResult, andPredicate2.hashCode());
+    assertEquals(andPredicate.hashCode(), andPredicate2.hashCode());
   }
 
   /**
@@ -334,9 +234,7 @@ public class AndPredicateDiffblueTest {
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual() {
     // Arrange
-    ArrayList<Predicate<Object>> predicates = new ArrayList<>();
-    predicates.add(mock(Predicate.class));
-    AndPredicate andPredicate = new AndPredicate(predicates);
+    AndPredicate andPredicate = new AndPredicate(mock(Predicate.class));
 
     // Act and Assert
     assertNotEquals(andPredicate, new AndPredicate(new ArrayList<>()));
@@ -355,15 +253,10 @@ public class AndPredicateDiffblueTest {
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
     // Arrange
-    ArrayList<Predicate<Object>> predicates = new ArrayList<>();
-    predicates.add(new AndPredicate(new ArrayList<>()));
-    AndPredicate andPredicate = new AndPredicate(predicates);
-
-    ArrayList<Predicate<Object>> predicates2 = new ArrayList<>();
-    predicates2.add(mock(Predicate.class));
+    AndPredicate andPredicate = new AndPredicate(new AndPredicate(new ArrayList<>()));
 
     // Act and Assert
-    assertNotEquals(andPredicate, new AndPredicate(predicates2));
+    assertNotEquals(andPredicate, new AndPredicate(mock(Predicate.class)));
   }
 
   /**

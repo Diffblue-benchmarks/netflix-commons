@@ -159,8 +159,11 @@ public class HistogramDiffblueTest {
    */
   @Test
   public void testGetBucketCount_thenReturnZero() {
-    // Arrange, Act and Assert
-    assertEquals(0L, new Histogram(-0.5d, 10.0d, 10.0d).getBucketCount(3));
+    // Arrange
+    Histogram histogram = new Histogram(new double[] {10.0d, 1.0d, 10.0d, 1.0d});
+
+    // Act and Assert
+    assertEquals(0L, histogram.getBucketCount(3));
   }
 
   /**
@@ -199,21 +202,6 @@ public class HistogramDiffblueTest {
    * Test {@link Histogram#getBucketMaximum(int)}.
    *
    * <ul>
-   *   <li>Then return eleven.
-   * </ul>
-   *
-   * <p>Method under test: {@link Histogram#getBucketMaximum(int)}
-   */
-  @Test
-  public void testGetBucketMaximum_thenReturnEleven() {
-    // Arrange, Act and Assert
-    assertEquals(11.0d, new Histogram(1.0d, 10.0d, 10.0d).getBucketMaximum(1), 0.0);
-  }
-
-  /**
-   * Test {@link Histogram#getBucketMaximum(int)}.
-   *
-   * <ul>
    *   <li>Then return {@link Double#MAX_VALUE}.
    * </ul>
    *
@@ -223,6 +211,25 @@ public class HistogramDiffblueTest {
   public void testGetBucketMaximum_thenReturnMax_value() {
     // Arrange, Act and Assert
     assertEquals(Double.MAX_VALUE, new Histogram(10.0d, 10.0d, 10.0d).getBucketMaximum(1), 0.0);
+  }
+
+  /**
+   * Test {@link Histogram#getBucketMaximum(int)}.
+   *
+   * <ul>
+   *   <li>Then return ten.
+   * </ul>
+   *
+   * <p>Method under test: {@link Histogram#getBucketMaximum(int)}
+   */
+  @Test
+  public void testGetBucketMaximum_thenReturnTen() {
+    // Arrange
+    Histogram histogram =
+        new Histogram(new double[] {Double.MAX_VALUE, 10.0d, Double.MAX_VALUE, 10.0d});
+
+    // Act and Assert
+    assertEquals(10.0d, histogram.getBucketMaximum(1), 0.0);
   }
 
   /**

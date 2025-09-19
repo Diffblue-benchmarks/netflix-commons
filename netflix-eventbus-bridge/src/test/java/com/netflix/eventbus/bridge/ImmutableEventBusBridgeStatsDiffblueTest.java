@@ -114,7 +114,7 @@ public class ImmutableEventBusBridgeStatsDiffblueTest {
     // Act and Assert
     assertThrows(
         UnsupportedOperationException.class,
-        () -> immutableEventBusBridgeStats.incConsumeErrorCount(new Exception("foo")));
+        () -> immutableEventBusBridgeStats.incConsumeErrorCount(new Exception()));
   }
 
   /**

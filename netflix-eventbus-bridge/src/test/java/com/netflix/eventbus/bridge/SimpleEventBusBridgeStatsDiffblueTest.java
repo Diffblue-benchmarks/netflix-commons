@@ -55,7 +55,7 @@ public class SimpleEventBusBridgeStatsDiffblueTest {
   public void testIncConsumeErrorCount() {
     // Arrange
     SimpleEventBusBridgeStats simpleEventBusBridgeStats = new SimpleEventBusBridgeStats();
-    Exception e = new Exception("foo");
+    Exception e = new Exception();
 
     // Act
     long actualIncConsumeErrorCountResult = simpleEventBusBridgeStats.incConsumeErrorCount(e);

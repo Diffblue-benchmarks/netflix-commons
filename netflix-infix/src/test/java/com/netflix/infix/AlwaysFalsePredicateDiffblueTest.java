@@ -51,8 +51,7 @@ public class AlwaysFalsePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(alwaysFalsePredicate, alwaysFalsePredicate2);
-    int expectedHashCodeResult = alwaysFalsePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, alwaysFalsePredicate2.hashCode());
+    assertEquals(alwaysFalsePredicate.hashCode(), alwaysFalsePredicate2.hashCode());
   }
 
   /**

@@ -45,9 +45,10 @@ public class ExistsTreeNodeDiffblueTest {
   public void testNewExistsTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    ExistsTreeNode node = new ExistsTreeNode(t);
 
     // Act
-    ExistsTreeNode actualExistsTreeNode = new ExistsTreeNode(new ExistsTreeNode(t));
+    ExistsTreeNode actualExistsTreeNode = new ExistsTreeNode(node);
 
     // Assert
     Token token = actualExistsTreeNode.getToken();

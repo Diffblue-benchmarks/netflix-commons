@@ -104,8 +104,7 @@ public class NotPredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(notPredicate, notPredicate2);
-    int expectedHashCodeResult = notPredicate.hashCode();
-    assertEquals(expectedHashCodeResult, notPredicate2.hashCode());
+    assertEquals(notPredicate.hashCode(), notPredicate2.hashCode());
   }
 
   /**
@@ -166,7 +165,8 @@ public class NotPredicateDiffblueTest {
   @Test
   public void testEquals_whenOtherIsDifferent_thenReturnNotEqual2() {
     // Arrange
-    NotPredicate notPredicate = new NotPredicate(new NotPredicate(mock(Predicate.class)));
+    NotPredicate predicate = new NotPredicate(mock(Predicate.class));
+    NotPredicate notPredicate = new NotPredicate(predicate);
 
     // Act and Assert
     assertNotEquals(notPredicate, new NotPredicate(mock(Predicate.class)));

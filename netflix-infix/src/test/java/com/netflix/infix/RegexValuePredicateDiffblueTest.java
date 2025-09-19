@@ -78,10 +78,11 @@ public class RegexValuePredicateDiffblueTest {
    */
   @Test
   public void testApplyWithString_thenThrowUnsupportedOperationException() {
-    // Arrange, Act and Assert
-    assertThrows(
-        UnsupportedOperationException.class,
-        () -> new RegexValuePredicate(".*", null).apply("Input"));
+    // Arrange
+    RegexValuePredicate regexValuePredicate = new RegexValuePredicate(".*", null);
+
+    // Act and Assert
+    assertThrows(UnsupportedOperationException.class, () -> regexValuePredicate.apply("Input"));
   }
 
   /**
@@ -141,8 +142,7 @@ public class RegexValuePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(regexValuePredicate, regexValuePredicate2);
-    int expectedHashCodeResult = regexValuePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, regexValuePredicate2.hashCode());
+    assertEquals(regexValuePredicate.hashCode(), regexValuePredicate2.hashCode());
   }
 
   /**

@@ -46,9 +46,10 @@ public class TrueValueTreeNodeDiffblueTest {
   public void testNewTrueValueTreeNode_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    TrueValueTreeNode node = new TrueValueTreeNode(t);
 
     // Act
-    TrueValueTreeNode actualTrueValueTreeNode = new TrueValueTreeNode(new TrueValueTreeNode(t));
+    TrueValueTreeNode actualTrueValueTreeNode = new TrueValueTreeNode(node);
 
     // Assert
     Token token = actualTrueValueTreeNode.getToken();
@@ -112,10 +113,11 @@ public class TrueValueTreeNodeDiffblueTest {
     // Arrange and Act
     Predicate<Object> actualTranslateResult =
         new TrueValueTreeNode(new ClassicToken(1)).translate();
+    boolean actualApplyResult = actualTranslateResult.apply("42");
 
     // Assert
     assertTrue(actualTranslateResult instanceof AlwaysTruePredicate);
-    assertTrue(actualTranslateResult.apply("42"));
+    assertTrue(actualApplyResult);
     assertTrue(actualTranslateResult.apply("Input"));
     assertTrue(actualTranslateResult.test("Input"));
   }

@@ -45,10 +45,10 @@ public class TimeMillisValueTreeNodeDiffblueTest {
   public void testNewTimeMillisValueTreeNode_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    TimeMillisValueTreeNode node = new TimeMillisValueTreeNode(t);
 
     // Act
-    TimeMillisValueTreeNode actualTimeMillisValueTreeNode =
-        new TimeMillisValueTreeNode(new TimeMillisValueTreeNode(t));
+    TimeMillisValueTreeNode actualTimeMillisValueTreeNode = new TimeMillisValueTreeNode(node);
 
     // Assert
     Token token = actualTimeMillisValueTreeNode.getToken();

@@ -104,8 +104,7 @@ public class StringValuePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(stringValuePredicate, stringValuePredicate2);
-    int expectedHashCodeResult = stringValuePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, stringValuePredicate2.hashCode());
+    assertEquals(stringValuePredicate.hashCode(), stringValuePredicate2.hashCode());
   }
 
   /**
@@ -131,8 +130,7 @@ public class StringValuePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(stringValuePredicate, stringValuePredicate2);
-    int expectedHashCodeResult = stringValuePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, stringValuePredicate2.hashCode());
+    assertEquals(stringValuePredicate.hashCode(), stringValuePredicate2.hashCode());
   }
 
   /**

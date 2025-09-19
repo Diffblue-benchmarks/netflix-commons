@@ -28,12 +28,13 @@ public class DefaultConsumerQueueSupplierDiffblueTest {
   public void testGet_givenOne_whenSubscriberConfigGetQueueSizeReturnOne() {
     // Arrange
     DefaultConsumerQueueSupplier defaultConsumerQueueSupplier = new DefaultConsumerQueueSupplier();
+
     SubscriberConfig subscriberConfig = mock(SubscriberConfig.class);
     when(subscriberConfig.getQueueSize()).thenReturn(1);
     when(subscriberConfig.getBatchingStrategy()).thenReturn(BatchingStrategy.None);
 
     // Act
-    defaultConsumerQueueSupplier.get(null, subscriberConfig, new AtomicLong(1L));
+    defaultConsumerQueueSupplier.get(null, subscriberConfig, new AtomicLong());
 
     // Assert
     verify(subscriberConfig).getBatchingStrategy();
@@ -56,12 +57,13 @@ public class DefaultConsumerQueueSupplierDiffblueTest {
   public void testGet_givenZero_whenSubscriberConfigGetQueueSizeReturnZero() {
     // Arrange
     DefaultConsumerQueueSupplier defaultConsumerQueueSupplier = new DefaultConsumerQueueSupplier();
+
     SubscriberConfig subscriberConfig = mock(SubscriberConfig.class);
     when(subscriberConfig.getQueueSize()).thenReturn(0);
     when(subscriberConfig.getBatchingStrategy()).thenReturn(BatchingStrategy.None);
 
     // Act
-    defaultConsumerQueueSupplier.get(null, subscriberConfig, new AtomicLong(1L));
+    defaultConsumerQueueSupplier.get(null, subscriberConfig, new AtomicLong());
 
     // Assert
     verify(subscriberConfig).getBatchingStrategy();

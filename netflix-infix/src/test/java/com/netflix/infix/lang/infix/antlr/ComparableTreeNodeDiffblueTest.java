@@ -44,9 +44,10 @@ public class ComparableTreeNodeDiffblueTest {
   public void testNewComparableTreeNode_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    ComparableTreeNode node = new ComparableTreeNode(t);
 
     // Act
-    ComparableTreeNode actualComparableTreeNode = new ComparableTreeNode(new ComparableTreeNode(t));
+    ComparableTreeNode actualComparableTreeNode = new ComparableTreeNode(node);
 
     // Assert
     Token token = actualComparableTreeNode.getToken();

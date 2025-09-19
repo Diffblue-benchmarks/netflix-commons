@@ -45,10 +45,10 @@ public class BetweenTimeMillisTreeNodeDiffblueTest {
   public void testNewBetweenTimeMillisTreeNode_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    BetweenTimeMillisTreeNode node = new BetweenTimeMillisTreeNode(t);
 
     // Act
-    BetweenTimeMillisTreeNode actualBetweenTimeMillisTreeNode =
-        new BetweenTimeMillisTreeNode(new BetweenTimeMillisTreeNode(t));
+    BetweenTimeMillisTreeNode actualBetweenTimeMillisTreeNode = new BetweenTimeMillisTreeNode(node);
 
     // Assert
     Token token = actualBetweenTimeMillisTreeNode.getToken();

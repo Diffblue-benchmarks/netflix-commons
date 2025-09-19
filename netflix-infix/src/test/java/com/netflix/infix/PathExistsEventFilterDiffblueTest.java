@@ -86,8 +86,7 @@ public class PathExistsEventFilterDiffblueTest {
 
     // Act and Assert
     assertEquals(pathExistsEventFilter, pathExistsEventFilter2);
-    int expectedHashCodeResult = pathExistsEventFilter.hashCode();
-    assertEquals(expectedHashCodeResult, pathExistsEventFilter2.hashCode());
+    assertEquals(pathExistsEventFilter.hashCode(), pathExistsEventFilter2.hashCode());
   }
 
   /**
@@ -114,8 +113,7 @@ public class PathExistsEventFilterDiffblueTest {
 
     // Act and Assert
     assertEquals(pathExistsEventFilter, pathExistsEventFilter2);
-    int expectedHashCodeResult = pathExistsEventFilter.hashCode();
-    assertEquals(expectedHashCodeResult, pathExistsEventFilter2.hashCode());
+    assertEquals(pathExistsEventFilter.hashCode(), pathExistsEventFilter2.hashCode());
   }
 
   /**

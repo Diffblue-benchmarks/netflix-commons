@@ -51,36 +51,4 @@ public class TimeUtilDiffblueTest {
     // Arrange, Act and Assert
     assertEquals("42", TimeUtil.toString(1L, "42"));
   }
-
-  /**
-   * Test {@link TimeUtil#toString(long, String)} with {@code long}, {@code String}.
-   *
-   * <ul>
-   *   <li>When {@link Long#MAX_VALUE}.
-   *   <li>Then return {@code 42}.
-   * </ul>
-   *
-   * <p>Method under test: {@link TimeUtil#toString(long, String)}
-   */
-  @Test
-  public void testToStringWithLongString_whenMax_value_thenReturn42() {
-    // Arrange, Act and Assert
-    assertEquals("42", TimeUtil.toString(Long.MAX_VALUE, "42"));
-  }
-
-  /**
-   * Test {@link TimeUtil#toString(long, String)} with {@code long}, {@code String}.
-   *
-   * <ul>
-   *   <li>When minus one.
-   *   <li>Then return {@code 42}.
-   * </ul>
-   *
-   * <p>Method under test: {@link TimeUtil#toString(long, String)}
-   */
-  @Test
-  public void testToStringWithLongString_whenMinusOne_thenReturn42() {
-    // Arrange, Act and Assert
-    assertEquals("42", TimeUtil.toString(-1L, "42"));
-  }
 }

@@ -73,8 +73,7 @@ public class NullValuePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(nullValuePredicate, nullValuePredicate2);
-    int expectedHashCodeResult = nullValuePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, nullValuePredicate2.hashCode());
+    assertEquals(nullValuePredicate.hashCode(), nullValuePredicate2.hashCode());
   }
 
   /**

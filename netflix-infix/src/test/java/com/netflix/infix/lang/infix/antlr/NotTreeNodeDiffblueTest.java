@@ -45,9 +45,10 @@ public class NotTreeNodeDiffblueTest {
   public void testNewNotTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    NotTreeNode node = new NotTreeNode(t);
 
     // Act
-    NotTreeNode actualNotTreeNode = new NotTreeNode(new NotTreeNode(t));
+    NotTreeNode actualNotTreeNode = new NotTreeNode(node);
 
     // Assert
     Token token = actualNotTreeNode.getToken();

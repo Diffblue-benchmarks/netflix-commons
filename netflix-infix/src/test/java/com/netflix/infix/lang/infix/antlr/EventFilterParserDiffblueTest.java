@@ -21,13 +21,8 @@ import com.netflix.infix.lang.infix.antlr.EventFilterParser.regex_predicate_retu
 import com.netflix.infix.lang.infix.antlr.EventFilterParser.time_millis_function_return;
 import com.netflix.infix.lang.infix.antlr.EventFilterParser.time_string_function_return;
 import com.netflix.infix.lang.infix.antlr.EventFilterParser.value_function_return;
-import java.io.IOException;
-import java.io.StringReader;
-import org.antlr.runtime.ANTLRInputStream;
-import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.BufferedTokenStream;
-import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonToken;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.FailedPredicateException;
@@ -271,8 +266,7 @@ public class EventFilterParserDiffblueTest {
     assertEquals(0, actualEventFilterParser.getDelegates().length);
     assertTrue(actualEventFilterParser.getRuleInvocationStack().isEmpty());
     assertSame(input, tokenStream);
-    String[] expectedTokenNames = actualEventFilterParser.tokenNames;
-    assertSame(expectedTokenNames, actualEventFilterParser.getTokenNames());
+    assertSame(EventFilterParser.tokenNames, actualEventFilterParser.getTokenNames());
   }
 
   /**
@@ -305,8 +299,7 @@ public class EventFilterParserDiffblueTest {
     assertEquals(0, actualEventFilterParser.getDelegates().length);
     assertTrue(actualEventFilterParser.getRuleInvocationStack().isEmpty());
     assertSame(input, tokenStream);
-    String[] expectedTokenNames = actualEventFilterParser.tokenNames;
-    assertSame(expectedTokenNames, actualEventFilterParser.getTokenNames());
+    assertSame(EventFilterParser.tokenNames, actualEventFilterParser.getTokenNames());
   }
 
   /**
@@ -337,7 +330,7 @@ public class EventFilterParserDiffblueTest {
     assertTrue(actualTreeAdaptor instanceof CommonTreeAdaptor);
     assertEquals("EventFilter.g", actualGrammarFileName);
     assertSame(adaptor, actualTreeAdaptor);
-    assertSame(createParserResult.tokenNames, actualTokenNames);
+    assertSame(EventFilterParser.tokenNames, actualTokenNames);
   }
 
   /**
@@ -360,8 +353,7 @@ public class EventFilterParserDiffblueTest {
     assertEquals(0, actualCreateParserResult.getRuleMemoizationCacheSize());
     assertEquals(0, actualCreateParserResult.getDelegates().length);
     assertTrue(actualCreateParserResult.getRuleInvocationStack().isEmpty());
-    String[] expectedTokenNames = actualCreateParserResult.tokenNames;
-    assertSame(expectedTokenNames, actualCreateParserResult.getTokenNames());
+    assertSame(EventFilterParser.tokenNames, actualCreateParserResult.getTokenNames());
   }
 
   /**
@@ -513,42 +505,6 @@ public class EventFilterParserDiffblueTest {
    * Test {@link EventFilterParser#filter()}.
    *
    * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#filter()}
-   */
-  @Test
-  public void testFilter_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class, () -> EventFilterParser.createParser("42").filter());
-  }
-
-  /**
-   * Test {@link EventFilterParser#filter()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#filter()}
-   */
-  @Test
-  public void testFilter_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree").filter());
-  }
-
-  /**
-   * Test {@link EventFilterParser#filter()}.
-   *
-   * <ul>
    *   <li>Given createParser space.
    *   <li>Then throw {@link EventFilterParsingException}.
    * </ul>
@@ -561,88 +517,6 @@ public class EventFilterParserDiffblueTest {
     // Arrange, Act and Assert
     assertThrows(
         EventFilterParsingException.class, () -> EventFilterParser.createParser(" ").filter());
-  }
-
-  /**
-   * Test {@link EventFilterParser#filter()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#filter()}
-   */
-  @Test
-  public void testFilter_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .filter());
-  }
-
-  /**
-   * Test {@link EventFilterParser#filter()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#filter()}
-   */
-  @Test
-  public void testFilter_givenStringReaderWithLf_thenThrowEventFilterParsingException()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .filter());
-  }
-
-  /**
-   * Test {@link EventFilterParser#boolean_expr()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#boolean_expr()}
-   */
-  @Test
-  public void testBoolean_expr_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").boolean_expr());
-  }
-
-  /**
-   * Test {@link EventFilterParser#boolean_expr()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#boolean_expr()}
-   */
-  @Test
-  public void testBoolean_expr_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree").boolean_expr());
   }
 
   /**
@@ -665,88 +539,6 @@ public class EventFilterParserDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterParser#boolean_expr()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#boolean_expr()}
-   */
-  @Test
-  public void testBoolean_expr_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .boolean_expr());
-  }
-
-  /**
-   * Test {@link EventFilterParser#boolean_expr()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#boolean_expr()}
-   */
-  @Test
-  public void testBoolean_expr_givenStringReaderWithLf_thenThrowEventFilterParsingException()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .boolean_expr());
-  }
-
-  /**
-   * Test {@link EventFilterParser#boolean_factor()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#boolean_factor()}
-   */
-  @Test
-  public void testBoolean_factor_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").boolean_factor());
-  }
-
-  /**
-   * Test {@link EventFilterParser#boolean_factor()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#boolean_factor()}
-   */
-  @Test
-  public void testBoolean_factor_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree").boolean_factor());
-  }
-
-  /**
    * Test {@link EventFilterParser#boolean_factor()}.
    *
    * <ul>
@@ -763,87 +555,6 @@ public class EventFilterParserDiffblueTest {
     assertThrows(
         EventFilterParsingException.class,
         () -> EventFilterParser.createParser(" ").boolean_factor());
-  }
-
-  /**
-   * Test {@link EventFilterParser#boolean_factor()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#boolean_factor()}
-   */
-  @Test
-  public void testBoolean_factor_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .boolean_factor());
-  }
-
-  /**
-   * Test {@link EventFilterParser#boolean_factor()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#boolean_factor()}
-   */
-  @Test
-  public void testBoolean_factor_givenStringReaderWithLf_thenThrowEventFilterParsingException()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .boolean_factor());
-  }
-
-  /**
-   * Test {@link EventFilterParser#predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#predicate()}
-   */
-  @Test
-  public void testPredicate_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class, () -> EventFilterParser.createParser("42").predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#predicate()}
-   */
-  @Test
-  public void testPredicate_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree").predicate());
   }
 
   /**
@@ -865,100 +576,17 @@ public class EventFilterParserDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterParser#predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#predicate()}
-   */
-  @Test
-  public void testPredicate_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#predicate()}
-   */
-  @Test
-  public void testPredicate_givenStringReaderWithLf_thenThrowEventFilterParsingException()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .predicate());
-  }
-
-  /**
    * Test {@link EventFilterParser#comparison_function()}.
    *
    * <ul>
-   *   <li>Given createParser {@code 42}.
    *   <li>Then throw {@link EventFilterParsingException}.
    * </ul>
    *
    * <p>Method under test: {@link EventFilterParser#comparison_function()}
    */
   @Test
-  public void testComparison_function_givenCreateParser42_thenThrowEventFilterParsingException()
+  public void testComparison_function_thenThrowEventFilterParsingException()
       throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").comparison_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#comparison_function()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#comparison_function()}
-   */
-  @Test
-  public void testComparison_function_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree")
-                .comparison_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#comparison_function()}.
-   *
-   * <ul>
-   *   <li>Given createParser space.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#comparison_function()}
-   */
-  @Test
-  public void testComparison_function_givenCreateParserSpace() throws RecognitionException {
     // Arrange, Act and Assert
     assertThrows(
         EventFilterParsingException.class,
@@ -966,184 +594,21 @@ public class EventFilterParserDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterParser#comparison_function()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#comparison_function()}
-   */
-  @Test
-  public void testComparison_function_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .comparison_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#comparison_function()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#comparison_function()}
-   */
-  @Test
-  public void testComparison_function_givenStringReaderWithLf()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .comparison_function());
-  }
-
-  /**
    * Test {@link EventFilterParser#between_predicate()}.
    *
    * <ul>
-   *   <li>Given createParser {@code 42}.
    *   <li>Then throw {@link EventFilterParsingException}.
    * </ul>
    *
    * <p>Method under test: {@link EventFilterParser#between_predicate()}
    */
   @Test
-  public void testBetween_predicate_givenCreateParser42_thenThrowEventFilterParsingException()
+  public void testBetween_predicate_thenThrowEventFilterParsingException()
       throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").between_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#between_predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#between_predicate()}
-   */
-  @Test
-  public void testBetween_predicate_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree")
-                .between_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#between_predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser space.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#between_predicate()}
-   */
-  @Test
-  public void testBetween_predicate_givenCreateParserSpace() throws RecognitionException {
     // Arrange, Act and Assert
     assertThrows(
         EventFilterParsingException.class,
         () -> EventFilterParser.createParser(" ").between_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#between_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#between_predicate()}
-   */
-  @Test
-  public void testBetween_predicate_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .between_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#between_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#between_predicate()}
-   */
-  @Test
-  public void testBetween_predicate_givenStringReaderWithLf()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .between_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#in_predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#in_predicate()}
-   */
-  @Test
-  public void testIn_predicate_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").in_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#in_predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#in_predicate()}
-   */
-  @Test
-  public void testIn_predicate_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree").in_predicate());
   }
 
   /**
@@ -1166,70 +631,6 @@ public class EventFilterParserDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterParser#in_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#in_predicate()}
-   */
-  @Test
-  public void testIn_predicate_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .in_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#in_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#in_predicate()}
-   */
-  @Test
-  public void testIn_predicate_givenStringReaderWithLf_thenThrowEventFilterParsingException()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .in_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#null_predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#null_predicate()}
-   */
-  @Test
-  public void testNull_predicate_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").null_predicate());
-  }
-
-  /**
    * Test {@link EventFilterParser#null_predicate()}.
    *
    * <ul>
@@ -1246,70 +647,6 @@ public class EventFilterParserDiffblueTest {
     assertThrows(
         EventFilterParsingException.class,
         () -> EventFilterParser.createParser(" ").null_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#null_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#null_predicate()}
-   */
-  @Test
-  public void testNull_predicate_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .null_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#null_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#null_predicate()}
-   */
-  @Test
-  public void testNull_predicate_givenStringReaderWithLf_thenThrowEventFilterParsingException()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .null_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#regex_predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#regex_predicate()}
-   */
-  @Test
-  public void testRegex_predicate_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").regex_predicate());
   }
 
   /**
@@ -1332,89 +669,6 @@ public class EventFilterParserDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterParser#regex_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#regex_predicate()}
-   */
-  @Test
-  public void testRegex_predicate_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .regex_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#regex_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#regex_predicate()}
-   */
-  @Test
-  public void testRegex_predicate_givenStringReaderWithLf_thenThrowEventFilterParsingException()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .regex_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#exists_predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#exists_predicate()}
-   */
-  @Test
-  public void testExists_predicate_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").exists_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#exists_predicate()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#exists_predicate()}
-   */
-  @Test
-  public void testExists_predicate_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree").exists_predicate());
-  }
-
-  /**
    * Test {@link EventFilterParser#exists_predicate()}.
    *
    * <ul>
@@ -1434,69 +688,6 @@ public class EventFilterParserDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterParser#exists_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#exists_predicate()}
-   */
-  @Test
-  public void testExists_predicate_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .exists_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#exists_predicate()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#exists_predicate()}
-   */
-  @Test
-  public void testExists_predicate_givenStringReaderWithLf()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .exists_predicate());
-  }
-
-  /**
-   * Test {@link EventFilterParser#path_function()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#path_function()}
-   */
-  @Test
-  public void testPath_function_givenCreateParser42_thenThrowEventFilterParsingException()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").path_function());
-  }
-
-  /**
    * Test {@link EventFilterParser#path_function()}.
    *
    * <ul>
@@ -1513,51 +704,6 @@ public class EventFilterParserDiffblueTest {
     assertThrows(
         EventFilterParsingException.class,
         () -> EventFilterParser.createParser(" ").path_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#path_function()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#path_function()}
-   */
-  @Test
-  public void testPath_function_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .path_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#path_function()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   *   <li>Then throw {@link EventFilterParsingException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#path_function()}
-   */
-  @Test
-  public void testPath_function_givenStringReaderWithLf_thenThrowEventFilterParsingException()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .path_function());
   }
 
   /**
@@ -1605,30 +751,6 @@ public class EventFilterParserDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterParser#value_function()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then Tree return {@link NumberTreeNode}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#value_function()}
-   */
-  @Test
-  public void testValue_function_givenCreateParser42_thenTreeReturnNumberTreeNode()
-      throws RecognitionException {
-    // Arrange and Act
-    value_function_return actualValue_functionResult =
-        EventFilterParser.createParser("42").value_function();
-
-    // Assert
-    assertTrue(actualValue_functionResult.getTree() instanceof NumberTreeNode);
-    Object start = actualValue_functionResult.getStart();
-    assertTrue(start instanceof CommonToken);
-    assertSame(start, actualValue_functionResult.getStop());
-  }
-
-  /**
    * Test value_function_return getters and setters.
    *
    * <p>Methods under test:
@@ -1653,160 +775,52 @@ public class EventFilterParserDiffblueTest {
    * Test {@link EventFilterParser#value_function()}.
    *
    * <ul>
-   *   <li>Then createParser space TokenStream {@link CommonTokenStream}.
+   *   <li>Then Start InputStream return {@link ANTLRStringStream}.
    * </ul>
    *
    * <p>Method under test: {@link EventFilterParser#value_function()}
    */
   @Test
-  public void testValue_function_thenCreateParserSpaceTokenStreamCommonTokenStream()
+  public void testValue_function_thenStartInputStreamReturnANTLRStringStream()
       throws RecognitionException {
     // Arrange
     EventFilterParser createParserResult = EventFilterParser.createParser(" ");
 
-    // Act and Assert
-    Object start = createParserResult.value_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
+    // Act
+    value_function_return actualValue_functionResult = createParserResult.value_function();
+
+    // Assert
+    Object start = actualValue_functionResult.getStart();
+    assertTrue(((CommonToken) start).getInputStream() instanceof ANTLRStringStream);
     assertTrue(start instanceof CommonToken);
     TokenStream tokenStream = createParserResult.getTokenStream();
     assertTrue(tokenStream instanceof CommonTokenStream);
-    assertEquals(1, inputStream.getCharPositionInLine());
+    assertEquals("<EOF>", ((CommonToken) start).getText());
+    assertNull(actualValue_functionResult.getTree());
+    assertNull(actualValue_functionResult.getStop());
+    assertNull(actualValue_functionResult.getTemplate());
+    assertEquals(0, ((CommonToken) start).getChannel());
     assertEquals(1, ((CommonToken) start).getCharPositionInLine());
+    assertEquals(1, ((CommonToken) start).getLine());
     assertEquals(1, ((CommonToken) start).getStartIndex());
+    assertEquals(1, ((CommonToken) start).getStopIndex());
     assertEquals(1, ((CommonToken) start).getTokenIndex());
-    assertEquals(1, inputStream.index());
-    assertEquals(1, inputStream.size());
     assertEquals(1, tokenStream.range());
-  }
-
-  /**
-   * Test {@link EventFilterParser#value_function()}.
-   *
-   * <ul>
-   *   <li>Then return Start InputStream CharPositionInLine is zero.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#value_function()}
-   */
-  @Test
-  public void testValue_function_thenReturnStartInputStreamCharPositionInLineIsZero()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    Object start = EventFilterParser.createParser("").value_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals(0, inputStream.getCharPositionInLine());
-    assertEquals(0, ((CommonToken) start).getStopIndex());
-    assertEquals(0, inputStream.index());
-    assertEquals(0, inputStream.size());
-  }
-
-  /**
-   * Test {@link EventFilterParser#value_function()}.
-   *
-   * <ul>
-   *   <li>Then return Start Text is {@code or}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#value_function()}
-   */
-  @Test
-  public void testValue_function_thenReturnStartTextIsOr() throws RecognitionException {
-    // Arrange, Act and Assert
-    Object start =
-        EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree")
-            .value_function()
-            .getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals("or", ((CommonToken) start).getText());
-    assertEquals(2, inputStream.getCharPositionInLine());
-    assertEquals(2, inputStream.index());
-    assertEquals(EventFilterParser.OR, ((CommonToken) start).getType());
-    assertEquals(EventFilterParser.T__33, inputStream.size());
-  }
-
-  /**
-   * Test {@link EventFilterParser#value_function()}.
-   *
-   * <ul>
-   *   <li>Then Start InputStream return {@link ANTLRInputStream}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#value_function()}
-   */
-  @Test
-  public void testValue_function_thenStartInputStreamReturnANTLRInputStream()
-      throws RecognitionException {
-    // Arrange
-    ANTLRInputStream input = new ANTLRInputStream();
-    EventFilterParser eventFilterParser =
-        new EventFilterParser(new BufferedTokenStream(new EventFilterLexer(input)));
-
-    // Act and Assert
-    Object start = eventFilterParser.value_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRInputStream);
-    TokenStream tokenStream = eventFilterParser.getTokenStream();
-    assertTrue(tokenStream instanceof BufferedTokenStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals(0, tokenStream.index());
-    assertEquals(1, ((BufferedTokenStream) tokenStream).getTokens().size());
-    assertEquals(1, tokenStream.size());
-    assertSame(input, inputStream);
+    assertEquals(EventFilterParser.EOF, ((CommonToken) start).getType());
   }
 
   /**
    * Test {@link EventFilterParser#equality_value_function()}.
    *
    * <ul>
-   *   <li>Given createParser {@code 42}.
+   *   <li>Then throw {@link EventFilterParsingException}.
    * </ul>
    *
    * <p>Method under test: {@link EventFilterParser#equality_value_function()}
    */
   @Test
-  public void testEquality_value_function_givenCreateParser42() throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").equality_value_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#equality_value_function()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code org.antlr.runtime.tree.CommonTree}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#equality_value_function()}
-   */
-  @Test
-  public void testEquality_value_function_givenCreateParserOrgAntlrRuntimeTreeCommonTree()
+  public void testEquality_value_function_thenThrowEventFilterParsingException()
       throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree")
-                .equality_value_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#equality_value_function()}.
-   *
-   * <ul>
-   *   <li>Given createParser space.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#equality_value_function()}
-   */
-  @Test
-  public void testEquality_value_function_givenCreateParserSpace() throws RecognitionException {
     // Arrange, Act and Assert
     assertThrows(
         EventFilterParsingException.class,
@@ -1814,381 +828,98 @@ public class EventFilterParserDiffblueTest {
   }
 
   /**
-   * Test {@link EventFilterParser#equality_value_function()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#equality_value_function()}
-   */
-  @Test
-  public void testEquality_value_function_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .equality_value_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#equality_value_function()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#equality_value_function()}
-   */
-  @Test
-  public void testEquality_value_function_givenStringReaderWithLf()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .equality_value_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#compariable_value_function()}.
-   *
-   * <p>Method under test: {@link EventFilterParser#compariable_value_function()}
-   */
-  @Test
-  public void testCompariable_value_function() throws RecognitionException {
-    // Arrange, Act and Assert
-    Object start = EventFilterParser.createParser("").compariable_value_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals(0, inputStream.getCharPositionInLine());
-    assertEquals(0, ((CommonToken) start).getStopIndex());
-    assertEquals(0, inputStream.index());
-    assertEquals(0, inputStream.size());
-  }
-
-  /**
    * Test {@link EventFilterParser#compariable_value_function()}.
    *
    * <ul>
-   *   <li>Given createParser {@code 42}.
-   *   <li>Then Tree return {@link NumberTreeNode}.
+   *   <li>Then Start InputStream return {@link ANTLRStringStream}.
    * </ul>
    *
    * <p>Method under test: {@link EventFilterParser#compariable_value_function()}
    */
   @Test
-  public void testCompariable_value_function_givenCreateParser42_thenTreeReturnNumberTreeNode()
+  public void testCompariable_value_function_thenStartInputStreamReturnANTLRStringStream()
       throws RecognitionException {
-    // Arrange and Act
+    // Arrange
+    EventFilterParser createParserResult = EventFilterParser.createParser(" ");
+
+    // Act
     compariable_value_function_return actualCompariable_value_functionResult =
-        EventFilterParser.createParser("42").compariable_value_function();
+        createParserResult.compariable_value_function();
 
     // Assert
-    assertTrue(actualCompariable_value_functionResult.getTree() instanceof NumberTreeNode);
     Object start = actualCompariable_value_functionResult.getStart();
+    assertTrue(((CommonToken) start).getInputStream() instanceof ANTLRStringStream);
     assertTrue(start instanceof CommonToken);
-    assertSame(start, actualCompariable_value_functionResult.getStop());
+    TokenStream tokenStream = createParserResult.getTokenStream();
+    assertTrue(tokenStream instanceof CommonTokenStream);
+    assertEquals("<EOF>", ((CommonToken) start).getText());
+    assertNull(actualCompariable_value_functionResult.getTree());
+    assertNull(actualCompariable_value_functionResult.getStop());
+    assertNull(actualCompariable_value_functionResult.getTemplate());
+    assertEquals(0, ((CommonToken) start).getChannel());
+    assertEquals(1, ((CommonToken) start).getCharPositionInLine());
+    assertEquals(1, ((CommonToken) start).getLine());
+    assertEquals(1, ((CommonToken) start).getStartIndex());
+    assertEquals(1, ((CommonToken) start).getStopIndex());
+    assertEquals(1, ((CommonToken) start).getTokenIndex());
+    assertEquals(1, tokenStream.range());
+    assertEquals(EventFilterParser.EOF, ((CommonToken) start).getType());
   }
 
   /**
-   * Test {@link EventFilterParser#compariable_value_function()}.
+   * Test {@link EventFilterParser#time_millis_function()}.
    *
    * <ul>
-   *   <li>Then createParser space TokenStream {@link CommonTokenStream}.
+   *   <li>Then Start InputStream return {@link ANTLRStringStream}.
    * </ul>
    *
-   * <p>Method under test: {@link EventFilterParser#compariable_value_function()}
+   * <p>Method under test: {@link EventFilterParser#time_millis_function()}
    */
   @Test
-  public void testCompariable_value_function_thenCreateParserSpaceTokenStreamCommonTokenStream()
+  public void testTime_millis_function_thenStartInputStreamReturnANTLRStringStream()
       throws RecognitionException {
     // Arrange
     EventFilterParser createParserResult = EventFilterParser.createParser(" ");
 
-    // Act and Assert
-    Object start = createParserResult.compariable_value_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
+    // Act
+    time_millis_function_return actualTime_millis_functionResult =
+        createParserResult.time_millis_function();
+
+    // Assert
+    Object start = actualTime_millis_functionResult.getStart();
+    assertTrue(((CommonToken) start).getInputStream() instanceof ANTLRStringStream);
     assertTrue(start instanceof CommonToken);
     TokenStream tokenStream = createParserResult.getTokenStream();
     assertTrue(tokenStream instanceof CommonTokenStream);
-    assertEquals(1, inputStream.getCharPositionInLine());
+    assertEquals("<EOF>", ((CommonToken) start).getText());
+    assertNull(actualTime_millis_functionResult.getTree());
+    assertNull(actualTime_millis_functionResult.getStop());
+    assertNull(actualTime_millis_functionResult.getTemplate());
+    assertEquals(0, ((CommonToken) start).getChannel());
     assertEquals(1, ((CommonToken) start).getCharPositionInLine());
+    assertEquals(1, ((CommonToken) start).getLine());
     assertEquals(1, ((CommonToken) start).getStartIndex());
+    assertEquals(1, ((CommonToken) start).getStopIndex());
     assertEquals(1, ((CommonToken) start).getTokenIndex());
-    assertEquals(1, inputStream.index());
-    assertEquals(1, inputStream.size());
     assertEquals(1, tokenStream.range());
+    assertEquals(EventFilterParser.EOF, ((CommonToken) start).getType());
   }
 
   /**
-   * Test {@link EventFilterParser#compariable_value_function()}.
-   *
-   * <ul>
-   *   <li>Then return Start Text is {@code or}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#compariable_value_function()}
-   */
-  @Test
-  public void testCompariable_value_function_thenReturnStartTextIsOr() throws RecognitionException {
-    // Arrange, Act and Assert
-    Object start =
-        EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree")
-            .compariable_value_function()
-            .getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals("or", ((CommonToken) start).getText());
-    assertEquals(2, inputStream.getCharPositionInLine());
-    assertEquals(2, inputStream.index());
-    assertEquals(EventFilterParser.OR, ((CommonToken) start).getType());
-    assertEquals(EventFilterParser.T__33, inputStream.size());
-  }
-
-  /**
-   * Test {@link EventFilterParser#compariable_value_function()}.
-   *
-   * <ul>
-   *   <li>Then Start InputStream return {@link ANTLRInputStream}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#compariable_value_function()}
-   */
-  @Test
-  public void testCompariable_value_function_thenStartInputStreamReturnANTLRInputStream()
-      throws RecognitionException {
-    // Arrange
-    ANTLRInputStream input = new ANTLRInputStream();
-    EventFilterParser eventFilterParser =
-        new EventFilterParser(new BufferedTokenStream(new EventFilterLexer(input)));
-
-    // Act and Assert
-    Object start = eventFilterParser.compariable_value_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRInputStream);
-    TokenStream tokenStream = eventFilterParser.getTokenStream();
-    assertTrue(tokenStream instanceof BufferedTokenStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals(0, tokenStream.index());
-    assertEquals(1, ((BufferedTokenStream) tokenStream).getTokens().size());
-    assertEquals(1, tokenStream.size());
-    assertSame(input, inputStream);
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_millis_function()}.
-   *
-   * <ul>
-   *   <li>Then createParser space TokenStream {@link CommonTokenStream}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#time_millis_function()}
-   */
-  @Test
-  public void testTime_millis_function_thenCreateParserSpaceTokenStreamCommonTokenStream()
-      throws RecognitionException {
-    // Arrange
-    EventFilterParser createParserResult = EventFilterParser.createParser(" ");
-
-    // Act and Assert
-    Object start = createParserResult.time_millis_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
-    assertTrue(start instanceof CommonToken);
-    TokenStream tokenStream = createParserResult.getTokenStream();
-    assertTrue(tokenStream instanceof CommonTokenStream);
-    assertEquals(1, inputStream.getCharPositionInLine());
-    assertEquals(1, ((CommonToken) start).getCharPositionInLine());
-    assertEquals(1, ((CommonToken) start).getStartIndex());
-    assertEquals(1, ((CommonToken) start).getTokenIndex());
-    assertEquals(1, inputStream.index());
-    assertEquals(1, inputStream.size());
-    assertEquals(1, tokenStream.range());
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_millis_function()}.
-   *
-   * <ul>
-   *   <li>Then return Start InputStream CharPositionInLine is zero.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#time_millis_function()}
-   */
-  @Test
-  public void testTime_millis_function_thenReturnStartInputStreamCharPositionInLineIsZero()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    Object start = EventFilterParser.createParser("").time_millis_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals(0, inputStream.getCharPositionInLine());
-    assertEquals(0, ((CommonToken) start).getStopIndex());
-    assertEquals(0, inputStream.index());
-    assertEquals(0, inputStream.size());
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_millis_function()}.
-   *
-   * <ul>
-   *   <li>Then return Start Text is {@code or}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#time_millis_function()}
-   */
-  @Test
-  public void testTime_millis_function_thenReturnStartTextIsOr() throws RecognitionException {
-    // Arrange, Act and Assert
-    Object start =
-        EventFilterParser.createParser("org.antlr.runtime.tree.CommonTree")
-            .time_millis_function()
-            .getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRStringStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals("or", ((CommonToken) start).getText());
-    assertEquals(2, inputStream.getCharPositionInLine());
-    assertEquals(2, inputStream.index());
-    assertEquals(EventFilterParser.OR, ((CommonToken) start).getType());
-    assertEquals(EventFilterParser.T__33, inputStream.size());
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_millis_function()}.
-   *
-   * <ul>
-   *   <li>Then Start InputStream return {@link ANTLRInputStream}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#time_millis_function()}
-   */
-  @Test
-  public void testTime_millis_function_thenStartInputStreamReturnANTLRInputStream()
-      throws RecognitionException {
-    // Arrange
-    ANTLRInputStream input = new ANTLRInputStream();
-    EventFilterParser eventFilterParser =
-        new EventFilterParser(new BufferedTokenStream(new EventFilterLexer(input)));
-
-    // Act and Assert
-    Object start = eventFilterParser.time_millis_function().getStart();
-    CharStream inputStream = ((CommonToken) start).getInputStream();
-    assertTrue(inputStream instanceof ANTLRInputStream);
-    TokenStream tokenStream = eventFilterParser.getTokenStream();
-    assertTrue(tokenStream instanceof BufferedTokenStream);
-    assertTrue(start instanceof CommonToken);
-    assertEquals(0, tokenStream.index());
-    assertEquals(1, ((BufferedTokenStream) tokenStream).getTokens().size());
-    assertEquals(1, tokenStream.size());
-    assertSame(input, inputStream);
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_millis_function()}.
+   * Test {@link EventFilterParser#time_string_function()}.
    *
    * <ul>
    *   <li>Then throw {@link EventFilterParsingException}.
    * </ul>
    *
-   * <p>Method under test: {@link EventFilterParser#time_millis_function()}
+   * <p>Method under test: {@link EventFilterParser#time_string_function()}
    */
   @Test
-  public void testTime_millis_function_thenThrowEventFilterParsingException()
+  public void testTime_string_function_thenThrowEventFilterParsingException()
       throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").time_millis_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_string_function()}.
-   *
-   * <ul>
-   *   <li>Given createParser {@code 42}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#time_string_function()}
-   */
-  @Test
-  public void testTime_string_function_givenCreateParser42() throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () -> EventFilterParser.createParser("42").time_string_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_string_function()}.
-   *
-   * <ul>
-   *   <li>Given createParser space.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#time_string_function()}
-   */
-  @Test
-  public void testTime_string_function_givenCreateParserSpace() throws RecognitionException {
     // Arrange, Act and Assert
     assertThrows(
         EventFilterParsingException.class,
         () -> EventFilterParser.createParser(" ").time_string_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_string_function()}.
-   *
-   * <ul>
-   *   <li>Given {@link EventFilterLexer#EventFilterLexer(CharStream)} with input is {@link
-   *       ANTLRInputStream#ANTLRInputStream()}.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#time_string_function()}
-   */
-  @Test
-  public void testTime_string_function_givenEventFilterLexerWithInputIsANTLRInputStream()
-      throws RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(new EventFilterLexer(new ANTLRInputStream())))
-                .time_string_function());
-  }
-
-  /**
-   * Test {@link EventFilterParser#time_string_function()}.
-   *
-   * <ul>
-   *   <li>Given {@link StringReader#StringReader(String)} with lf.
-   * </ul>
-   *
-   * <p>Method under test: {@link EventFilterParser#time_string_function()}
-   */
-  @Test
-  public void testTime_string_function_givenStringReaderWithLf()
-      throws IOException, RecognitionException {
-    // Arrange, Act and Assert
-    assertThrows(
-        EventFilterParsingException.class,
-        () ->
-            new EventFilterParser(
-                    new BufferedTokenStream(
-                        new EventFilterLexer(new ANTLRReaderStream(new StringReader("\n")))))
-                .time_string_function());
   }
 }

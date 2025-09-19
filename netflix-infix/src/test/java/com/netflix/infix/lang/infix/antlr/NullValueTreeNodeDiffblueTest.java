@@ -50,9 +50,10 @@ public class NullValueTreeNodeDiffblueTest {
   public void testNewNullValueTreeNode_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    NullValueTreeNode node = new NullValueTreeNode(t);
 
     // Act
-    NullValueTreeNode actualNullValueTreeNode = new NullValueTreeNode(new NullValueTreeNode(t));
+    NullValueTreeNode actualNullValueTreeNode = new NullValueTreeNode(node);
 
     // Assert
     Token token = actualNullValueTreeNode.getToken();

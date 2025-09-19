@@ -75,9 +75,10 @@ public class StringTreeNodeDiffblueTest {
   public void testNewStringTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    StringTreeNode node = new StringTreeNode(t);
 
     // Act
-    StringTreeNode actualStringTreeNode = new StringTreeNode(new StringTreeNode(t));
+    StringTreeNode actualStringTreeNode = new StringTreeNode(node);
 
     // Assert
     Token token = actualStringTreeNode.getToken();

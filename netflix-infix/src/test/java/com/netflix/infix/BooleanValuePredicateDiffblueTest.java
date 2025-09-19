@@ -86,8 +86,7 @@ public class BooleanValuePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(booleanValuePredicate, booleanValuePredicate2);
-    int expectedHashCodeResult = booleanValuePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, booleanValuePredicate2.hashCode());
+    assertEquals(booleanValuePredicate.hashCode(), booleanValuePredicate2.hashCode());
   }
 
   /**

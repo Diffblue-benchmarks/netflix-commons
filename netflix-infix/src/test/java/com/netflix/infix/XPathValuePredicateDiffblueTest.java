@@ -105,8 +105,7 @@ public class XPathValuePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(xPathValuePredicate, xPathValuePredicate2);
-    int expectedHashCodeResult = xPathValuePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, xPathValuePredicate2.hashCode());
+    assertEquals(xPathValuePredicate.hashCode(), xPathValuePredicate2.hashCode());
   }
 
   /**
@@ -132,8 +131,7 @@ public class XPathValuePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(xPathValuePredicate, xPathValuePredicate2);
-    int expectedHashCodeResult = xPathValuePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, xPathValuePredicate2.hashCode());
+    assertEquals(xPathValuePredicate.hashCode(), xPathValuePredicate2.hashCode());
   }
 
   /**
@@ -159,8 +157,7 @@ public class XPathValuePredicateDiffblueTest {
 
     // Act and Assert
     assertEquals(xPathValuePredicate, xPathValuePredicate2);
-    int expectedHashCodeResult = xPathValuePredicate.hashCode();
-    assertEquals(expectedHashCodeResult, xPathValuePredicate2.hashCode());
+    assertEquals(xPathValuePredicate.hashCode(), xPathValuePredicate2.hashCode());
   }
 
   /**

@@ -61,9 +61,10 @@ public class NumberTreeNodeDiffblueTest {
   public void testNewNumberTreeNode_whenClassicTokenWithTypeIsOne_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    NumberTreeNode node = new NumberTreeNode(t);
 
     // Act
-    NumberTreeNode actualNumberTreeNode = new NumberTreeNode(new NumberTreeNode(t));
+    NumberTreeNode actualNumberTreeNode = new NumberTreeNode(node);
 
     // Assert
     Token token = actualNumberTreeNode.getToken();

@@ -44,9 +44,10 @@ public class NumericInTreeNodeDiffblueTest {
   public void testNewNumericInTreeNode_thenTokenReturnClassicToken() {
     // Arrange
     ClassicToken t = new ClassicToken(1);
+    NumericInTreeNode node = new NumericInTreeNode(t);
 
     // Act
-    NumericInTreeNode actualNumericInTreeNode = new NumericInTreeNode(new NumericInTreeNode(t));
+    NumericInTreeNode actualNumericInTreeNode = new NumericInTreeNode(node);
 
     // Assert
     Token token = actualNumericInTreeNode.getToken();

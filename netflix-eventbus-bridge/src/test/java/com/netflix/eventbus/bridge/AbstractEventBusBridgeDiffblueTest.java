@@ -9,11 +9,35 @@ import com.google.common.base.Supplier;
 import com.netflix.eventbus.DummyEventBusBridge;
 import com.netflix.eventbus.bridge.AbstractEventBusBridge.Builder;
 import com.netflix.eventbus.filter.lang.infix.InfixEventFilter;
+import com.netflix.eventbus.impl.EventBusImpl;
 import com.netflix.eventbus.spi.EventBus;
 import com.netflix.eventbus.spi.EventFilter;
 import org.junit.Test;
 
 public class AbstractEventBusBridgeDiffblueTest {
+  /**
+   * Test Builder {@link Builder#validate()}.
+   *
+   * <ul>
+   *   <li>Given builder withEventBus {@link EventBusImpl}.
+   *   <li>Then does not throw.
+   * </ul>
+   *
+   * <p>Method under test: {@link Builder#validate()}
+   */
+  @Test
+  public void testBuilderValidate_givenBuilderWithEventBusEventBusImpl_thenDoesNotThrow()
+      throws Exception {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+    Class<Object> eventType = Object.class;
+    builderResult.withEventType(eventType);
+    builderResult.withEventBus(mock(EventBusImpl.class));
+
+    // Act and Assert
+    builderResult.validate();
+  }
+
   /**
    * Test Builder {@link Builder#withAutoStart(Boolean)}.
    *
@@ -24,8 +48,11 @@ public class AbstractEventBusBridgeDiffblueTest {
     // Arrange
     DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
 
-    // Act and Assert
-    assertSame(builderResult, builderResult.withAutoStart(true));
+    // Act
+    DummyEventBusBridge.Builder actualWithAutoStartResult = builderResult.withAutoStart(true);
+
+    // Assert
+    assertSame(builderResult, actualWithAutoStartResult);
   }
 
   /**
@@ -43,8 +70,11 @@ public class AbstractEventBusBridgeDiffblueTest {
     // Arrange
     DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
 
-    // Act and Assert
-    assertSame(builderResult, builderResult.withEventBus(null));
+    // Act
+    DummyEventBusBridge.Builder actualWithEventBusResult = builderResult.withEventBus(null);
+
+    // Assert
+    assertSame(builderResult, actualWithEventBusResult);
   }
 
   /**
@@ -102,8 +132,12 @@ public class AbstractEventBusBridgeDiffblueTest {
     // Arrange
     DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
 
-    // Act and Assert
-    assertSame(builderResult, builderResult.withStatsSupplier(null));
+    // Act
+    DummyEventBusBridge.Builder actualWithStatsSupplierResult =
+        builderResult.withStatsSupplier(null);
+
+    // Assert
+    assertSame(builderResult, actualWithStatsSupplierResult);
   }
 
   /**
@@ -120,8 +154,12 @@ public class AbstractEventBusBridgeDiffblueTest {
     // Arrange
     DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
 
-    // Act and Assert
-    assertSame(builderResult, builderResult.withStatsSupplier(mock(Supplier.class)));
+    // Act
+    DummyEventBusBridge.Builder actualWithStatsSupplierResult =
+        builderResult.withStatsSupplier(mock(Supplier.class));
+
+    // Assert
+    assertSame(builderResult, actualWithStatsSupplierResult);
   }
 
   /**
@@ -138,8 +176,11 @@ public class AbstractEventBusBridgeDiffblueTest {
     // Arrange
     DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
 
-    // Act and Assert
-    assertSame(builderResult, builderResult.withStats(null));
+    // Act
+    DummyEventBusBridge.Builder actualWithStatsResult = builderResult.withStats(null);
+
+    // Assert
+    assertSame(builderResult, actualWithStatsResult);
   }
 
   /**
@@ -156,7 +197,11 @@ public class AbstractEventBusBridgeDiffblueTest {
     // Arrange
     DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
 
-    // Act and Assert
-    assertSame(builderResult, builderResult.withStats(new SimpleEventBusBridgeStats()));
+    // Act
+    DummyEventBusBridge.Builder actualWithStatsResult =
+        builderResult.withStats(new SimpleEventBusBridgeStats());
+
+    // Assert
+    assertSame(builderResult, actualWithStatsResult);
   }
 }

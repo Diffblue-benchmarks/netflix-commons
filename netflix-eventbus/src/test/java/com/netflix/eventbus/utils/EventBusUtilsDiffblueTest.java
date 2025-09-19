@@ -25,6 +25,28 @@ public class EventBusUtilsDiffblueTest {
    * Test {@link EventBusUtils#getQueueSize(SubscriberConfig)}.
    *
    * <ul>
+   *   <li>Given {@link IllegalArgumentException#IllegalArgumentException()}.
+   *   <li>Then throw {@link IllegalArgumentException}.
+   * </ul>
+   *
+   * <p>Method under test: {@link
+   * EventBusUtils#getQueueSize(SubscriberConfigProvider.SubscriberConfig)}
+   */
+  @Test
+  public void testGetQueueSize_givenIllegalArgumentException_thenThrowIllegalArgumentException() {
+    // Arrange
+    SubscriberConfig subscribe = mock(SubscriberConfig.class);
+    when(subscribe.getQueueSize()).thenThrow(new IllegalArgumentException());
+
+    // Act and Assert
+    assertThrows(IllegalArgumentException.class, () -> EventBusUtils.getQueueSize(subscribe));
+    verify(subscribe).getQueueSize();
+  }
+
+  /**
+   * Test {@link EventBusUtils#getQueueSize(SubscriberConfig)}.
+   *
+   * <ul>
    *   <li>Given one.
    *   <li>Then return one.
    * </ul>
@@ -72,27 +94,6 @@ public class EventBusUtilsDiffblueTest {
   }
 
   /**
-   * Test {@link EventBusUtils#getQueueSize(SubscriberConfig)}.
-   *
-   * <ul>
-   *   <li>Then throw {@link IllegalArgumentException}.
-   * </ul>
-   *
-   * <p>Method under test: {@link
-   * EventBusUtils#getQueueSize(SubscriberConfigProvider.SubscriberConfig)}
-   */
-  @Test
-  public void testGetQueueSize_thenThrowIllegalArgumentException() {
-    // Arrange
-    SubscriberConfig subscribe = mock(SubscriberConfig.class);
-    when(subscribe.getQueueSize()).thenThrow(new IllegalArgumentException("foo"));
-
-    // Act and Assert
-    assertThrows(IllegalArgumentException.class, () -> EventBusUtils.getQueueSize(subscribe));
-    verify(subscribe).getQueueSize();
-  }
-
-  /**
    * Test {@link EventBusUtils#isAnEventBatch(Object)}.
    *
    * <p>Method under test: {@link EventBusUtils#isAnEventBatch(Object)}
@@ -117,7 +118,7 @@ public class EventBusUtilsDiffblueTest {
     // Arrange
     DynamicSubscriber dynamicSubscriber = mock(DynamicSubscriber.class);
     org.mockito.Mockito.<Class<?>>when(dynamicSubscriber.getEventType())
-        .thenThrow(new IllegalArgumentException("foo"));
+        .thenThrow(new IllegalArgumentException());
 
     // Act and Assert
     assertThrows(
@@ -141,14 +142,13 @@ public class EventBusUtilsDiffblueTest {
   public void testApplyFilters_whenHashSet_thenReturnTrue() {
     // Arrange
     HashSet<EventFilter> filters = new HashSet<>();
+    SubstituteLogger logger = new SubstituteLogger("Name", new LinkedList<>(), true);
 
-    // Act and Assert
-    assertTrue(
-        EventBusUtils.applyFilters(
-            "Event",
-            filters,
-            null,
-            "Invoker Desc",
-            new SubstituteLogger("Name", new LinkedList<>(), true)));
+    // Act
+    boolean actualApplyFiltersResult =
+        EventBusUtils.applyFilters("Event", filters, null, "Invoker Desc", logger);
+
+    // Assert
+    assertTrue(actualApplyFiltersResult);
   }
 }
