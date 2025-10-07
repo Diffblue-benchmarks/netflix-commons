@@ -1,0 +1,1504 @@
+{
+  "meta" : {
+    "reportVersion" : "2.7"
+  },
+  "run" : {
+    "version" : "2025.09.01-44e352d-licensed",
+    "creationTimestamp" : "2025-10-07T14:04:01.648950414Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name netflix-commons --name with-diffblue-tests",
+    "totalTime" : 126.613,
+    "environmentDetectionTime" : 0.164,
+    "indexingTime" : 0.394,
+    "entryPointsTime" : 0.151,
+    "generationTime" : 212.046,
+    "timeToFirstTest" : 412.882,
+    "timeToLastTest" : 334.992,
+    "indexQueryTime" : 2.196,
+    "verificationTime" : 4.27,
+    "validationTime" : 20.225
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R004" : "No meaningful assertions found",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R031" : "Method may be time-sensitive",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T003" : "Private method",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "T020" : "Other trivial method",
+    "T021" : "Empty method body",
+    "T023" : "Testability unknown",
+    "V000" : "Validated successfully",
+    "W002" : "Test compiled, but did not pass"
+  },
+  "summary" : {
+    "classesCount" : 12,
+    "methodsCount" : 99,
+    "cumulativeDiffblueTestCount" : 35,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 35,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 579,
+    "perMethodTestability" : {
+      "T000" : 38,
+      "T001" : 17,
+      "T003" : 10,
+      "T004" : 2,
+      "T005" : 2,
+      "T010" : 23,
+      "T012" : 1,
+      "T020" : 1,
+      "T021" : 1,
+      "T023" : 4
+    },
+    "perMethodOutcome" : {
+      "R000" : 46,
+      "R004" : 8,
+      "R013" : 2,
+      "R031" : 2,
+      "T003" : 10,
+      "T004" : 2,
+      "T010" : 23,
+      "T012" : 1,
+      "T023" : 4,
+      "W002" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 35
+    },
+    "perTestValidation" : {
+      "V000" : 35
+    },
+    "warnings" : {
+      "W002" : 1
+    }
+  },
+  "classes" : {
+    "com.netflix.stats.distribution.DataAccumulator" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "R013" : 1,
+        "R031" : 1,
+        "T010" : 2
+      }
+    },
+    "com.netflix.stats.distribution.DataBuffer" : {
+      "methodsCount" : 12,
+      "completeTestCount" : 7,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 8,
+        "T001" : 2,
+        "T003" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 7,
+        "R004" : 3,
+        "T003" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 7
+      }
+    },
+    "com.netflix.stats.distribution.DataCollector" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "com.netflix.stats.distribution.DataDistribution" : {
+      "methodsCount" : 17,
+      "completeTestCount" : 4,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T001" : 11,
+        "T003" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 13,
+        "R004" : 1,
+        "R031" : 1,
+        "T003" : 1,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 4
+      }
+    },
+    "com.netflix.stats.distribution.DataDistributionMBean" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 6
+      },
+      "perMethodOutcome" : {
+        "T010" : 6
+      }
+    },
+    "com.netflix.stats.distribution.DataPublisher" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T001" : 1,
+        "T005" : 1,
+        "T012" : 1,
+        "T021" : 1,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "R004" : 1,
+        "R013" : 1,
+        "T012" : 1,
+        "T023" : 1,
+        "W002" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "warnings" : {
+        "W002" : 1
+      }
+    },
+    "com.netflix.stats.distribution.DataPublisher$1" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "com.netflix.stats.distribution.DataPublisher$PublishThreadFactory" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T003" : 2
+      },
+      "perMethodOutcome" : {
+        "T003" : 2
+      }
+    },
+    "com.netflix.stats.distribution.Distribution" : {
+      "methodsCount" : 11,
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 6,
+        "T001" : 3,
+        "T005" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 9,
+        "R004" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 5
+      }
+    },
+    "com.netflix.stats.distribution.DistributionMBean" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 7
+      },
+      "perMethodOutcome" : {
+        "T010" : 7
+      }
+    },
+    "com.netflix.stats.distribution.Histogram" : {
+      "methodsCount" : 21,
+      "completeTestCount" : 17,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 14,
+        "T003" : 6,
+        "T023" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 13,
+        "R004" : 1,
+        "T003" : 6,
+        "T023" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 17
+      }
+    },
+    "com.netflix.stats.distribution.HistogramMBean" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 7
+      },
+      "perMethodOutcome" : {
+        "T010" : 7
+      }
+    }
+  },
+  "methods" : {
+    "com.netflix.stats.distribution.DataAccumulator.<init>:(I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        48,
+        37,
+        49,
+        50,
+        51
+      ]
+    },
+    "com.netflix.stats.distribution.DataAccumulator.noteValue:(D)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        59,
+        60,
+        61,
+        63,
+        65,
+        66,
+        65,
+        66,
+        67,
+        68
+      ]
+    },
+    "com.netflix.stats.distribution.DataAccumulator.publish:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R031",
+      "lineNumbers" : [
+        82,
+        83,
+        84,
+        86,
+        87,
+        88,
+        90,
+        91,
+        93,
+        95,
+        96,
+        95,
+        96,
+        98,
+        99,
+        100,
+        103,
+        104,
+        106,
+        107,
+        106,
+        107,
+        108
+      ]
+    },
+    "com.netflix.stats.distribution.DataAccumulator.publish:(Lcom/netflix/stats/distribution/DataBuffer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DataBuffer.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "com.netflix.stats.distribution.DataBuffer.<init>:(I)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        107,
+        108,
+        109,
+        110,
+        111
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.computePercentile:(D)D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191,
+        193,
+        194,
+        195,
+        198
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.endCollection:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        131,
+        132,
+        133
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.getCapacity:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        78
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.getLock:()Ljava/util/concurrent/locks/Lock;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        70
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.getPercentiles:([D[D)[D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        165,
+        166,
+        165,
+        168
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.getSampleIntervalMillis:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        88
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.getSampleSize:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        97
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.noteValue:(D)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        151
+      ]
+    },
+    "com.netflix.stats.distribution.DataBuffer.startCollection:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        117,
+        118,
+        119
+      ]
+    },
+    "com.netflix.stats.distribution.DataCollector.noteValue:(D)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DataDistribution.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "com.netflix.stats.distribution.DataDistribution.<init>:(I[D)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        54,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        101,
+        104
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getMaximum:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        133
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getMean:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        113
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getMinimum:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        128
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getNumValues:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        108
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getPercentiles:()[D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        163
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getPercents:()[D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        158
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getSampleIntervalMillis:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        148
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getSampleSize:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        153
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getStdDev:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        123
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getTimestamp:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R031",
+      "lineNumbers" : [
+        138
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getTimestampMillis:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        143
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.getVariance:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        118
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.percentsOK:([D)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        61,
+        62,
+        64,
+        65,
+        66,
+        64,
+        69
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistribution.publish:(Lcom/netflix/stats/distribution/DataBuffer;)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    "com.netflix.stats.distribution.DataDistributionMBean.getPercentiles:()[D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DataDistributionMBean.getPercents:()[D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DataDistributionMBean.getSampleIntervalMillis:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DataDistributionMBean.getSampleSize:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DataDistributionMBean.getTimestamp:()Ljava/lang/String;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DataDistributionMBean.getTimestampMillis:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DataPublisher$1.<init>:(Lcom/netflix/stats/distribution/DataPublisher;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        85
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher$1.run:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        88,
+        91,
+        89,
+        90,
+        92
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher$PublishThreadFactory.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher$PublishThreadFactory.newThread:(Ljava/lang/Runnable;)Ljava/lang/Thread;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        117,
+        118,
+        119
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "com.netflix.stats.distribution.DataPublisher.<init>:(Lcom/netflix/stats/distribution/DataAccumulator;J)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52,
+        42,
+        53,
+        54,
+        55
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher.access$000:(Lcom/netflix/stats/distribution/DataPublisher;)Lcom/netflix/stats/distribution/DataAccumulator;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        34
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher.getDataAccumulator:()Lcom/netflix/stats/distribution/DataAccumulator;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        61
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher.getExecutor:()Ljava/util/concurrent/ScheduledExecutorService;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "W002",
+      "warnings" : {
+        "W002" : 1
+      },
+      "lineNumbers" : [
+        108,
+        109,
+        111
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher.handleException:(Ljava/lang/Exception;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T021",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        142
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher.isRunning:()Z" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        68
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher.start:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        84,
+        85,
+        94,
+        98
+      ]
+    },
+    "com.netflix.stats.distribution.DataPublisher.stop:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        129,
+        130,
+        131,
+        133
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.add:(Lcom/netflix/stats/distribution/Distribution;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        149
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.getMaximum:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        130
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.getMean:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        99,
+        100,
+        102
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.getMinimum:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        125
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.getNumValues:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        94
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.getStdDev:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        120
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.getVariance:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        108,
+        109,
+        110,
+        111,
+        113,
+        114
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.noteValue:(D)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        77
+      ]
+    },
+    "com.netflix.stats.distribution.Distribution.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        153
+      ]
+    },
+    "com.netflix.stats.distribution.DistributionMBean.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DistributionMBean.getMaximum:()D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DistributionMBean.getMean:()D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DistributionMBean.getMinimum:()D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DistributionMBean.getNumValues:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DistributionMBean.getStdDev:()D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.DistributionMBean.getVariance:()D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.Histogram.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T023",
+      "perMethodOutcome" : "T023"
+    },
+    "com.netflix.stats.distribution.Histogram.<init>:(DDD)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        73,
+        74,
+        75,
+        76,
+        77,
+        76,
+        80,
+        81
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.<init>:([D)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53,
+        55,
+        56,
+        57,
+        56,
+        60,
+        61
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.clear:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        124,
+        125,
+        126,
+        125,
+        128
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.clearBucket:(I)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        118,
+        119
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.findBucket:(D)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        104,
+        105,
+        106,
+        104,
+        110
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getBucketCount:(I)J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        144
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getBucketCounts:()[J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        182,
+        183,
+        184,
+        183,
+        186
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getBucketMaximum:(I)D" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        170,
+        171,
+        172,
+        174,
+        176
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getBucketMaximums:()[D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        200,
+        201,
+        202,
+        201,
+        204
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getBucketMinimum:(I)D" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        153,
+        154,
+        155,
+        157,
+        160
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getBucketMinimums:()[D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        191,
+        192,
+        193,
+        192,
+        195
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getMedian:()D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        209
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getNthValue:(D)D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        214,
+        215,
+        216,
+        217,
+        220,
+        221,
+        222,
+        224,
+        225,
+        226,
+        228,
+        247,
+        248,
+        249,
+        250,
+        251,
+        253,
+        254,
+        255,
+        257,
+        258,
+        259,
+        261,
+        262,
+        263,
+        265,
+        268,
+        270
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getNumBuckets:()I" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        136
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getPercentile:(I)D" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        275,
+        276,
+        278
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getPercentileRank:(D)J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        323,
+        324,
+        326
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.getValueIndex:(D)D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        284,
+        285,
+        286,
+        287,
+        290,
+        291,
+        292,
+        294,
+        295,
+        296,
+        303,
+        304,
+        305,
+        306,
+        307,
+        308,
+        309,
+        310,
+        311,
+        313,
+        315,
+        316,
+        317
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.makeBuckets:(I)[Ljava/util/concurrent/atomic/AtomicLong;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        84,
+        85,
+        86,
+        85,
+        88
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.noteValue:(D)V" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        98,
+        99,
+        100
+      ]
+    },
+    "com.netflix.stats.distribution.Histogram.updateBucket:(DI)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        114,
+        115
+      ]
+    },
+    "com.netflix.stats.distribution.HistogramMBean.getBucketCounts:()[J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.HistogramMBean.getBucketMaximums:()[D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.HistogramMBean.getBucketMinimums:()[D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.HistogramMBean.getMedian:()D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.HistogramMBean.getNumBuckets:()I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.HistogramMBean.getPercentile:(I)D" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.stats.distribution.HistogramMBean.getPercentileRank:(D)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    }
+  },
+  "validationMetrics" : { }
+}
