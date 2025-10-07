@@ -16,6 +16,10 @@ subprojects {
         testImplementation 'junit:junit:4.13.2'
         testImplementation 'log4j:log4j:1.2.17'
 
+        compileOnly("com.diffblue.cover:cover-annotations:1.6.0")
+        testImplementation("com.diffblue.cover:cover-annotations:1.6.0")
+        testImplementation("org.mockito:mockito-core:5.19.0")
+
         constraints {
             implementation 'com.fasterxml.jackson.core:jackson-annotations:2.4.3'
             implementation 'com.google.errorprone:error_prone_annotations:2.11.0'
