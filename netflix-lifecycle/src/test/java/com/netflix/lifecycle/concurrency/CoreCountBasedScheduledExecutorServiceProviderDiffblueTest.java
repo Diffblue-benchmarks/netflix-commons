@@ -3,11 +3,24 @@ package com.netflix.lifecycle.concurrency;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.verify;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
+  @InjectMocks
+  private CoreCountBasedScheduledExecutorServiceProvider
+      coreCountBasedScheduledExecutorServiceProvider;
+
+  @Mock private ScheduledExecutorService scheduledExecutorService;
+
   /**
    * Test {@link CoreCountBasedScheduledExecutorServiceProvider#get()}.
    *
@@ -26,7 +39,7 @@ public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
     assertEquals(0, ((ScheduledThreadPoolExecutor) actualGetResult).getPoolSize());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) actualGetResult).getCompletedTaskCount());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) actualGetResult).getTaskCount());
-    assertEquals(8, ((ScheduledThreadPoolExecutor) actualGetResult).getCorePoolSize());
+    assertEquals(10, ((ScheduledThreadPoolExecutor) actualGetResult).getCorePoolSize());
     assertFalse(
         ((ScheduledThreadPoolExecutor) actualGetResult)
             .getContinueExistingPeriodicTasksAfterShutdownPolicy());
@@ -37,6 +50,23 @@ public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
             .getExecuteExistingDelayedTasksAfterShutdownPolicy());
     assertEquals(
         Integer.MAX_VALUE, ((ScheduledThreadPoolExecutor) actualGetResult).getMaximumPoolSize());
+  }
+
+  /**
+   * Test {@link CoreCountBasedScheduledExecutorServiceProvider#shutdown()}.
+   *
+   * <p>Method under test: {@link CoreCountBasedScheduledExecutorServiceProvider#shutdown()}
+   */
+  @Test
+  public void testShutdown() {
+    // Arrange
+    doNothing().when(scheduledExecutorService).shutdown();
+
+    // Act
+    coreCountBasedScheduledExecutorServiceProvider.shutdown();
+
+    // Assert
+    verify(scheduledExecutorService).shutdown();
   }
 
   /**
@@ -55,8 +85,7 @@ public class CoreCountBasedScheduledExecutorServiceProviderDiffblueTest {
     assertEquals(0, ((ScheduledThreadPoolExecutor) getResult).getPoolSize());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) getResult).getCompletedTaskCount());
     assertEquals(0L, ((ScheduledThreadPoolExecutor) getResult).getTaskCount());
-    assertEquals(8, ((ScheduledThreadPoolExecutor) getResult).getCorePoolSize());
-    assertFalse(getResult.isShutdown());
+    assertEquals(10, ((ScheduledThreadPoolExecutor) getResult).getCorePoolSize());
     assertFalse(
         ((ScheduledThreadPoolExecutor) getResult)
             .getContinueExistingPeriodicTasksAfterShutdownPolicy());

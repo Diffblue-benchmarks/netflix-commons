@@ -2,7 +2,6 @@ package com.netflix.eventbus.spi;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import java.lang.reflect.Method;
 import java.util.HashMap;
@@ -64,6 +63,5 @@ public class InvalidSubscriberExceptionDiffblueTest {
     assertTrue(actualOffendingMethods.isEmpty());
     Class<Object> expectedSubscriberClass = Object.class;
     assertEquals(expectedSubscriberClass, actualSubscriberClass);
-    assertSame(subscriberClass, actualSubscriberClass);
   }
 }

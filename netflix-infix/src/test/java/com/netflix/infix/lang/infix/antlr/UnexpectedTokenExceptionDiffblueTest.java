@@ -2,11 +2,23 @@ package com.netflix.infix.lang.infix.antlr;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertThrows;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.Tree;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class UnexpectedTokenExceptionDiffblueTest {
+  @Mock private Tree tree;
+
+  @InjectMocks private UnexpectedTokenException unexpectedTokenException;
+
   /**
    * Test {@link UnexpectedTokenException#UnexpectedTokenException(Tree, String[])}.
    *
@@ -58,6 +70,27 @@ public class UnexpectedTokenExceptionDiffblueTest {
     assertEquals(
         "Unexpected token null at 0:0. Expected: Unexpected token %s at %d:%d. Expected: %s or Expected",
         unexpectedTokenException.getMessage());
+  }
+
+  /**
+   * Test {@link UnexpectedTokenException#getMessage()}.
+   *
+   * <ul>
+   *   <li>Given {@link Tree} {@link Tree#getText()} throw {@link
+   *       RuntimeException#RuntimeException()}.
+   *   <li>Then throw {@link RuntimeException}.
+   * </ul>
+   *
+   * <p>Method under test: {@link UnexpectedTokenException#getMessage()}
+   */
+  @Test
+  public void testGetMessage_givenTreeGetTextThrowRuntimeException_thenThrowRuntimeException() {
+    // Arrange
+    when(tree.getText()).thenThrow(new RuntimeException());
+
+    // Act and Assert
+    assertThrows(RuntimeException.class, () -> unexpectedTokenException.getMessage());
+    verify(tree).getText();
   }
 
   /**

@@ -1,21 +1,21 @@
 {
   "meta" : {
-    "reportVersion" : "2.7"
+    "reportVersion" : "2.8"
   },
   "run" : {
-    "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-09-19T10:26:29.567345204Z",
-    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name netflix-commons --name with-diffblue-tests",
-    "totalTime" : 118.029,
-    "environmentDetectionTime" : 0.128,
-    "indexingTime" : 0.428,
-    "entryPointsTime" : 0.115,
-    "generationTime" : 210.731,
-    "timeToFirstTest" : 396.548,
-    "timeToLastTest" : 335.806,
-    "indexQueryTime" : 2.099,
-    "verificationTime" : 3.975,
-    "validationTime" : 20.573
+    "version" : "2025.10.02-RC1-2bc25d3-licensed",
+    "creationTimestamp" : "2025-10-21T11:20:53.265641+01:00",
+    "command" : "dcover create --coverage-reports",
+    "totalTime" : 138.375,
+    "environmentDetectionTime" : 0.105,
+    "indexingTime" : 0.242,
+    "entryPointsTime" : 0.097,
+    "generationTime" : 204.513,
+    "timeToFirstTest" : 418.632,
+    "timeToLastTest" : 337.433,
+    "indexQueryTime" : 3.217,
+    "verificationTime" : 4.701,
+    "validationTime" : 27.45
   },
   "codes" : {
     "R000" : "Success",
@@ -31,16 +31,14 @@
     "T012" : "Synthetic method",
     "T020" : "Other trivial method",
     "T021" : "Empty method body",
-    "T023" : "Testability unknown",
-    "V000" : "Validated successfully",
-    "W002" : "Test compiled, but did not pass"
+    "V000" : "Validated successfully"
   },
   "summary" : {
     "classesCount" : 12,
-    "methodsCount" : 99,
-    "cumulativeDiffblueTestCount" : 35,
+    "methodsCount" : 95,
+    "cumulativeDiffblueTestCount" : 36,
     "cumulativeManualTestCount" : 0,
-    "completeTestCount" : 35,
+    "completeTestCount" : 36,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 579,
@@ -53,29 +51,23 @@
       "T010" : 23,
       "T012" : 1,
       "T020" : 1,
-      "T021" : 1,
-      "T023" : 4
+      "T021" : 1
     },
     "perMethodOutcome" : {
-      "R000" : 46,
+      "R000" : 47,
       "R004" : 8,
       "R013" : 2,
       "R031" : 2,
       "T003" : 10,
       "T004" : 2,
       "T010" : 23,
-      "T012" : 1,
-      "T023" : 4,
-      "W002" : 1
+      "T012" : 1
     },
     "perTestOutcome" : {
-      "R000" : 35
+      "R000" : 36
     },
     "perTestValidation" : {
-      "V000" : 35
-    },
-    "warnings" : {
-      "W002" : 1
+      "V000" : 36
     }
   },
   "classes" : {
@@ -94,20 +86,18 @@
       }
     },
     "com.netflix.stats.distribution.DataBuffer" : {
-      "methodsCount" : 12,
+      "methodsCount" : 11,
       "completeTestCount" : 7,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 8,
         "T001" : 2,
-        "T003" : 1,
-        "T023" : 1
+        "T003" : 1
       },
       "perMethodOutcome" : {
         "R000" : 7,
         "R004" : 3,
-        "T003" : 1,
-        "T023" : 1
+        "T003" : 1
       },
       "perTestOutcome" : {
         "R000" : 7
@@ -125,21 +115,19 @@
       }
     },
     "com.netflix.stats.distribution.DataDistribution" : {
-      "methodsCount" : 17,
+      "methodsCount" : 16,
       "completeTestCount" : 4,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 4,
         "T001" : 11,
-        "T003" : 1,
-        "T023" : 1
+        "T003" : 1
       },
       "perMethodOutcome" : {
         "R000" : 13,
         "R004" : 1,
         "R031" : 1,
-        "T003" : 1,
-        "T023" : 1
+        "T003" : 1
       },
       "perTestOutcome" : {
         "R000" : 4
@@ -157,30 +145,24 @@
       }
     },
     "com.netflix.stats.distribution.DataPublisher" : {
-      "methodsCount" : 9,
-      "completeTestCount" : 2,
+      "methodsCount" : 8,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 4,
         "T001" : 1,
         "T005" : 1,
         "T012" : 1,
-        "T021" : 1,
-        "T023" : 1
+        "T021" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 4,
+        "R000" : 5,
         "R004" : 1,
         "R013" : 1,
-        "T012" : 1,
-        "T023" : 1,
-        "W002" : 1
+        "T012" : 1
       },
       "perTestOutcome" : {
-        "R000" : 2
-      },
-      "warnings" : {
-        "W002" : 1
+        "R000" : 3
       }
     },
     "com.netflix.stats.distribution.DataPublisher$1" : {
@@ -235,19 +217,17 @@
       }
     },
     "com.netflix.stats.distribution.Histogram" : {
-      "methodsCount" : 21,
+      "methodsCount" : 20,
       "completeTestCount" : 17,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 14,
-        "T003" : 6,
-        "T023" : 1
+        "T003" : 6
       },
       "perMethodOutcome" : {
         "R000" : 13,
         "R004" : 1,
-        "T003" : 6,
-        "T023" : 1
+        "T003" : 6
       },
       "perTestOutcome" : {
         "R000" : 17
@@ -333,12 +313,6 @@
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T010",
       "perMethodOutcome" : "T010"
-    },
-    "com.netflix.stats.distribution.DataBuffer.<clinit>:()V" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T023",
-      "perMethodOutcome" : "T023"
     },
     "com.netflix.stats.distribution.DataBuffer.<init>:(I)V" : {
       "completeTestCount" : 1,
@@ -504,12 +478,6 @@
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T010",
       "perMethodOutcome" : "T010"
-    },
-    "com.netflix.stats.distribution.DataDistribution.<clinit>:()V" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T023",
-      "perMethodOutcome" : "T023"
     },
     "com.netflix.stats.distribution.DataDistribution.<init>:(I[D)V" : {
       "completeTestCount" : 1,
@@ -813,12 +781,6 @@
         119
       ]
     },
-    "com.netflix.stats.distribution.DataPublisher.<clinit>:()V" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T023",
-      "perMethodOutcome" : "T023"
-    },
     "com.netflix.stats.distribution.DataPublisher.<init>:(Lcom/netflix/stats/distribution/DataAccumulator;J)V" : {
       "completeTestCount" : 1,
       "incompleteTestCount" : 0,
@@ -857,12 +819,12 @@
       ]
     },
     "com.netflix.stats.distribution.DataPublisher.getExecutor:()Ljava/util/concurrent/ScheduledExecutorService;" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "W002",
-      "warnings" : {
-        "W002" : 1
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
       },
       "lineNumbers" : [
         108,
@@ -1129,12 +1091,6 @@
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T010",
       "perMethodOutcome" : "T010"
-    },
-    "com.netflix.stats.distribution.Histogram.<clinit>:()V" : {
-      "completeTestCount" : 0,
-      "incompleteTestCount" : 0,
-      "perMethodTestability" : "T023",
-      "perMethodOutcome" : "T023"
     },
     "com.netflix.stats.distribution.Histogram.<init>:(DDD)V" : {
       "completeTestCount" : 2,
@@ -1500,5 +1456,199 @@
       "perMethodOutcome" : "T010"
     }
   },
-  "validationMetrics" : { }
+  "validationMetrics" : { },
+  "outputCodes" : [
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.MissingDependencyMessage\",\"buildTool\":\"GRADLE\",\"dependencies\":[{\"artifactId\":\"cover-annotations\",\"buildContext\":\"PROVIDED\",\"groupId\":\"com.diffblue.cover\",\"name\":\"Cover Annotations\",\"version\":\"1.7.0\"}],\"detail\":null,\"serializableCause\":null}",
+      "methodGroup" : null
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.ServiceShutdownMessage\",\"method\":{\"binaryClassName\":\"com.netflix.eventbus.rx.RxEventBus\",\"descriptor\":\"(Ljava/lang/Class;)Lrx/Observable;\",\"methodName\":\"asObservable\"},\"serializableCause\":{\"cause\":{\"cause\":{\"cause\":null,\"message\":\"CANCELLED: RST_STREAM closed stream. HTTP/2 error code: CANCEL\",\"originalClassName\":\"io.grpc.StatusRuntimeException\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"io.grpc.Status\",\"fileName\":\"SourceFile\",\"lineNumber\":539,\"methodName\":\"asRuntimeException\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.stub.ClientCalls$UnaryStreamToFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":544,\"methodName\":\"onClose\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ClientCallImpl\",\"fileName\":\"SourceFile\",\"lineNumber\":563,\"methodName\":\"closeObserver\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ClientCallImpl\",\"fileName\":\"SourceFile\",\"lineNumber\":70,\"methodName\":\"access$300\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed\",\"fileName\":\"SourceFile\",\"lineNumber\":744,\"methodName\":\"runInternal\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed\",\"fileName\":\"SourceFile\",\"lineNumber\":723,\"methodName\":\"runInContext\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ContextRunnable\",\"fileName\":\"SourceFile\",\"lineNumber\":37,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.SerializingExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":133,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1136,\"methodName\":\"runWorker\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":635,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":842,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false}]},\"message\":\"io.grpc.StatusRuntimeException: CANCELLED: RST_STREAM closed stream. HTTP/2 error code: CANCEL\",\"originalClassName\":\"java.util.concurrent.ExecutionException\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"com.google.common.util.concurrent.AbstractFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":594,\"methodName\":\"getDoneValue\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.google.common.util.concurrent.AbstractFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":573,\"methodName\":\"get\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.google.common.util.concurrent.FluentFuture$TrustedFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":91,\"methodName\":\"get\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.service.analyzer.a.d\",\"fileName\":\"SourceFile\",\"lineNumber\":89,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.analysis.a.e$a$1\",\"fileName\":\"SourceFile\",\"lineNumber\":150,\"methodName\":\"tryAdvance\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.Spliterator\",\"fileName\":\"Spliterator.java\",\"lineNumber\":332,\"methodName\":\"forEachRemaining\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":598,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":297,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":616,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":568,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.e\",\"fileName\":\"SourceFile\",\"lineNumber\":105,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.p.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":176,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.CompletableFuture$AsyncRun\",\"fileName\":\"CompletableFuture.java\",\"lineNumber\":1804,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1136,\"methodName\":\"runWorker\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":635,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":842,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false}]},\"message\":\"Failed to call nextAnalysisResultAsPatch\",\"originalClassName\":\"com.diffblue.cover.service.analyzer.b\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.service.analyzer.a.d\",\"fileName\":\"SourceFile\",\"lineNumber\":92,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.analysis.a.e$a$1\",\"fileName\":\"SourceFile\",\"lineNumber\":150,\"methodName\":\"tryAdvance\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.Spliterator\",\"fileName\":\"Spliterator.java\",\"lineNumber\":332,\"methodName\":\"forEachRemaining\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":598,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":297,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":616,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":568,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.e\",\"fileName\":\"SourceFile\",\"lineNumber\":105,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.p.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":176,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.CompletableFuture$AsyncRun\",\"fileName\":\"CompletableFuture.java\",\"lineNumber\":1804,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1136,\"methodName\":\"runWorker\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":635,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":842,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.eventbus.rx.RxEventBus",
+            "descriptor" : "(Lcom/netflix/eventbus/spi/EventBus;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.MissingDependencyMessage\",\"buildTool\":\"GRADLE\",\"dependencies\":[{\"artifactId\":\"cover-annotations\",\"buildContext\":\"PROVIDED\",\"groupId\":\"com.diffblue.cover\",\"name\":\"Cover Annotations\",\"version\":\"1.7.0\"}],\"detail\":null,\"serializableCause\":null}",
+      "methodGroup" : null
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/google/inject/AbstractModule;\",\"simpleNames\":[\"AbstractModule\"]},\"fieldName\":\"binder\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.lifecycle.concurrency.ConcurrencyModule",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"The binder can only be used inside configure()\",\"originalClassName\":\"java.lang.IllegalStateException\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"com.google.common.base.Preconditions\",\"fileName\":\"Preconditions.java\",\"lineNumber\":502,\"methodName\":\"checkState\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.google.inject.AbstractModule\",\"fileName\":\"AbstractModule.java\",\"lineNumber\":77,\"methodName\":\"binder\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.google.inject.AbstractModule\",\"fileName\":\"AbstractModule.java\",\"lineNumber\":98,\"methodName\":\"bind\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.netflix.lifecycle.concurrency.ConcurrencyModule\",\"fileName\":\"ConcurrencyModule.java\",\"lineNumber\":22,\"methodName\":\"configure\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":-2,\"methodName\":\"invoke0\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":true},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":77,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":568,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":391,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":269,\"methodName\":\"b\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1101,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":28,\"methodName\":\"executeTask\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.lifecycle.concurrency.ConcurrencyModule",
+            "descriptor" : "()V",
+            "methodName" : "configure"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.MissingDependencyMessage\",\"buildTool\":\"GRADLE\",\"dependencies\":[{\"artifactId\":\"cover-annotations\",\"buildContext\":\"PROVIDED\",\"groupId\":\"com.diffblue.cover\",\"name\":\"Cover Annotations\",\"version\":\"1.7.0\"}],\"detail\":null,\"serializableCause\":null}",
+      "methodGroup" : null
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"Index 0 out of bounds for length 0\",\"originalClassName\":\"java.lang.ArrayIndexOutOfBoundsException\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"com.netflix.stats.distribution.DataBuffer\",\"fileName\":\"DataBuffer.java\",\"lineNumber\":144,\"methodName\":\"noteValue\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.netflix.stats.distribution.DataAccumulator\",\"fileName\":\"DataAccumulator.java\",\"lineNumber\":63,\"methodName\":\"noteValue\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":-2,\"methodName\":\"invoke0\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":true},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":77,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":568,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":391,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":269,\"methodName\":\"b\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1101,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":28,\"methodName\":\"executeTask\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataAccumulator",
+            "descriptor" : "(D)V",
+            "methodName" : "noteValue"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.TimeSensitiveAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataAccumulator",
+            "descriptor" : "()V",
+            "methodName" : "publish"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataBuffer",
+            "descriptor" : "()V",
+            "methodName" : "clear"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataBuffer",
+            "descriptor" : "()V",
+            "methodName" : "endCollection"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataBuffer",
+            "descriptor" : "()V",
+            "methodName" : "startCollection"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataDistribution",
+            "descriptor" : "()V",
+            "methodName" : "clear"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.TimeSensitiveAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataDistribution",
+            "descriptor" : "()Ljava/lang/String;",
+            "methodName" : "getTimestamp"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"Task java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask@453aa98d[Not completed, task = java.util.concurrent.Executors$RunnableAdapter@2a045f6c[Wrapped task = com.netflix.stats.distribution.DataPublisher$1@78820f9f]] rejected from java.util.concurrent.ScheduledThreadPoolExecutor@57754bcc[Terminated, pool size = 0, active threads = 0, queued tasks = 0, completed tasks = 0]\",\"originalClassName\":\"java.util.concurrent.RejectedExecutionException\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor$AbortPolicy\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":2065,\"methodName\":\"rejectedExecution\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":833,\"methodName\":\"reject\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ScheduledThreadPoolExecutor\",\"fileName\":\"ScheduledThreadPoolExecutor.java\",\"lineNumber\":340,\"methodName\":\"delayedExecute\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ScheduledThreadPoolExecutor\",\"fileName\":\"ScheduledThreadPoolExecutor.java\",\"lineNumber\":680,\"methodName\":\"scheduleWithFixedDelay\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.netflix.stats.distribution.DataPublisher\",\"fileName\":\"DataPublisher.java\",\"lineNumber\":94,\"methodName\":\"start\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":-2,\"methodName\":\"invoke0\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":true},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":77,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":568,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":391,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":269,\"methodName\":\"b\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1101,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":28,\"methodName\":\"executeTask\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataPublisher",
+            "descriptor" : "()V",
+            "methodName" : "start"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.DataPublisher",
+            "descriptor" : "()V",
+            "methodName" : "stop"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.Distribution",
+            "descriptor" : "(Lcom/netflix/stats/distribution/Distribution;)V",
+            "methodName" : "add"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.Distribution",
+            "descriptor" : "()V",
+            "methodName" : "clear"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoMeaningfulAssertionMessage\",\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.stats.distribution.Histogram",
+            "descriptor" : "()V",
+            "methodName" : "clear"
+          }
+        ]
+      }
+    }
+  ]
 }

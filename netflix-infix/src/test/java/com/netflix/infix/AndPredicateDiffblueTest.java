@@ -109,13 +109,13 @@ public class AndPredicateDiffblueTest {
    *
    * <ul>
    *   <li>When {@link Predicate}.
-   *   <li>Then return not test {@code Input}.
+   *   <li>Then array length is one.
    * </ul>
    *
    * <p>Method under test: {@link AndPredicate#AndPredicate(Predicate[])}
    */
   @Test
-  public void testNewAndPredicate_whenPredicate_thenReturnNotTestInput() {
+  public void testNewAndPredicate_whenPredicate_thenArrayLengthIsOne() {
     // Arrange
     Predicate<Object>[] predicates = new Predicate[] {mock(Predicate.class)};
 

@@ -1,7 +1,11 @@
 package com.netflix.stats.distribution;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
 import org.junit.Test;
 
 public class DataPublisherDiffblueTest {
@@ -41,5 +45,38 @@ public class DataPublisherDiffblueTest {
 
     // Act and Assert
     assertFalse(new DataPublisher(accumulator, 1L).isRunning());
+  }
+
+  /**
+   * Test {@link DataPublisher#getExecutor()}.
+   *
+   * <p>Method under test: {@link DataPublisher#getExecutor()}
+   */
+  @Test
+  public void testGetExecutor() {
+    // Arrange
+    DataDistribution accumulator = new DataDistribution(3, new double[] {10.0d, 1.0d, 10.0d, 1.0d});
+
+    // Act
+    ScheduledExecutorService actualExecutor = new DataPublisher(accumulator, 1L).getExecutor();
+
+    // Assert
+    assertTrue(actualExecutor instanceof ScheduledThreadPoolExecutor);
+    assertEquals(0, ((ScheduledThreadPoolExecutor) actualExecutor).getActiveCount());
+    assertEquals(0, ((ScheduledThreadPoolExecutor) actualExecutor).getLargestPoolSize());
+    assertEquals(0, ((ScheduledThreadPoolExecutor) actualExecutor).getPoolSize());
+    assertEquals(0L, ((ScheduledThreadPoolExecutor) actualExecutor).getCompletedTaskCount());
+    assertEquals(0L, ((ScheduledThreadPoolExecutor) actualExecutor).getTaskCount());
+    assertEquals(1, ((ScheduledThreadPoolExecutor) actualExecutor).getCorePoolSize());
+    assertFalse(
+        ((ScheduledThreadPoolExecutor) actualExecutor)
+            .getContinueExistingPeriodicTasksAfterShutdownPolicy());
+    assertFalse(((ScheduledThreadPoolExecutor) actualExecutor).getRemoveOnCancelPolicy());
+    assertTrue(((ScheduledThreadPoolExecutor) actualExecutor).getQueue().isEmpty());
+    assertTrue(
+        ((ScheduledThreadPoolExecutor) actualExecutor)
+            .getExecuteExistingDelayedTasksAfterShutdownPolicy());
+    assertEquals(
+        Integer.MAX_VALUE, ((ScheduledThreadPoolExecutor) actualExecutor).getMaximumPoolSize());
   }
 }

@@ -1,26 +1,25 @@
 {
   "meta" : {
-    "reportVersion" : "2.7"
+    "reportVersion" : "2.8"
   },
   "run" : {
-    "version" : "2025.09.01-44e352d-licensed",
-    "creationTimestamp" : "2025-09-19T10:26:29.567345204Z",
-    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name netflix-commons --name with-diffblue-tests",
-    "totalTime" : 96.455,
-    "environmentDetectionTime" : 0.059,
-    "indexingTime" : 0.423,
-    "entryPointsTime" : 0.042,
-    "generationTime" : 175.094,
-    "timeToFirstTest" : 278.487,
-    "timeToLastTest" : 258.273,
-    "indexQueryTime" : 2.608,
-    "verificationTime" : 1.178,
-    "validationTime" : 18.954
+    "version" : "2025.10.02-RC1-2bc25d3-licensed",
+    "creationTimestamp" : "2025-10-21T11:20:53.265641+01:00",
+    "command" : "dcover create --coverage-reports",
+    "totalTime" : 115.179,
+    "environmentDetectionTime" : 0.217,
+    "indexingTime" : 0.24,
+    "entryPointsTime" : 0.207,
+    "generationTime" : 163.349,
+    "timeToFirstTest" : 280.156,
+    "timeToLastTest" : 252.704,
+    "indexQueryTime" : 0.915,
+    "verificationTime" : 1.48,
+    "validationTime" : 28.76
   },
   "codes" : {
     "R000" : "Success",
     "R002" : "Missing observers",
-    "R004" : "No meaningful assertions found",
     "R013" : "No inputs found that don't throw a trivial exception",
     "T000" : "Method eligible for test creation",
     "T005" : "Trivial constructor",
@@ -29,9 +28,9 @@
   "summary" : {
     "classesCount" : 2,
     "methodsCount" : 5,
-    "cumulativeDiffblueTestCount" : 2,
+    "cumulativeDiffblueTestCount" : 3,
     "cumulativeManualTestCount" : 4,
-    "completeTestCount" : 2,
+    "completeTestCount" : 3,
     "incompleteTestCount" : 0,
     "skeletonTestCount" : 0,
     "totalPhysicalLineCount" : 40,
@@ -40,16 +39,15 @@
       "T005" : 2
     },
     "perMethodOutcome" : {
-      "R000" : 2,
+      "R000" : 3,
       "R002" : 1,
-      "R004" : 1,
       "R013" : 1
     },
     "perTestOutcome" : {
-      "R000" : 2
+      "R000" : 3
     },
     "perTestValidation" : {
-      "V000" : 2
+      "V000" : 3
     }
   },
   "classes" : {
@@ -68,18 +66,17 @@
     },
     "com.netflix.lifecycle.concurrency.CoreCountBasedScheduledExecutorServiceProvider" : {
       "methodsCount" : 3,
-      "completeTestCount" : 2,
+      "completeTestCount" : 3,
       "incompleteTestCount" : 0,
       "perMethodTestability" : {
         "T000" : 2,
         "T005" : 1
       },
       "perMethodOutcome" : {
-        "R000" : 2,
-        "R004" : 1
+        "R000" : 3
       },
       "perTestOutcome" : {
-        "R000" : 2
+        "R000" : 3
       }
     }
   },
@@ -136,10 +133,13 @@
       ]
     },
     "com.netflix.lifecycle.concurrency.CoreCountBasedScheduledExecutorServiceProvider.shutdown:()V" : {
-      "completeTestCount" : 0,
+      "completeTestCount" : 1,
       "incompleteTestCount" : 0,
       "perMethodTestability" : "T000",
-      "perMethodOutcome" : "R004",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
       "lineNumbers" : [
         29,
         30,
@@ -147,5 +147,51 @@
       ]
     }
   },
-  "validationMetrics" : { }
+  "validationMetrics" : { },
+  "outputCodes" : [
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.MissingDependencyMessage\",\"buildTool\":\"GRADLE\",\"dependencies\":[{\"artifactId\":\"cover-annotations\",\"buildContext\":\"PROVIDED\",\"groupId\":\"com.diffblue.cover\",\"name\":\"Cover Annotations\",\"version\":\"1.7.0\"}],\"detail\":null,\"serializableCause\":null}",
+      "methodGroup" : null
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.ServiceShutdownMessage\",\"method\":{\"binaryClassName\":\"com.netflix.eventbus.rx.RxEventBus\",\"descriptor\":\"(Ljava/lang/Class;)Lrx/Observable;\",\"methodName\":\"asObservable\"},\"serializableCause\":{\"cause\":{\"cause\":{\"cause\":null,\"message\":\"CANCELLED: RST_STREAM closed stream. HTTP/2 error code: CANCEL\",\"originalClassName\":\"io.grpc.StatusRuntimeException\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"io.grpc.Status\",\"fileName\":\"SourceFile\",\"lineNumber\":539,\"methodName\":\"asRuntimeException\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.stub.ClientCalls$UnaryStreamToFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":544,\"methodName\":\"onClose\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ClientCallImpl\",\"fileName\":\"SourceFile\",\"lineNumber\":563,\"methodName\":\"closeObserver\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ClientCallImpl\",\"fileName\":\"SourceFile\",\"lineNumber\":70,\"methodName\":\"access$300\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed\",\"fileName\":\"SourceFile\",\"lineNumber\":744,\"methodName\":\"runInternal\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ClientCallImpl$ClientStreamListenerImpl$1StreamClosed\",\"fileName\":\"SourceFile\",\"lineNumber\":723,\"methodName\":\"runInContext\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.ContextRunnable\",\"fileName\":\"SourceFile\",\"lineNumber\":37,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"io.grpc.internal.SerializingExecutor\",\"fileName\":\"SourceFile\",\"lineNumber\":133,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1136,\"methodName\":\"runWorker\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":635,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":842,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false}]},\"message\":\"io.grpc.StatusRuntimeException: CANCELLED: RST_STREAM closed stream. HTTP/2 error code: CANCEL\",\"originalClassName\":\"java.util.concurrent.ExecutionException\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"com.google.common.util.concurrent.AbstractFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":594,\"methodName\":\"getDoneValue\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.google.common.util.concurrent.AbstractFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":573,\"methodName\":\"get\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.google.common.util.concurrent.FluentFuture$TrustedFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":91,\"methodName\":\"get\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.service.analyzer.a.d\",\"fileName\":\"SourceFile\",\"lineNumber\":89,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.analysis.a.e$a$1\",\"fileName\":\"SourceFile\",\"lineNumber\":150,\"methodName\":\"tryAdvance\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.Spliterator\",\"fileName\":\"Spliterator.java\",\"lineNumber\":332,\"methodName\":\"forEachRemaining\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":598,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":297,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":616,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":568,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.e\",\"fileName\":\"SourceFile\",\"lineNumber\":105,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.p.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":176,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.CompletableFuture$AsyncRun\",\"fileName\":\"CompletableFuture.java\",\"lineNumber\":1804,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1136,\"methodName\":\"runWorker\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":635,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":842,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false}]},\"message\":\"Failed to call nextAnalysisResultAsPatch\",\"originalClassName\":\"com.diffblue.cover.service.analyzer.b\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.service.analyzer.a.d\",\"fileName\":\"SourceFile\",\"lineNumber\":92,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.analysis.a.e$a$1\",\"fileName\":\"SourceFile\",\"lineNumber\":150,\"methodName\":\"tryAdvance\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.Spliterator\",\"fileName\":\"Spliterator.java\",\"lineNumber\":332,\"methodName\":\"forEachRemaining\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":598,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":297,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":616,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.b\",\"fileName\":\"SourceFile\",\"lineNumber\":568,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.l.a.e\",\"fileName\":\"SourceFile\",\"lineNumber\":105,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.p.a.a\",\"fileName\":\"SourceFile\",\"lineNumber\":176,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.CompletableFuture$AsyncRun\",\"fileName\":\"CompletableFuture.java\",\"lineNumber\":1804,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":1136,\"methodName\":\"runWorker\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.util.concurrent.ThreadPoolExecutor$Worker\",\"fileName\":\"ThreadPoolExecutor.java\",\"lineNumber\":635,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.Thread\",\"fileName\":\"Thread.java\",\"lineNumber\":842,\"methodName\":\"run\",\"moduleName\":\"java.base\",\"moduleVersion\":\"17.0.12\",\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.eventbus.rx.RxEventBus",
+            "descriptor" : "(Lcom/netflix/eventbus/spi/EventBus;)V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.environment.MissingDependencyMessage\",\"buildTool\":\"GRADLE\",\"dependencies\":[{\"artifactId\":\"cover-annotations\",\"buildContext\":\"PROVIDED\",\"groupId\":\"com.diffblue.cover\",\"name\":\"Cover Annotations\",\"version\":\"1.7.0\"}],\"detail\":null,\"serializableCause\":null}",
+      "methodGroup" : null
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.MissingObserverMessage\",\"fields\":[{\"className\":{\"descriptor\":\"Lcom/google/inject/AbstractModule;\",\"simpleNames\":[\"AbstractModule\"]},\"fieldName\":\"binder\"}],\"serializableCause\":null}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.lifecycle.concurrency.ConcurrencyModule",
+            "descriptor" : "()V",
+            "methodName" : "<init>"
+          }
+        ]
+      }
+    },
+    {
+      "baseMessage" : "{\"__type\":\"com.diffblue.cover.message.limitation.NoNonThrowingInputsMessage\",\"serializableCause\":{\"cause\":null,\"message\":\"The binder can only be used inside configure()\",\"originalClassName\":\"java.lang.IllegalStateException\",\"stackTrace\":[{\"classLoaderName\":null,\"className\":\"com.google.common.base.Preconditions\",\"fileName\":\"Preconditions.java\",\"lineNumber\":502,\"methodName\":\"checkState\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.google.inject.AbstractModule\",\"fileName\":\"AbstractModule.java\",\"lineNumber\":77,\"methodName\":\"binder\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.google.inject.AbstractModule\",\"fileName\":\"AbstractModule.java\",\"lineNumber\":98,\"methodName\":\"bind\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.netflix.lifecycle.concurrency.ConcurrencyModule\",\"fileName\":\"ConcurrencyModule.java\",\"lineNumber\":22,\"methodName\":\"configure\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":-2,\"methodName\":\"invoke0\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":true},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.NativeMethodAccessorImpl\",\"fileName\":\"NativeMethodAccessorImpl.java\",\"lineNumber\":77,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"jdk.internal.reflect.DelegatingMethodAccessorImpl\",\"fileName\":\"DelegatingMethodAccessorImpl.java\",\"lineNumber\":43,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"java.lang.reflect.Method\",\"fileName\":\"Method.java\",\"lineNumber\":568,\"methodName\":\"invoke\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":140,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.h\",\"fileName\":\"SourceFile\",\"lineNumber\":77,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.a.f\",\"fileName\":\"SourceFile\",\"lineNumber\":852,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":463,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":99,\"methodName\":\"b\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.g.d\",\"fileName\":\"SourceFile\",\"lineNumber\":51,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":391,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.tir.b.g\",\"fileName\":\"SourceFile\",\"lineNumber\":269,\"methodName\":\"b\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.fuzztest.b.f\",\"fileName\":\"SourceFile\",\"lineNumber\":1101,\"methodName\":\"a\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.TimedCallableExecutor$CallableFuture\",\"fileName\":\"SourceFile\",\"lineNumber\":28,\"methodName\":\"executeTask\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.TaskQueueRunner\",\"fileName\":\"SourceFile\",\"lineNumber\":39,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false},{\"classLoaderName\":null,\"className\":\"com.diffblue.cover.sandbox.execution.WorkerThread\",\"fileName\":\"SourceFile\",\"lineNumber\":265,\"methodName\":\"run\",\"moduleName\":null,\"moduleVersion\":null,\"nativeMethod\":false}]}}",
+      "methodGroup" : {
+        "methods" : [
+          {
+            "binaryClassName" : "com.netflix.lifecycle.concurrency.ConcurrencyModule",
+            "descriptor" : "()V",
+            "methodName" : "configure"
+          }
+        ]
+      }
+    }
+  ]
 }

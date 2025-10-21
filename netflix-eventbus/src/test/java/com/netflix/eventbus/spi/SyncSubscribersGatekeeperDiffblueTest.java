@@ -92,4 +92,32 @@ public class SyncSubscribersGatekeeperDiffblueTest {
     verify(subscribe).syncIfAllowed();
     assertTrue(actualIsSyncSubscriberResult);
   }
+
+  /**
+   * Test {@link SyncSubscribersGatekeeper#isSyncSubscriber(SubscriberConfig, Class, Class)}.
+   *
+   * <ul>
+   *   <li>Given {@code true}.
+   *   <li>When {@code null}.
+   *   <li>Then return {@code true}.
+   * </ul>
+   *
+   * <p>Method under test: {@link SyncSubscribersGatekeeper#isSyncSubscriber(SubscriberConfig,
+   * Class, Class)}
+   */
+  @Test
+  public void testIsSyncSubscriber_givenTrue_whenNull_thenReturnTrue() {
+    // Arrange
+    SubscriberConfig subscribe = mock(SubscriberConfig.class);
+    when(subscribe.syncIfAllowed()).thenReturn(true);
+    Class<Object> subscriberClass = Object.class;
+
+    // Act
+    boolean actualIsSyncSubscriberResult =
+        SyncSubscribersGatekeeper.isSyncSubscriber(subscribe, null, subscriberClass);
+
+    // Assert
+    verify(subscribe).syncIfAllowed();
+    assertTrue(actualIsSyncSubscriberResult);
+  }
 }
