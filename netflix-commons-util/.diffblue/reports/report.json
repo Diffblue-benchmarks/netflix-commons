@@ -1,0 +1,758 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-11-04T15:24:32.945558942Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name netflix-commons --name with-diffblue-tests",
+    "totalTime" : 686.886,
+    "environmentDetectionTime" : 0.243,
+    "indexingTime" : 0.333,
+    "entryPointsTime" : 0.239,
+    "generationTime" : 276.641,
+    "timeToFirstTest" : 287.53,
+    "timeToLastTest" : 212.6,
+    "indexQueryTime" : 2.066,
+    "verificationTime" : 7.7,
+    "validationTime" : 18.844
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "R015" : "Method may be nondeterministic",
+    "T000" : "Method eligible for test creation",
+    "T002" : "Trivial setter",
+    "T003" : "Private method",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T006" : "Main method",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "T020" : "Other trivial method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 7,
+    "methodsCount" : 47,
+    "cumulativeDiffblueTestCount" : 20,
+    "cumulativeManualTestCount" : 3,
+    "completeTestCount" : 26,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 271,
+    "perMethodTestability" : {
+      "T000" : 30,
+      "T002" : 2,
+      "T003" : 4,
+      "T004" : 2,
+      "T005" : 3,
+      "T006" : 1,
+      "T010" : 1,
+      "T012" : 2,
+      "T020" : 2
+    },
+    "perMethodOutcome" : {
+      "R000" : 16,
+      "R002" : 3,
+      "R004" : 2,
+      "R013" : 1,
+      "R015" : 15,
+      "T003" : 4,
+      "T004" : 2,
+      "T006" : 1,
+      "T010" : 1,
+      "T012" : 2
+    },
+    "perTestOutcome" : {
+      "R000" : 26
+    },
+    "perTestValidation" : {
+      "V000" : 26
+    }
+  },
+  "classes" : {
+    "com.netflix.util.HashCode" : {
+      "methodsCount" : 24,
+      "completeTestCount" : 11,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 19,
+        "T003" : 3,
+        "T005" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 5,
+        "R013" : 1,
+        "R015" : 15,
+        "T003" : 3
+      },
+      "perTestOutcome" : {
+        "R000" : 11
+      }
+    },
+    "com.netflix.util.MeasuredRate" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T003" : 1,
+        "T006" : 1,
+        "T020" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 4,
+        "R004" : 1,
+        "T003" : 1,
+        "T006" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    },
+    "com.netflix.util.Pair" : {
+      "methodsCount" : 7,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T002" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 7
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "com.netflix.util.UUIDFactory" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "com.netflix.util.concurrent.ConcurrentUUIDFactory" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 1,
+        "R004" : 1
+      }
+    },
+    "com.netflix.util.concurrent.ShutdownEnabledTimer" : {
+      "methodsCount" : 4,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T012" : 2
+      },
+      "perMethodOutcome" : {
+        "R002" : 2,
+        "T012" : 2
+      }
+    },
+    "com.netflix.util.concurrent.ShutdownEnabledTimer$1" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    }
+  },
+  "methods" : {
+    "com.netflix.util.HashCode.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        88,
+        89,
+        90
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:(B)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        126
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:(C)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        137
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:(D)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        181
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:(F)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        170
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:(I)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        159
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:(Ljava/lang/Object;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        104
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:(S)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        148
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:(Z)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:([B)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        225,
+        226,
+        227,
+        226,
+        229
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:([C)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        240,
+        241,
+        242,
+        241,
+        244
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:([D)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        300,
+        301,
+        302,
+        301,
+        304
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:([F)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        285,
+        286,
+        287,
+        286,
+        289
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:([I)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        270,
+        271,
+        272,
+        271,
+        274
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:([Ljava/lang/Object;)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        195,
+        196,
+        197,
+        196,
+        199
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:([S)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        255,
+        256,
+        257,
+        256,
+        259
+      ]
+    },
+    "com.netflix.util.HashCode.addValue:([Z)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R015",
+      "lineNumbers" : [
+        210,
+        211,
+        212,
+        211,
+        214
+      ]
+    },
+    "com.netflix.util.HashCode.equalObjects:(Ljava/lang/Object;Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        319,
+        320,
+        321,
+        322,
+        324
+      ]
+    },
+    "com.netflix.util.HashCode.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        357,
+        358,
+        359,
+        360,
+        362,
+        363
+      ]
+    },
+    "com.netflix.util.HashCode.foldIn:(I)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        332
+      ]
+    },
+    "com.netflix.util.HashCode.foldIn:(J)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        336
+      ]
+    },
+    "com.netflix.util.HashCode.hashCode:()I" : {
+      "completeTestCount" : 5,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 5
+      },
+      "lineNumbers" : [
+        352
+      ]
+    },
+    "com.netflix.util.HashCode.setVal:(J)I" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        340,
+        341
+      ]
+    },
+    "com.netflix.util.HashCode.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        368
+      ]
+    },
+    "com.netflix.util.MeasuredRate.<init>:(J)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        38,
+        30,
+        31,
+        39,
+        41,
+        42
+      ]
+    },
+    "com.netflix.util.MeasuredRate.checkAndResetWindow:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T003",
+      "perMethodOutcome" : "T003",
+      "lineNumbers" : [
+        73,
+        74,
+        75,
+        76,
+        77,
+        79
+      ]
+    },
+    "com.netflix.util.MeasuredRate.getCount:()J" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        48,
+        49
+      ]
+    },
+    "com.netflix.util.MeasuredRate.getCurrentCount:()J" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        58,
+        59
+      ]
+    },
+    "com.netflix.util.MeasuredRate.increment:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        68,
+        69,
+        70
+      ]
+    },
+    "com.netflix.util.MeasuredRate.main:([Ljava/lang/String;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T006",
+      "perMethodOutcome" : "T006",
+      "lineNumbers" : [
+        89,
+        91,
+        92,
+        94,
+        98,
+        95,
+        97,
+        91,
+        101,
+        103
+      ]
+    },
+    "com.netflix.util.MeasuredRate.toString:()Ljava/lang/String;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T020",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        82,
+        83,
+        84,
+        85
+      ]
+    },
+    "com.netflix.util.Pair.<init>:(Ljava/lang/Object;Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        53,
+        54,
+        55,
+        56
+      ]
+    },
+    "com.netflix.util.Pair.equals:(Ljava/lang/Object;)Z" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        106,
+        107,
+        108,
+        109,
+        111,
+        112,
+        113,
+        112
+      ]
+    },
+    "com.netflix.util.Pair.first:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        68
+      ]
+    },
+    "com.netflix.util.Pair.hashCode:()I" : {
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 6
+      },
+      "lineNumbers" : [
+        120,
+        121,
+        122,
+        123
+      ]
+    },
+    "com.netflix.util.Pair.second:()Ljava/lang/Object;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        77
+      ]
+    },
+    "com.netflix.util.Pair.setFirst:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        86,
+        87
+      ]
+    },
+    "com.netflix.util.Pair.setSecond:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T002",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        95,
+        96
+      ]
+    },
+    "com.netflix.util.UUIDFactory.generateRandomUuid:()Ljava/util/UUID;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.util.concurrent.ConcurrentUUIDFactory.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        32
+      ]
+    },
+    "com.netflix.util.concurrent.ConcurrentUUIDFactory.generateRandomUuid:()Ljava/util/UUID;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        35,
+        36,
+        37,
+        40,
+        41,
+        45,
+        46,
+        48
+      ]
+    },
+    "com.netflix.util.concurrent.ShutdownEnabledTimer$1.<init>:(Lcom/netflix/util/concurrent/ShutdownEnabledTimer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        52
+      ]
+    },
+    "com.netflix.util.concurrent.ShutdownEnabledTimer$1.run:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        54,
+        55
+      ]
+    },
+    "com.netflix.util.concurrent.ShutdownEnabledTimer.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        41,
+        42,
+        41
+      ]
+    },
+    "com.netflix.util.concurrent.ShutdownEnabledTimer.<init>:(Ljava/lang/String;Z)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        48,
+        50,
+        52,
+        58,
+        60,
+        61
+      ]
+    },
+    "com.netflix.util.concurrent.ShutdownEnabledTimer.access$001:(Lcom/netflix/util/concurrent/ShutdownEnabledTimer;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        39
+      ]
+    },
+    "com.netflix.util.concurrent.ShutdownEnabledTimer.cancel:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        65,
+        67,
+        70,
+        73,
+        71,
+        72,
+        75
+      ]
+    }
+  }
+}

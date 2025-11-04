@@ -1,0 +1,356 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2024.10.01-2ee2e3d-licensed",
+    "creationTimestamp" : "2025-11-04T15:24:32.945558942Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name netflix-commons --name with-diffblue-tests",
+    "totalTime" : 233.417,
+    "environmentDetectionTime" : 0.746,
+    "indexingTime" : 0.311,
+    "entryPointsTime" : 0.612,
+    "generationTime" : 158.349,
+    "timeToFirstTest" : 233.448,
+    "timeToLastTest" : 212.6,
+    "indexQueryTime" : 6.429,
+    "verificationTime" : 0.0,
+    "validationTime" : 0.0
+  },
+  "codes" : {
+    "R024" : "Analysis service shutdown unexpectedly",
+    "T000" : "Method eligible for test creation",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T012" : "Synthetic method"
+  },
+  "summary" : {
+    "classesCount" : 7,
+    "methodsCount" : 22,
+    "cumulativeDiffblueTestCount" : 0,
+    "cumulativeManualTestCount" : 1,
+    "completeTestCount" : 0,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 86,
+    "perMethodTestability" : {
+      "T000" : 4,
+      "T004" : 14,
+      "T005" : 1,
+      "T012" : 3
+    },
+    "perMethodOutcome" : {
+      "R024" : 2,
+      "T004" : 14,
+      "T012" : 3
+    }
+  },
+  "classes" : {
+    "com.netflix.eventbus.rx.RxEventBus" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 4,
+        "T005" : 1,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "R024" : 2,
+        "T012" : 1
+      }
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T004" : 2,
+        "T012" : 1
+      }
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1$1" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 3
+      },
+      "perMethodOutcome" : {
+        "T004" : 3
+      }
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1$2" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T004" : 2,
+        "T012" : 1
+      }
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2$1" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 3
+      },
+      "perMethodOutcome" : {
+        "T004" : 3
+      }
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2$2" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 2
+      },
+      "perMethodOutcome" : {
+        "T004" : 2
+      }
+    }
+  },
+  "methods" : {
+    "com.netflix.eventbus.rx.RxEventBus$1$1.<init>:(Lcom/netflix/eventbus/rx/RxEventBus$1;Lrx/Subscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        61
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1$1.consume:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        69,
+        70
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1$1.getEventType:()Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        64
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1$2.<init>:(Lcom/netflix/eventbus/rx/RxEventBus$1;Lcom/netflix/eventbus/spi/DynamicSubscriber;Lrx/Subscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        73
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1$2.call:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        76,
+        77,
+        78
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1.<init>:(Lcom/netflix/eventbus/rx/RxEventBus;Ljava/lang/Class;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1.call:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$1.call:(Lrx/Subscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        61,
+        73,
+        82,
+        85,
+        83,
+        84,
+        86
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2$1.<init>:(Lcom/netflix/eventbus/rx/RxEventBus$2;Lrx/Subscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        103
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2$1.consume:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        111,
+        112
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2$1.getEventType:()Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        106
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2$2.<init>:(Lcom/netflix/eventbus/rx/RxEventBus$2;Lcom/netflix/eventbus/spi/DynamicSubscriber;Lrx/Subscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        115
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2$2.call:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        118,
+        119,
+        120
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2.<init>:(Lcom/netflix/eventbus/rx/RxEventBus;Ljava/lang/Class;Lcom/netflix/eventbus/spi/EventFilter;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2.call:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus$2.call:(Lrx/Subscriber;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        103,
+        115,
+        124,
+        127,
+        125,
+        126,
+        128
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus.<init>:(Lcom/netflix/eventbus/spi/EventBus;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        31,
+        32,
+        33
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus.access$000:(Lcom/netflix/eventbus/rx/RxEventBus;)Lcom/netflix/eventbus/spi/EventBus;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        27
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus.asObservable:(Ljava/lang/Class;)Lrx/Observable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R024",
+      "lineNumbers" : [
+        58
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus.asObservable:(Ljava/lang/Class;Lcom/netflix/eventbus/spi/EventFilter;)Lrx/Observable;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        100
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus.publish:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        39,
+        40
+      ]
+    },
+    "com.netflix.eventbus.rx.RxEventBus.publishIfNotDead:(Lcom/netflix/eventbus/spi/EventCreator;[Ljava/lang/Class;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "F009",
+      "lineNumbers" : [
+        46,
+        47
+      ]
+    }
+  }
+}

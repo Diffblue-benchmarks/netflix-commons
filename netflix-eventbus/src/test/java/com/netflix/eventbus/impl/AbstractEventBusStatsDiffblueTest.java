@@ -1,0 +1,171 @@
+package com.netflix.eventbus.impl;
+
+import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
+import org.junit.Test;
+
+public class AbstractEventBusStatsDiffblueTest {
+  /**
+   * Method under test: {@link AbstractEventBusStats.LatencyStats#compute()}
+   */
+  @Test
+  public void testLatencyStatsCompute() {
+    // Arrange
+    AbstractEventBusStats.LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
+
+    // Act
+    latencyStats.compute();
+
+    // Assert
+    assertEquals(0, latencyStats.getSampleSize());
+    assertEquals(0.0d, latencyStats.getMax(), 0.0);
+    assertEquals(0.0d, latencyStats.getMean(), 0.0);
+    assertEquals(0.0d, latencyStats.getMedian(), 0.0);
+    assertEquals(0.0d, latencyStats.getPercentile_90(), 0.0);
+    assertEquals(0.0d, latencyStats.getPercentile_99(), 0.0);
+    assertEquals(0.0d, latencyStats.getPercentile_99_5(), 0.0);
+    assertEquals(0.0d, latencyStats.getStddev(), 0.0);
+  }
+
+  /**
+   * Method under test: {@link AbstractEventBusStats.LatencyStats#compute()}
+   */
+  @Test
+  public void testLatencyStatsCompute2() {
+    // Arrange
+    AbstractEventBusStats.LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
+    latencyStats.addLatency(10.0d);
+
+    // Act
+    latencyStats.compute();
+
+    // Assert
+    assertEquals(0.0d, latencyStats.getStddev(), 0.0);
+    assertEquals(1, latencyStats.getSampleSize());
+    assertEquals(10.0d, latencyStats.getMax(), 0.0);
+    assertEquals(10.0d, latencyStats.getMean(), 0.0);
+    assertEquals(10.0d, latencyStats.getMedian(), 0.0);
+    assertEquals(10.0d, latencyStats.getPercentile_90(), 0.0);
+    assertEquals(10.0d, latencyStats.getPercentile_99(), 0.0);
+    assertEquals(10.0d, latencyStats.getPercentile_99_5(), 0.0);
+  }
+
+  /**
+   * Method under test: {@link AbstractEventBusStats.LatencyStats#compute()}
+   */
+  @Test
+  public void testLatencyStatsCompute3() {
+    // Arrange
+    AbstractEventBusStats.LatencyStats latencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
+    latencyStats.addLatency(99.0d);
+    latencyStats.addLatency(10.0d);
+
+    // Act
+    latencyStats.compute();
+
+    // Assert
+    assertEquals(2, latencyStats.getSampleSize());
+    assertEquals(54.5d, latencyStats.getMean(), 0.0);
+    assertEquals(54.5d, latencyStats.getMedian(), 0.0);
+    assertEquals(62.932503525602726d, latencyStats.getStddev(), 0.0);
+    assertEquals(99.0d, latencyStats.getMax(), 0.0);
+    assertEquals(99.0d, latencyStats.getPercentile_90(), 0.0);
+    assertEquals(99.0d, latencyStats.getPercentile_99(), 0.0);
+    assertEquals(99.0d, latencyStats.getPercentile_99_5(), 0.0);
+  }
+
+  /**
+   * Method under test: {@link AbstractEventBusStats.LatencyStats#getMax()}
+   */
+  @Test
+  public void testLatencyStatsGetMax() {
+    // Arrange, Act and Assert
+    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getMax(), 0.0);
+  }
+
+  /**
+   * Method under test: {@link AbstractEventBusStats.LatencyStats#getMean()}
+   */
+  @Test
+  public void testLatencyStatsGetMean() {
+    // Arrange, Act and Assert
+    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getMean(), 0.0);
+  }
+
+  /**
+   * Method under test: {@link AbstractEventBusStats.LatencyStats#getMedian()}
+   */
+  @Test
+  public void testLatencyStatsGetMedian() {
+    // Arrange, Act and Assert
+    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getMedian(), 0.0);
+  }
+
+  /**
+   * Method under test:
+   * {@link AbstractEventBusStats.LatencyStats#getPercentile_90()}
+   */
+  @Test
+  public void testLatencyStatsGetPercentile_90() {
+    // Arrange, Act and Assert
+    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getPercentile_90(), 0.0);
+  }
+
+  /**
+   * Method under test:
+   * {@link AbstractEventBusStats.LatencyStats#getPercentile_99()}
+   */
+  @Test
+  public void testLatencyStatsGetPercentile_99() {
+    // Arrange, Act and Assert
+    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getPercentile_99(), 0.0);
+  }
+
+  /**
+   * Method under test:
+   * {@link AbstractEventBusStats.LatencyStats#getPercentile_99_5()}
+   */
+  @Test
+  public void testLatencyStatsGetPercentile_99_5() {
+    // Arrange, Act and Assert
+    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getPercentile_99_5(), 0.0);
+  }
+
+  /**
+   * Method under test: {@link AbstractEventBusStats.LatencyStats#getSampleSize()}
+   */
+  @Test
+  public void testLatencyStatsGetSampleSize() {
+    // Arrange, Act and Assert
+    assertEquals(0, (mock(AbstractEventBusStats.class).new LatencyStats()).getSampleSize());
+  }
+
+  /**
+   * Method under test: {@link AbstractEventBusStats.LatencyStats#getStddev()}
+   */
+  @Test
+  public void testLatencyStatsGetStddev() {
+    // Arrange, Act and Assert
+    assertEquals(0.0d, (mock(AbstractEventBusStats.class).new LatencyStats()).getStddev(), 0.0);
+  }
+
+  /**
+   * Method under test:
+   * {@link AbstractEventBusStats.LatencyStats#LatencyStats(AbstractEventBusStats)}
+   */
+  @Test
+  public void testLatencyStatsNewLatencyStats() {
+    // Arrange and Act
+    AbstractEventBusStats.LatencyStats actualLatencyStats = mock(AbstractEventBusStats.class).new LatencyStats();
+
+    // Assert
+    assertEquals(0, actualLatencyStats.getSampleSize());
+    assertEquals(0.0d, actualLatencyStats.getMax(), 0.0);
+    assertEquals(0.0d, actualLatencyStats.getMean(), 0.0);
+    assertEquals(0.0d, actualLatencyStats.getMedian(), 0.0);
+    assertEquals(0.0d, actualLatencyStats.getPercentile_90(), 0.0);
+    assertEquals(0.0d, actualLatencyStats.getPercentile_99(), 0.0);
+    assertEquals(0.0d, actualLatencyStats.getPercentile_99_5(), 0.0);
+    assertEquals(0.0d, actualLatencyStats.getStddev(), 0.0);
+  }
+}
