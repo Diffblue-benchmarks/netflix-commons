@@ -1,0 +1,176 @@
+package com.netflix.eventbus.bridge;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import com.diffblue.cover.annotations.MaintainedByDiffblue;
+import com.diffblue.cover.annotations.MethodsUnderTest;
+import com.google.common.base.Predicate;
+import com.google.common.base.Supplier;
+import com.netflix.eventbus.DummyEventBusBridge;
+import com.netflix.eventbus.bridge.AbstractEventBusBridge.Builder;
+import com.netflix.eventbus.filter.lang.infix.InfixEventFilter;
+import com.netflix.eventbus.spi.EventBus;
+import com.netflix.eventbus.spi.EventFilter;
+import org.junit.Test;
+import org.junit.experimental.categories.Category;
+
+public class AbstractEventBusBridgeDiffblueTest {
+  /**
+   * Test Builder {@link Builder#withAutoStart(Boolean)}.
+   * <p>
+   * Method under test: {@link Builder#withAutoStart(Boolean)}
+   */
+  @Test
+  @Category(MaintainedByDiffblue.class)
+  @MethodsUnderTest({"Builder Builder.withAutoStart(Boolean)"})
+  public void testBuilderWithAutoStart() {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+
+    // Act and Assert
+    assertSame(builderResult, builderResult.withAutoStart(true));
+  }
+
+  /**
+   * Test Builder {@link Builder#withEventBus(EventBus)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   *   <li>Then return builder.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Builder#withEventBus(EventBus)}
+   */
+  @Test
+  @Category(MaintainedByDiffblue.class)
+  @MethodsUnderTest({"Builder Builder.withEventBus(EventBus)"})
+  public void testBuilderWithEventBus_whenNull_thenReturnBuilder() {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+
+    // Act and Assert
+    assertSame(builderResult, builderResult.withEventBus(null));
+  }
+
+  /**
+   * Test Builder {@link Builder#withEventType(Class)}.
+   * <p>
+   * Method under test: {@link Builder#withEventType(Class)}
+   */
+  @Test
+  @Category(MaintainedByDiffblue.class)
+  @MethodsUnderTest({"Builder Builder.withEventType(Class)"})
+  public void testBuilderWithEventType() {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+    Class<Object> eventType = Object.class;
+
+    // Act
+    DummyEventBusBridge.Builder actualWithEventTypeResult = builderResult.withEventType(eventType);
+
+    // Assert
+    Class<Object> expectedResultClass = Object.class;
+    assertEquals(expectedResultClass, builderResult.eventType);
+    assertSame(builderResult, actualWithEventTypeResult);
+  }
+
+  /**
+   * Test Builder {@link Builder#withFilter(EventFilter)}.
+   * <p>
+   * Method under test: {@link Builder#withFilter(EventFilter)}
+   */
+  @Test
+  @Category(MaintainedByDiffblue.class)
+  @MethodsUnderTest({"Builder Builder.withFilter(EventFilter)"})
+  public void testBuilderWithFilter() {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+
+    // Act
+    DummyEventBusBridge.Builder actualWithFilterResult = builderResult
+        .withFilter(new InfixEventFilter(mock(Predicate.class), "Original"));
+
+    // Assert
+    EventFilter eventFilter = builderResult.filter;
+    assertTrue(eventFilter instanceof InfixEventFilter);
+    assertEquals("Infix", eventFilter.getLanguage());
+    assertSame(builderResult, actualWithFilterResult);
+  }
+
+  /**
+   * Test Builder {@link Builder#withStatsSupplier(Supplier)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Builder#withStatsSupplier(Supplier)}
+   */
+  @Test
+  @Category(MaintainedByDiffblue.class)
+  @MethodsUnderTest({"Builder Builder.withStatsSupplier(Supplier)"})
+  public void testBuilderWithStatsSupplier_whenNull() {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+
+    // Act and Assert
+    assertSame(builderResult, builderResult.withStatsSupplier(null));
+  }
+
+  /**
+   * Test Builder {@link Builder#withStatsSupplier(Supplier)}.
+   * <ul>
+   *   <li>When {@link Supplier}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Builder#withStatsSupplier(Supplier)}
+   */
+  @Test
+  @Category(MaintainedByDiffblue.class)
+  @MethodsUnderTest({"Builder Builder.withStatsSupplier(Supplier)"})
+  public void testBuilderWithStatsSupplier_whenSupplier() {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+
+    // Act and Assert
+    assertSame(builderResult, builderResult.withStatsSupplier(mock(Supplier.class)));
+  }
+
+  /**
+   * Test Builder {@link Builder#withStats(EventBusBridgeStats)}.
+   * <ul>
+   *   <li>When {@code null}.</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Builder#withStats(EventBusBridgeStats)}
+   */
+  @Test
+  @Category(MaintainedByDiffblue.class)
+  @MethodsUnderTest({"Builder Builder.withStats(EventBusBridgeStats)"})
+  public void testBuilderWithStats_whenNull() {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+
+    // Act and Assert
+    assertSame(builderResult, builderResult.withStats(null));
+  }
+
+  /**
+   * Test Builder {@link Builder#withStats(EventBusBridgeStats)}.
+   * <ul>
+   *   <li>When {@link SimpleEventBusBridgeStats} (default constructor).</li>
+   * </ul>
+   * <p>
+   * Method under test: {@link Builder#withStats(EventBusBridgeStats)}
+   */
+  @Test
+  @Category(MaintainedByDiffblue.class)
+  @MethodsUnderTest({"Builder Builder.withStats(EventBusBridgeStats)"})
+  public void testBuilderWithStats_whenSimpleEventBusBridgeStats() {
+    // Arrange
+    DummyEventBusBridge.Builder builderResult = DummyEventBusBridge.builder();
+
+    // Act and Assert
+    assertSame(builderResult, builderResult.withStats(new SimpleEventBusBridgeStats()));
+  }
+}

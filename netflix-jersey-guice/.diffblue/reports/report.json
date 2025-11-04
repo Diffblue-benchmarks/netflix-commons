@@ -1,0 +1,152 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-04T15:39:40.60439297Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name netflix-commons --name with-diffblue-tests",
+    "totalTime" : 74.975,
+    "environmentDetectionTime" : 0.169,
+    "indexingTime" : 0.29,
+    "entryPointsTime" : 0.164,
+    "generationTime" : 2075.742,
+    "timeToFirstTest" : 2665.506,
+    "timeToLastTest" : 2413.536,
+    "indexQueryTime" : 2.6350000000000002,
+    "verificationTime" : 29.334,
+    "validationTime" : 24.251
+  },
+  "codes" : {
+    "R002" : "Missing observers",
+    "R005" : "Unable to load class",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T005" : "Trivial constructor",
+    "T010" : "Abstract or interface method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 3,
+    "methodsCount" : 5,
+    "cumulativeDiffblueTestCount" : 0,
+    "cumulativeManualTestCount" : 0,
+    "completeTestCount" : 0,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 66,
+    "perMethodTestability" : {
+      "T000" : 2,
+      "T005" : 2,
+      "T010" : 1
+    },
+    "perMethodOutcome" : {
+      "R002" : 1,
+      "R005" : 2,
+      "R013" : 1,
+      "T010" : 1
+    },
+    "perTestValidation" : {
+      "V000" : 63
+    }
+  },
+  "classes" : {
+    "com.netflix.jersey.guice.providers.exception.CustomThrowableExceptionMapper" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 1
+      },
+      "perMethodOutcome" : {
+        "T010" : 1
+      }
+    },
+    "com.netflix.jersey.guice.providers.exception.GsonDefaultExceptionMapper" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 1,
+        "R013" : 1
+      }
+    },
+    "com.netflix.jersey.guice.providers.exception.ThrowableExceptionMapper" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R005" : 2
+      }
+    }
+  },
+  "methods" : {
+    "com.netflix.jersey.guice.providers.exception.CustomThrowableExceptionMapper.canMap:(Ljava/lang/Throwable;Ljavax/servlet/http/HttpServletRequest;)Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.jersey.guice.providers.exception.GsonDefaultExceptionMapper.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "com.netflix.jersey.guice.providers.exception.GsonDefaultExceptionMapper.toResponse:(Ljava/lang/Throwable;)Ljavax/ws/rs/core/Response;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        28,
+        29,
+        30,
+        32,
+        33,
+        34,
+        36
+      ]
+    },
+    "com.netflix.jersey.guice.providers.exception.ThrowableExceptionMapper.<init>:(Ljava/util/Set;Lcom/netflix/jersey/guice/providers/exception/DefaultThrowableExceptionMapper;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        68,
+        64,
+        69,
+        70,
+        71
+      ]
+    },
+    "com.netflix.jersey.guice.providers.exception.ThrowableExceptionMapper.toResponse:(Ljava/lang/Throwable;)Ljavax/ws/rs/core/Response;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R005",
+      "lineNumbers" : [
+        75,
+        76,
+        78,
+        79,
+        84,
+        82,
+        85,
+        86
+      ]
+    }
+  }
+}

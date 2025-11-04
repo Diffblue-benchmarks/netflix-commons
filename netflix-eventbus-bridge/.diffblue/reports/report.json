@@ -1,0 +1,693 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-04T15:39:40.60439297Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name netflix-commons --name with-diffblue-tests",
+    "totalTime" : 116.912,
+    "environmentDetectionTime" : 0.288,
+    "indexingTime" : 0.278,
+    "entryPointsTime" : 0.28,
+    "generationTime" : 237.73,
+    "timeToFirstTest" : 499.485,
+    "timeToLastTest" : 398.894,
+    "indexQueryTime" : 3.6670000000000003,
+    "verificationTime" : 6.039,
+    "validationTime" : 20.951
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T001" : "Trivial getter",
+    "T004" : "In anonymous inner class",
+    "T005" : "Trivial constructor",
+    "T009" : "No implementation for abstract class",
+    "T010" : "Abstract or interface method",
+    "T012" : "Synthetic method",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 8,
+    "methodsCount" : 49,
+    "cumulativeDiffblueTestCount" : 23,
+    "cumulativeManualTestCount" : 4,
+    "completeTestCount" : 23,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 218,
+    "perMethodTestability" : {
+      "T000" : 17,
+      "T001" : 1,
+      "T004" : 4,
+      "T005" : 1,
+      "T009" : 14,
+      "T010" : 11,
+      "T012" : 1
+    },
+    "perMethodOutcome" : {
+      "R000" : 18,
+      "R013" : 1,
+      "T004" : 4,
+      "T009" : 14,
+      "T010" : 11,
+      "T012" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 23
+    },
+    "perTestValidation" : {
+      "V000" : 23
+    }
+  },
+  "classes" : {
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge" : {
+      "methodsCount" : 17,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T009" : 14,
+        "T010" : 2,
+        "T012" : 1
+      },
+      "perMethodOutcome" : {
+        "T009" : 14,
+        "T010" : 2,
+        "T012" : 1
+      }
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$1" : {
+      "methodsCount" : 1,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 1
+      },
+      "perMethodOutcome" : {
+        "T004" : 1
+      }
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$2" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T004" : 3
+      },
+      "perMethodOutcome" : {
+        "T004" : 3
+      }
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder" : {
+      "methodsCount" : 9,
+      "completeTestCount" : 8,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 7,
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "R000" : 6,
+        "R013" : 1,
+        "T010" : 2
+      },
+      "perTestOutcome" : {
+        "R000" : 8
+      }
+    },
+    "com.netflix.eventbus.bridge.EventBusBridge" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 2
+      },
+      "perMethodOutcome" : {
+        "T010" : 2
+      }
+    },
+    "com.netflix.eventbus.bridge.EventBusBridgeStats" : {
+      "methodsCount" : 5,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T010" : 5
+      },
+      "perMethodOutcome" : {
+        "T010" : 5
+      }
+    },
+    "com.netflix.eventbus.bridge.ImmutableEventBusBridgeStats" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 9,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 6
+      },
+      "perTestOutcome" : {
+        "R000" : 9
+      }
+    },
+    "com.netflix.eventbus.bridge.SimpleEventBusBridgeStats" : {
+      "methodsCount" : 6,
+      "completeTestCount" : 6,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 5,
+        "T001" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 6
+      },
+      "perTestOutcome" : {
+        "R000" : 6
+      }
+    }
+  },
+  "methods" : {
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$1.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        24
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$2.<init>:(Lcom/netflix/eventbus/bridge/AbstractEventBusBridge;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        133
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$2.consume:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        142,
+        143,
+        144,
+        149,
+        147,
+        148,
+        150
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$2.getEventType:()Ljava/lang/Class;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T004",
+      "perMethodOutcome" : "T004",
+      "lineNumbers" : [
+        136
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        38,
+        41,
+        42
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.self:()Lcom/netflix/eventbus/bridge/AbstractEventBusBridge$Builder;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.validate:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        107,
+        108,
+        109
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.withAutoStart:(Ljava/lang/Boolean;)Lcom/netflix/eventbus/bridge/AbstractEventBusBridge$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        92,
+        93
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.withEventBus:(Lcom/netflix/eventbus/spi/EventBus;)Lcom/netflix/eventbus/bridge/AbstractEventBusBridge$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        51,
+        52
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.withEventType:(Ljava/lang/Class;)Lcom/netflix/eventbus/bridge/AbstractEventBusBridge$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        61,
+        62
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.withFilter:(Lcom/netflix/eventbus/spi/EventFilter;)Lcom/netflix/eventbus/bridge/AbstractEventBusBridge$Builder;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        70,
+        71
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.withStats:(Lcom/netflix/eventbus/bridge/EventBusBridgeStats;)Lcom/netflix/eventbus/bridge/AbstractEventBusBridge$Builder;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        101,
+        102,
+        103
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge$Builder.withStatsSupplier:(Lcom/google/common/base/Supplier;)Lcom/netflix/eventbus/bridge/AbstractEventBusBridge$Builder;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        79,
+        80,
+        81
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.<clinit>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T012",
+      "perMethodOutcome" : "T012",
+      "lineNumbers" : [
+        23,
+        24
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.<init>:(Lcom/netflix/eventbus/bridge/AbstractEventBusBridge$Builder;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010",
+      "lineNumbers" : [
+        126,
+        124,
+        127,
+        128,
+        129,
+        130,
+        131,
+        133,
+        152
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.getConsumeCount:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        254
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.getConsumeErrorCount:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        250
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.getLastConsumeException:()Ljava/lang/Exception;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        258
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.getStats:()Lcom/netflix/eventbus/bridge/EventBusBridgeStats;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        262
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.init:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        156,
+        157,
+        158,
+        159,
+        161
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.isPaused:()Z" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        246
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.onNextEvent:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        179,
+        180
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.pause:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        226,
+        227,
+        228,
+        229,
+        231
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.postPause:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        222
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.postShutdown:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        196
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.preInit:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        188
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.preResume:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        209
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.resume:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        235,
+        236,
+        237,
+        238,
+        240,
+        241,
+        243
+      ]
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.sendEvent:(Ljava/lang/Object;)V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.AbstractEventBusBridge.shutdown:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T009",
+      "perMethodOutcome" : "T009",
+      "lineNumbers" : [
+        165,
+        166,
+        167
+      ]
+    },
+    "com.netflix.eventbus.bridge.EventBusBridge.pause:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.EventBusBridge.resume:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.EventBusBridgeStats.getConsumeCount:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.EventBusBridgeStats.getConsumeErrorCount:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.EventBusBridgeStats.getLastConsumeException:()Ljava/lang/Exception;" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.EventBusBridgeStats.incConsumeCount:()J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.EventBusBridgeStats.incConsumeErrorCount:(Ljava/lang/Exception;)J" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T010",
+      "perMethodOutcome" : "T010"
+    },
+    "com.netflix.eventbus.bridge.ImmutableEventBusBridgeStats.<init>:(Lcom/netflix/eventbus/bridge/EventBusBridgeStats;)V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        14,
+        15,
+        16
+      ]
+    },
+    "com.netflix.eventbus.bridge.ImmutableEventBusBridgeStats.getConsumeCount:()J" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        20
+      ]
+    },
+    "com.netflix.eventbus.bridge.ImmutableEventBusBridgeStats.getConsumeErrorCount:()J" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        25
+      ]
+    },
+    "com.netflix.eventbus.bridge.ImmutableEventBusBridgeStats.getLastConsumeException:()Ljava/lang/Exception;" : {
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 2
+      },
+      "lineNumbers" : [
+        40
+      ]
+    },
+    "com.netflix.eventbus.bridge.ImmutableEventBusBridgeStats.incConsumeCount:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        30
+      ]
+    },
+    "com.netflix.eventbus.bridge.ImmutableEventBusBridgeStats.incConsumeErrorCount:(Ljava/lang/Exception;)J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        35
+      ]
+    },
+    "com.netflix.eventbus.bridge.SimpleEventBusBridgeStats.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    "com.netflix.eventbus.bridge.SimpleEventBusBridgeStats.getConsumeCount:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        12
+      ]
+    },
+    "com.netflix.eventbus.bridge.SimpleEventBusBridgeStats.getConsumeErrorCount:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        17
+      ]
+    },
+    "com.netflix.eventbus.bridge.SimpleEventBusBridgeStats.getLastConsumeException:()Ljava/lang/Exception;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T001",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        33
+      ]
+    },
+    "com.netflix.eventbus.bridge.SimpleEventBusBridgeStats.incConsumeCount:()J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        22
+      ]
+    },
+    "com.netflix.eventbus.bridge.SimpleEventBusBridgeStats.incConsumeErrorCount:(Ljava/lang/Exception;)J" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        27,
+        28
+      ]
+    }
+  }
+}

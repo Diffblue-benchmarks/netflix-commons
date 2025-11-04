@@ -1,0 +1,150 @@
+{
+  "meta" : {
+    "reportVersion" : "2.6"
+  },
+  "run" : {
+    "version" : "2025.02.02-08b2a5a-licensed",
+    "creationTimestamp" : "2025-11-04T15:39:40.60439297Z",
+    "command" : "dcover create --coverage-reports --upload http://localhost:8080 --project-name netflix-commons --name with-diffblue-tests",
+    "totalTime" : 90.81,
+    "environmentDetectionTime" : 0.312,
+    "indexingTime" : 0.271,
+    "entryPointsTime" : 0.303,
+    "generationTime" : 173.035,
+    "timeToFirstTest" : 273.745,
+    "timeToLastTest" : 253.601,
+    "indexQueryTime" : 2.7560000000000002,
+    "verificationTime" : 1.447,
+    "validationTime" : 18.444
+  },
+  "codes" : {
+    "R000" : "Success",
+    "R002" : "Missing observers",
+    "R004" : "No meaningful assertions found",
+    "R013" : "No inputs found that don't throw a trivial exception",
+    "T000" : "Method eligible for test creation",
+    "T005" : "Trivial constructor",
+    "V000" : "Validated successfully"
+  },
+  "summary" : {
+    "classesCount" : 2,
+    "methodsCount" : 5,
+    "cumulativeDiffblueTestCount" : 2,
+    "cumulativeManualTestCount" : 4,
+    "completeTestCount" : 2,
+    "incompleteTestCount" : 0,
+    "skeletonTestCount" : 0,
+    "totalPhysicalLineCount" : 40,
+    "perMethodTestability" : {
+      "T000" : 3,
+      "T005" : 2
+    },
+    "perMethodOutcome" : {
+      "R000" : 2,
+      "R002" : 1,
+      "R004" : 1,
+      "R013" : 1
+    },
+    "perTestOutcome" : {
+      "R000" : 2
+    },
+    "perTestValidation" : {
+      "V000" : 2
+    }
+  },
+  "classes" : {
+    "com.netflix.lifecycle.concurrency.ConcurrencyModule" : {
+      "methodsCount" : 2,
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 1,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R002" : 1,
+        "R013" : 1
+      }
+    },
+    "com.netflix.lifecycle.concurrency.CoreCountBasedScheduledExecutorServiceProvider" : {
+      "methodsCount" : 3,
+      "completeTestCount" : 2,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : {
+        "T000" : 2,
+        "T005" : 1
+      },
+      "perMethodOutcome" : {
+        "R000" : 2,
+        "R004" : 1
+      },
+      "perTestOutcome" : {
+        "R000" : 2
+      }
+    }
+  },
+  "methods" : {
+    "com.netflix.lifecycle.concurrency.ConcurrencyModule.<init>:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R002",
+      "lineNumbers" : [
+        19
+      ]
+    },
+    "com.netflix.lifecycle.concurrency.ConcurrencyModule.configure:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R013",
+      "lineNumbers" : [
+        22,
+        23,
+        24,
+        25
+      ]
+    },
+    "com.netflix.lifecycle.concurrency.CoreCountBasedScheduledExecutorServiceProvider.<init>:()V" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T005",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        13
+      ]
+    },
+    "com.netflix.lifecycle.concurrency.CoreCountBasedScheduledExecutorServiceProvider.get:()Ljava/util/concurrent/ScheduledExecutorService;" : {
+      "completeTestCount" : 1,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R000",
+      "perTestOutcome" : {
+        "R000" : 1
+      },
+      "lineNumbers" : [
+        18,
+        19,
+        21,
+        22,
+        23,
+        18,
+        24
+      ]
+    },
+    "com.netflix.lifecycle.concurrency.CoreCountBasedScheduledExecutorServiceProvider.shutdown:()V" : {
+      "completeTestCount" : 0,
+      "incompleteTestCount" : 0,
+      "perMethodTestability" : "T000",
+      "perMethodOutcome" : "R004",
+      "lineNumbers" : [
+        29,
+        30,
+        31
+      ]
+    }
+  }
+}
