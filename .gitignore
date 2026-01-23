@@ -72,3 +72,9 @@ atlassian-ide-plugin.xml
 .nbattrs
 
 
+
+.diffblue/cache
+**.diffblue/cache
+**/.diffblue/cache
+**/**.diffblue/cache
+**/**/.diffblue/cache
