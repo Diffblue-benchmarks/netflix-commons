@@ -30,6 +30,24 @@ public class MeasuredRateDiffblueTest {
    * Test {@link MeasuredRate#getCount()}.
    *
    * <ul>
+   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is {@code -355715884}.
+   * </ul>
+   *
+   * <p>Method under test: {@link MeasuredRate#getCount()}
+   */
+  @Test
+  @Category(ContributionFromDiffblue.class)
+  @ManagedByDiffblue
+  @MethodsUnderTest({"long MeasuredRate.getCount()"})
+  public void testGetCount_givenMeasuredRateWithSampleIntervalIs355715884() {
+    // Arrange, Act and Assert
+    assertEquals(0L, new MeasuredRate(-355715884L).getCount());
+  }
+
+  /**
+   * Test {@link MeasuredRate#getCount()}.
+   *
+   * <ul>
    *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is forty-two.
    * </ul>
    *
@@ -45,21 +63,21 @@ public class MeasuredRateDiffblueTest {
   }
 
   /**
-   * Test {@link MeasuredRate#getCount()}.
+   * Test {@link MeasuredRate#getCurrentCount()}.
    *
    * <ul>
-   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is minus one.
+   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is {@code -355715675}.
    * </ul>
    *
-   * <p>Method under test: {@link MeasuredRate#getCount()}
+   * <p>Method under test: {@link MeasuredRate#getCurrentCount()}
    */
   @Test
   @Category(ContributionFromDiffblue.class)
   @ManagedByDiffblue
-  @MethodsUnderTest({"long MeasuredRate.getCount()"})
-  public void testGetCount_givenMeasuredRateWithSampleIntervalIsMinusOne() {
+  @MethodsUnderTest({"long MeasuredRate.getCurrentCount()"})
+  public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIs355715675() {
     // Arrange, Act and Assert
-    assertEquals(0L, new MeasuredRate(-1L).getCount());
+    assertEquals(0L, new MeasuredRate(-355715675L).getCurrentCount());
   }
 
   /**
@@ -78,24 +96,6 @@ public class MeasuredRateDiffblueTest {
   public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIsFortyTwo() {
     // Arrange, Act and Assert
     assertEquals(0L, new MeasuredRate(42L).getCurrentCount());
-  }
-
-  /**
-   * Test {@link MeasuredRate#getCurrentCount()}.
-   *
-   * <ul>
-   *   <li>Given {@link MeasuredRate#MeasuredRate(long)} with sampleInterval is minus one.
-   * </ul>
-   *
-   * <p>Method under test: {@link MeasuredRate#getCurrentCount()}
-   */
-  @Test
-  @Category(ContributionFromDiffblue.class)
-  @ManagedByDiffblue
-  @MethodsUnderTest({"long MeasuredRate.getCurrentCount()"})
-  public void testGetCurrentCount_givenMeasuredRateWithSampleIntervalIsMinusOne() {
-    // Arrange, Act and Assert
-    assertEquals(0L, new MeasuredRate(-1L).getCurrentCount());
   }
 
   /**
